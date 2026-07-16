@@ -317,7 +317,6 @@ body {
     opacity: 0;
     transition: var(--transition-smooth);
 }
-
 .point-card:nth-child(2)::before {
     background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
 }
@@ -567,4 +566,13 @@ body {
     margin-left: 12px;
     border-left-width: 1px;
     color: #b0b0c8;
+}
+
+/* 隐藏导航样式 */
+.nav-hidden {
+    color: var(--bg-deep);
+    transition: color var(--transition-smooth);
+}
+.nav-hidden:hover {
+    color: var(--text-secondary);
 }

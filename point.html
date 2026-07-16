@@ -8,6 +8,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 子导航样式 */
+        .sub-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .sub-nav-link {
+            font-family: var(--font-main);
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all var(--transition-smooth);
+        }
+        .sub-nav-link:hover {
+            color: #ffffff;
+            background: rgba(94, 234, 219, 0.1);
+        }
+        .sub-nav-separator {
+            color: rgba(180, 180, 200, 0.3);
+            font-weight: 300;
+            font-size: 0.85rem;
+            user-select: none;
+        }
+
+        /* 矿物小卡片内坐标列表样式 - 放大 */
+        .point-card .ore-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .point-card .ore-list li {
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Noto Sans SC', monospace;
+            font-size: 0.88rem;
+            color: var(--accent-cyan);
+            margin-bottom: 3px;
+            line-height: 1.5;
+        }
+        .point-card .point-name {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #e0e0f0;
+        }
+    </style>
 </head>
 <body>
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
@@ -18,6 +70,15 @@
         </header>
 
         <section class="nav-section" id="main-nav"></section>
+
+        <!-- 页面内子导航 -->
+        <nav class="sub-nav">
+            <a href="#mobs" class="sub-nav-link">小怪点位</a>
+            <span class="sub-nav-separator">|</span>
+            <a href="#boss" class="sub-nav-link">BOSS点位</a>
+            <span class="sub-nav-separator">|</span>
+            <a href="#minerals" class="sub-nav-link">矿物点位</a>
+        </nav>
 
         <!-- 小怪点位 -->
         <section class="content-section" id="mobs">
@@ -262,6 +323,114 @@
                             <div class="boss-info-item"><strong>开启箱子消耗：</strong>银币*3000</div>
                             <div class="boss-info-full"><strong>箱子爆率：</strong>70%-远古海棱晶*1&nbsp;&nbsp;10%-海晶砂砾*8&nbsp;&nbsp;10%-侵蚀海绵*1&nbsp;&nbsp;10%-粒子水晶*3</div>
                         </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 矿物点位（包裹在一个大卡片中） -->
+        <section class="content-section" id="minerals">
+            <article class="content-card">
+                <h2 class="content-title">矿物点位</h2>
+
+                <h3 class="sub-area-title">铁矿</h3>
+                <div class="mobs-grid">
+                    <div class="point-card">
+                        <div class="point-name">石山</div>
+                        <ul class="ore-list">
+                            <li>X: 1769 / Y: 28 / Z: 2445  *4</li>
+                            <li>X: 1769 / Y: 27 / Z: 2437  *4</li>
+                            <li>X: 1847 / Y: 28 / Z: 2586  *4</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-name">雪山</div>
+                        <ul class="ore-list">
+                            <li>X: 2256 / Y: 167 / Z: 2889</li>
+                            <li>X: 2762 / Y: 179 / Z: 2829  *4</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-name">矿洞</div>
+                        <ul class="ore-list">
+                            <li>X: 1143 / Y: 38 / Z: 1536  *4</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="sub-area-title">金矿</h3>
+                <div class="mobs-grid">
+                    <div class="point-card">
+                        <div class="point-name">雪山</div>
+                        <ul class="ore-list">
+                            <li>X: 2379 / Y: 206 / Z: 2836</li>
+                            <li>X: 2282 / Y: 180 / Z: 2870  *2</li>
+                            <li>X: 2231 / Y: 155 / Z: 2886  *2</li>
+                            <li>X: 2610 / Y: 189 / Z: 3011  *5</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-name">沙漠</div>
+                        <ul class="ore-list">
+                            <li>X: 1432 / Y: 209 / Z: 2929</li>
+                            <li>X: 1466 / Y: 175 / Z: 2789  *2</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-name">矿洞</div>
+                        <ul class="ore-list">
+                            <li>X: 1138 / Y: 38 / Z: 1525  *4</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="sub-area-title">青金石</h3>
+                <div class="mobs-grid">
+                    <div class="point-card">
+                        <div class="point-name">沼泽</div>
+                        <ul class="ore-list">
+                            <li>X: 1814 / Y: 28 / Z: 1908  *4</li>
+                            <li>X: 1923 / Y: 28 / Z: 1957  *4</li>
+                            <li>X: 1918 / Y: 28 / Z: 1891  *4</li>
+                            <li>X: 1810 / Y: 25 / Z: 1897  *4</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-name">矿洞</div>
+                        <ul class="ore-list">
+                            <li>X: 1123 / Y: 46 / Z: 1520  *4</li>
+                            <li>X: 1141 / Y: 38 / Z: 1520  *4</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="sub-area-title">铜矿</h3>
+                <div class="mobs-grid">
+                    <div class="point-card">
+                        <div class="point-name">沼泽</div>
+                        <ul class="ore-list">
+                            <li>X: 1839 / Y: 27 / Z: 1934  *4</li>
+                            <li>X: 1981 / Y: 25 / Z: 1927  *4</li>
+                        </ul>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-name">沙漠</div>
+                        <ul class="ore-list">
+                            <li>X: 1449 / Y: 215 / Z: 2946  *4</li>
+                            <li>X: 1492 / Y: 205 / Z: 2984  *4</li>
+                            <li>X: 1483 / Y: 160 / Z: 2769  *4</li>
+                            <li>X: 1424 / Y: 181 / Z: 2781  *4</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="sub-area-title">红石</h3>
+                <div class="mobs-grid">
+                    <div class="point-card">
+                        <div class="point-name">矿洞</div>
+                        <ul class="ore-list">
+                            <li>X: 1156 / Y: 37 / Z: 1528  *2</li>
+                        </ul>
                     </div>
                 </div>
             </article>

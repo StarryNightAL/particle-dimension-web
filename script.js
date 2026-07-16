@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="mob.html" class="nav-link">小怪详情</a>
                 <span class="nav-separator">·</span>
                 <a href="boss.html" class="nav-link">BOSS详情</a>
+                <a href="interesting_thing.html" class="nav-link nav-hidden" style="margin-left: auto;">粒子趣事</a>
             </nav>
         `;
     }
