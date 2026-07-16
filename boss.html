@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <title>粒子维度 附属Wiki - BOSS详情</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .content-text {
+            font-size: 0.95rem !important;
+            color: #e0e0e8 !important;
+        }
+        .skill-list li {
+            font-size: 0.95rem;
+            color: #e0e0e8;
+            margin-bottom: 6px;
+        }
+        .credit-text {
+            font-size: 0.75rem;
+            color: rgba(180, 180, 200, 0.6);
+            text-align: right;
+            margin-top: 12px;
+            font-style: italic;
+        }
+        .boss-summary {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 2px solid var(--accent-cyan);
+        }
+        .boss-summary p {
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+            color: #c0c0d8;
+        }
+        .boss-summary strong {
+            color: #d0d0e0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <div class="main-container">
+        <header class="header-section">
+            <h1 class="main-title">粒子维度 附属Wiki</h1>
+        </header>
+
+        <section class="nav-section" id="main-nav"></section>
+
+        <!-- 前言 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title">前言</h2>
+                <p class="content-text">
+                    本书为怪物图鉴的重制版，制作相对前版比较精良，完善前版的各个缺点，比如说重点内容加了点彩色，本次重制版，主要把技巧选项删除，减少主观性，保证内容真实有效。<br>
+                    编：狐望江，暗己调灵之{鬼魂}<br>
+                    鸣谢（部分资料提供，不分前后）：孤僻的羊吃麦片，sleep___，Rav_若兮，初日，海灵伯，YF年华
+                </p>
+                <p class="credit-text">此部分由玩家狐望江提供；遵照原文，未加改动</p>
+            </article>
+        </section>
+
+        <!-- 天灾·僵尸 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF5555;">天灾·僵尸</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>X: 1711 / Y: 67 / Z: 2371</p>
+                        <p><strong>召唤消耗：</strong>无</p>
+                        <p><strong>开启箱子消耗：</strong>银币*500</p>
+                        <p><strong>箱子爆率：</strong>40%-铁块*1&nbsp;&nbsp;50%-铁块*2&nbsp;&nbsp;10%-粒子水晶*1</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>天灾·僵尸</p>
+                    <p class="content-text"><strong>简略介绍：</strong>天灾·僵尸是新手期最重要的boss之一；俗话说，每一只极寒背后都有一只僵尸</p>
+                    <p class="content-text"><strong>战利品：</strong>符文，粒子水晶，铁块，腐肉</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>五级</p>
+                    <p class="content-text"><strong>经验：</strong>30点</p>
+                    <p class="content-text"><strong>特点：</strong>拥有二阶段，是目前为止为数不多击杀后可爆出符文的boss（截止目前2月22日）</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>振地：赋予一二秒漂浮</li>
+                        <li>重击：天灾伤害乘1.5倍（正常跳劈伤害）并赋予四五秒缓慢二</li>
+                        <li>尸吼：召唤三只大僵尸，一只小僵尸，召唤两波</li>
+                        <li>连击：天灾获得三四秒速度，不知是否为错觉，他的攻击速度和攻击距离会增加</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 天灾·洞穴骷髅 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF5555;">天灾·洞穴骷髅</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>X: 1590 / Y: 99 / Z: 2728</p>
+                        <p><strong>召唤消耗：</strong>无</p>
+                        <p><strong>开启箱子消耗：</strong>银币*600</p>
+                        <p><strong>箱子爆率：</strong>50%-骷髅头骨*3&nbsp;&nbsp;30%-金锭*5&nbsp;&nbsp;20%-粒子水晶*1</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>天灾·洞穴骷髅</p>
+                    <p class="content-text"><strong>简略介绍：</strong>每三只雪山骷髅的背后都有一只洞穴骷髅（其实叫天灾·骷髅）</p>
+                    <p class="content-text"><strong>战利品：</strong>骷髅头骨，粒子水晶，金锭</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>击败洞穴外的精英骷髅并达到10级</p>
+                    <p class="content-text"><strong>经验：</strong>50点</p>
+                    <p class="content-text"><strong>特点：</strong>几乎所有技能都是给天灾力量，所以相对新手来说，洞穴骷髅的伤害较高</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>钢铁重斧·斧击：给天灾几秒力量，同时给予你二三秒缓慢三</li>
+                        <li>破风之弓·弓魂召唤：召唤四只骷髅（会内斗）</li>
+                        <li>精铁轻剑·剑刺：给天灾几秒力量，同时冲刺</li>
+                        <li>岩石巨盾·盾砸：给天灾几秒力量并造成缓慢和伤害</li>
+                        <li>永夜之时：给距离天灾八格以上的玩家造成伤害，给距离天灾四格以下的玩家负面buff</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 天灾·雪山骷髅 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF5555;">天灾·雪山骷髅</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>X: 2076 / Y: 109 / Z: 2954</p>
+                        <p><strong>召唤消耗：</strong>骷髅头骨*1</p>
+                        <p><strong>开启箱子消耗：</strong>银币*600</p>
+                        <p><strong>箱子爆率：</strong>50%-永恒枯骨*1&nbsp;&nbsp;30%-金锭*5&nbsp;&nbsp;20%-粒子水晶*1</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>天灾·雪山骷髅</p>
+                    <p class="content-text"><strong>简略介绍：</strong>支线Boss，却是最恶心也是最重要的几个boss之一</p>
+                    <p class="content-text"><strong>战利品：</strong>永恒枯骨，粒子水晶，金锭</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>无</p>
+                    <p class="content-text"><strong>经验：</strong>无</p>
+                    <p class="content-text"><strong>特点：</strong>天灾的金头盔炸的时候获得3秒无敌，并造成伤害两次，无敌的时候，金头盔仍然消耗耐久，所以不要在无敌的时候攻击天灾</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>粒子附加：获得一段时间的力量</li>
+                        <li>骨链拉扯：把玩家向天灾拉去</li>
+                        <li>{未命名}：天灾获得3秒无敌并对周围玩家造成伤害</li>
+                        <li>粒子渗透：对周围玩家造成伤害并造成减速</li>
+                        <li>枯骨深渊：对周围所有玩家造成缓慢二失明效果</li>
+                        <li>枯骨永夜：将天灾附近的场地地板变成灵魂沙，场地有多少名玩家就会召唤玩家数双倍的骷髅；骷髅会随时间掉血</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 天灾·极寒冰骷 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF5555;">天灾·极寒冰骷</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>X: 2416 / Y: 207 / Z: 2844</p>
+                        <p><strong>召唤消耗：</strong>铁块*2</p>
+                        <p><strong>开启箱子消耗：</strong>银币*1200</p>
+                        <p><strong>箱子爆率：</strong>40%-极寒凝晶*2&nbsp;&nbsp;40%-钻石*1&nbsp;&nbsp;20%-粒子水晶*2</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>天灾·极寒冰骷</p>
+                    <p class="content-text"><strong>简略介绍：</strong>与狂尸同名的钻石批发商</p>
+                    <p class="content-text"><strong>战利品：</strong>粒子水晶，钻石，极寒凝晶</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>达到15级，并获得雪山之晶</p>
+                    <p class="content-text"><strong>经验：</strong>80点</p>
+                    <p class="content-text"><strong>特点：</strong>冻雪伤害巨高，召唤的小怪都是无敌的，而且数量巨多</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>极寒侵袭：降低一等级粒子量，并且极寒等级上升1级，极寒等级上升到6级时，全场受到压制后的缓慢二，极寒等级上升到10级时，极寒已至，全场获得凋零Buff，最后几行等级重置回3级</li>
+                        <li>雪骨回魂：召唤一堆无敌的骷髅小怪（四个小包各召唤三个，Boss周围召唤三个）</li>
+                        <li>冻雪：对站在雪块上的玩家造成真伤</li>
+                        <li>极寒之视：对未低头的玩家造成伤害</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 天灾·沼泽魔蛛 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF5555;">天灾·沼泽魔蛛</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>跑酷开始: X: 1873 / Y: 28 / Z: 1938<br>入场: X: 1824 / Y: 41 / Z: 1918</p>
+                        <p><strong>召唤消耗：</strong>金锭*10</p>
+                        <p><strong>开启箱子消耗：</strong>银币*1200</p>
+                        <p><strong>箱子爆率：</strong>50%-坚韧蛛网*3&nbsp;&nbsp;30%-魔蛛眼*2&nbsp;&nbsp;20%-粒子水晶*2</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>天灾·沼泽魔蛛</p>
+                    <p class="content-text"><strong>简略介绍：</strong>需要跑酷上去，很烦</p>
+                    <p class="content-text"><strong>战利品：</strong>粒子水晶，坚韧蛛网，魔蛛眼</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>20级</p>
+                    <p class="content-text"><strong>经验：</strong>120点</p>
+                    <p class="content-text"><strong>特点：</strong>伤害巨高（相对新手），速度巨快（狂暴时），有二阶段，一阶段一堆小弟根本分不清谁是本体（其实还挺好认的）</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>魔蛛吐丝：给予你缓慢五</li>
+                        <li>粒子振波：造成两次伤害</li>
+                        <li>粒子牵引：把你拉到boss身边，并给予凋零4，失明4</li>
+                        <li>飞扑：Boss高速移动向被锁定的人</li>
+                        <li>魔蛛狂潮：一阶段所有蜘蛛给予速度</li>
+                        <li>锁定（没有官方认证是否为技能）：锁定某位玩家，并传送到此玩家身边，并给boss力量Buff</li>
+                        <li>蛛网缠绕：召唤一个蜘蛛网在你身上</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 天灾·荒漠狂尸 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF5555;">天灾·荒漠狂尸</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>X: 1401 / Y: 202 / Z: 2914</p>
+                        <p><strong>召唤消耗：</strong>爆裂紫颂果*32</p>
+                        <p><strong>开启箱子消耗：</strong>银币*1200</p>
+                        <p><strong>箱子爆率：</strong>40%-火晶石*1&nbsp;&nbsp;40%-钻石*1&nbsp;&nbsp;20%-粒子水晶*2</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>天灾·荒漠狂尸</p>
+                    <p class="content-text"><strong>简略介绍：</strong>钻石批发商）打烈焰棒的痛苦</p>
+                    <p class="content-text"><strong>战利品：</strong>粒子水晶，火晶石，钻石</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>等级达到30级，完成主线2-9</p>
+                    <p class="content-text"><strong>经验：</strong>130点</p>
+                    <p class="content-text"><strong>特点：</strong>移形很烦，决斗也很烦，粒子量总是上不去</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>移形：移动到紫色圈子内，否则造成巨量伤害，基本上就是炸命</li>
+                        <li>移形爆发：移行结束后释放，造成巨量伤害</li>
+                        <li>转移：召唤大量黑色圈，技能进行时，若在黑色圈子内，则转移到其他地方</li>
+                        <li>决斗：指定一个人与boss决斗，释放时全场玩家粒子量归零，决斗者归零后可恢复粒子量，Boss和决斗者都获得速度1buff，并且有段时间身上虚弱取消，非决斗者获得缓慢与失明，并随机传送全场</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 拟影·粒子幻构 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FFFF55;">拟影·粒子幻构 <span style="color: gray;">（荒漠洞穴副本BOSS）</span></h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>入场: X: 1464 / Y: 175 / Z: 2799</p>
+                        <p><strong>召唤消耗：</strong>无</p>
+                        <p><strong>开启箱子消耗：</strong>银币*1800</p>
+                        <p><strong>箱子爆率：</strong>50%-粒子枯枝*2&nbsp;&nbsp;40%-幻尘之沙*1&nbsp;&nbsp;10%-粒子水晶*2</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>拟影·粒子幻构</p>
+                    <p class="content-text"><strong>简略介绍：</strong>AAA沙子批发商；荒漠洞穴副本BOSS</p>
+                    <p class="content-text"><strong>战利品：</strong>粒子水晶，幻尘之沙，粒子枯枝，1200银币</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>37级</p>
+                    <p class="content-text"><strong>经验：</strong>100点</p>
+                    <p class="content-text"><strong>特点：</strong>遇见boss之前需要击杀大量僵尸和骷髅</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>粒子爆发：无法躲避，靠的越近伤害越高</li>
+                        <li>拟影往昔：召唤小怪，用末爆发能刚好炸掉</li>
+                        <li>熄灯：给予失明buff，似乎失明时不能对boss造成伤害，踩水晶边的压力板可解除</li>
+                        <li>圣法火术：召唤三个蓝色火球10秒后爆炸造成大量伤害</li>
+                        <li>拟影折射：召唤蓝色激光碰到就会受到伤害</li>
+                        <li>审判：boss到场中央造成伤害，站在合金块上面免疫</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 拟影·梦魇 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #555555;">拟影·梦魇</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>X: 2398 / Y: 44 / Z: 1752</p>
+                        <p><strong>召唤消耗：</strong>无</p>
+                        <p><strong>开启箱子消耗：</strong>银币*3000</p>
+                        <p><strong>箱子爆率：</strong>40%-回响碎片*2&nbsp;&nbsp;30%-粒子水晶*3&nbsp;&nbsp;20%-星晶*30&nbsp;&nbsp;10%-粒子圣晶*1</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>拟影·梦魇</p>
+                    <p class="content-text"><strong>简略介绍：</strong>AAA回响碎片批发商；这玩意小弟为什么会这么多</p>
+                    <p class="content-text"><strong>战利品：</strong>回响碎片，粒子水晶，星星，粒子圣晶</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>完成噩梦回响前置任务</p>
+                    <p class="content-text"><strong>经验：</strong>无</p>
+                    <p class="content-text"><strong>特点：</strong>召唤技能比较恶心</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>迷幻现实：召唤大量骷髅</li>
+                        <li>无由审判：召唤三次弱化审判</li>
+                        <li>夜幕降临：梦魇获得隐身加速</li>
+                        <li>雷电交加：随机位置召唤闪电</li>
+                        <li>幻影浮现：召唤一个大的100血的分身</li>
+                        <li>往昔重现：场地变换召唤大量弱化审判并召唤多名凋灵骷髅</li>
+                        <li>低温斩击：对附近玩家造成伤害并减速</li>
+                        <li>镜中的回响：出现倒计时并召唤两个蓝色火球碰到火球在倒计时结束传送到场地中央并秒杀</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+
+        <!-- 拟影·虚界幻兽 -->
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title" style="color: #FF55FF;">拟影·虚界幻兽</h2>
+                <div class="boss-detail">
+                    <div class="boss-summary">
+                        <p><strong>坐标：</strong>（暂无具体坐标，需组队进入）</p>
+                        <p><strong>召唤消耗：</strong>幻尘之沙（每人一个）</p>
+                        <p><strong>开启箱子消耗：</strong>（无箱子，直接掉落）</p>
+                        <p><strong>箱子爆率：</strong>纯净影星（全场唯一，随机分配）</p>
+                    </div>
+                    <p class="content-text"><strong>Boss名：</strong>拟影·虚界幻兽</p>
+                    <p class="content-text"><strong>简略介绍：</strong>升四阶的必经之路；三阶最严厉的父亲</p>
+                    <p class="content-text"><strong>召唤物：</strong>幻尘之沙（每人一个）</p>
+                    <p class="content-text"><strong>战利品：</strong>纯净影星（全场只有一个，随机分发给一个人）</p>
+                    <p class="content-text"><strong>进入场地限制：</strong>需要手持虚界指针低头踩压力板进入，每个人都应交一个幻尘之沙</p>
+                    <p class="content-text"><strong>经验：</strong>无</p>
+                    <p class="content-text"><strong>特点：</strong>幻兽每爆一个图腾就召唤一个拟态幻影，若是多人按人头算，总体难度非常困难（仅限三阶）</p>
+                    <p class="content-text"><strong>主要技能：</strong></p>
+                    <ul class="skill-list">
+                        <li>混沌空间：每个拟态幻影随机召唤虚空裂痕，触碰到虚空裂痕，造成超高帧伤，虚空裂痕会移动</li>
+                        <li>虚界潜移：每个拟态幻影开始移动，造成超高帧伤</li>
+                        <li>虚界幻影：每个拟态幻影召唤两个合金套僵尸，剑伤害较低，附魔有击退二消失诅咒一</li>
+                        <li>影袭：幻兽隐身并且速度增加，在此期间无视伤害</li>
+                    </ul>
+                </div>
+                <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+            </article>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
