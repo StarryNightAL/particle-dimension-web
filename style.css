@@ -568,11 +568,11 @@ body {
     color: #b0b0c8;
 }
 
-/* 隐藏导航样式 */
+/* 隐藏导航样式：默认完全透明，悬停显示 */
 .nav-hidden {
-    color: var(--bg-deep);
-    transition: color var(--transition-smooth);
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
 }
 .nav-hidden:hover {
-    color: var(--text-secondary);
+    opacity: 1;
 }
