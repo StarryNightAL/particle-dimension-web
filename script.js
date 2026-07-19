@@ -14,13 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="boss.html" class="nav-link">BOSS详情</a>
                 <span class="nav-separator">·</span>
                 <a href="item.html" class="nav-link">物品图鉴</a>
+                <span class="nav-separator">·</span>
+                <a href="player.html" class="nav-link">玩家图鉴</a>
                 <a href="interesting_thing.html" class="nav-link nav-hidden" style="margin-left: auto;">粒子趣事</a>
             </nav>
         `;
     }
 });
 
-// 粒子背景动画（原有代码不变）
+// 粒子背景动画（原有代码保持不变）
 (function() {
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');

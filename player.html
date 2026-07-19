@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <title>粒子维度 附属Wiki - 玩家图鉴</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main-container {
+            max-width: 1400px;
+        }
+
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .player-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 18px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: var(--transition-smooth);
+        }
+        .player-card:hover {
+            border-color: rgba(94, 234, 219, 0.3);
+            box-shadow: 0 3px 22px rgba(0, 0, 0, 0.35), 0 0 32px rgba(94, 234, 219, 0.1);
+            transform: translateY(-2px);
+            background: rgba(24, 24, 48, 0.7);
+        }
+        .player-card img {
+            width: 160px;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px;
+            flex-shrink: 0;
+        }
+        .player-info {
+            flex: 1;
+            padding-top: 6px;
+        }
+        .player-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e0e0f0;
+            margin-bottom: 8px;
+        }
+        .player-meta {
+            font-size: 0.9rem;
+            color: #b0b0c8;
+            line-height: 1.6;
+        }
+        .player-meta p {
+            margin-bottom: 4px;
+        }
+        .player-meta strong {
+            color: #d0d0e0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <div class="main-container">
+        <header class="header-section">
+            <h1 class="main-title">粒子维度 附属Wiki</h1>
+        </header>
+
+        <section class="nav-section" id="main-nav"></section>
+
+        <section class="content-section">
+            <article class="content-card">
+                <h2 class="content-title">玩家图鉴</h2>
+
+                <div class="player-grid">
+                    <!-- 灭会乄流星 -->
+                    <div class="player-card">
+                        <img src="./picture/player/3d/灭会乄流星.png" alt="灭会乄流星">
+                        <div class="player-info">
+                            <div class="player-name">灭会乄流星</div>
+                            <div class="player-meta">
+                                <p><strong>游戏名：</strong>灭会乄流星</p>
+                                <p><strong>介绍：</strong>作为服主及管理员，创建服务器，作为服主有最高权限</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 狐望江 -->
+                    <div class="player-card">
+                        <img src="./picture/player/3d/狐望江.png" alt="狐望江">
+                        <div class="player-info">
+                            <div class="player-name">狐望江</div>
+                            <div class="player-meta">
+                                <p><strong>游戏名：</strong>狐望江</p>
+                                <p><strong>简介：</strong>玩家，怪物图鉴编纂者</p>
+                                <p><strong>介绍：</strong>负责编写大部分BOSS的详细攻略信息</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 冰雨 -->
+                    <div class="player-card">
+                        <img src="./picture/player/3d/冰雨.png" alt="冰雨">
+                        <div class="player-info">
+                            <div class="player-name">冰雨</div>
+                            <div class="player-meta">
+                                <p><strong>游戏名：</strong>icereally冰雨</p>
+                                <p><strong>介绍：</strong>作为为数不多SLV超过40的人，其背后的人肝力不容小觑；AAA雪莲批发商，适合交易诸如雪莲等采集物；服务器内数一数二的采集物交易商</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 年华 -->
+                    <div class="player-card">
+                        <img src="./picture/player/3d/年华.png" alt="年华">
+                        <div class="player-info">
+                            <div class="player-name">年华</div>
+                            <div class="player-meta">
+                                <p><strong>游戏名：</strong>不爱学英语的年华</p>
+                                <p><strong>介绍：</strong>作为小南梁，其皮肤较好。作为带冷落的大佬，其本身实力不容小觑（也许？）；替身：年花，变身南梁魅惑所有人。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 冷落 -->
+                    <div class="player-card">
+                        <img src="./picture/player/3d/冷落.png" alt="冷落">
+                        <div class="player-info">
+                            <div class="player-name">冷落</div>
+                            <div class="player-meta">
+                                <p><strong>游戏名：</strong>灀泠落</p>
+                                <p><strong>介绍：</strong>作为一名三阶玩家，居然没有冰脉（划掉），由于其名字太过容易看错，故得称冷落。是一位可爱的玩家，目前我磕冷落x幼影。喜欢折磨自己的大佬。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 电闪 -->
+                    <div class="player-card">
+                        <img src="./picture/player/3d/电闪.png" alt="电闪">
+                        <div class="player-info">
+                            <div class="player-name">电闪</div>
+                            <div class="player-meta">
+                                <p><strong>游戏名：</strong>电闪awa</p>
+                                <p><strong>介绍：</strong>[根据玩家消息]早期电闪作为当时的cs榜第一，但现在已改善许多</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
