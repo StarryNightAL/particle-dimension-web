@@ -59,6 +59,14 @@
             font-size: 0.95rem;
             color: #e0e0f0;
         }
+
+        /* 采集物卡片自定义字段 */
+        .collection-desc p {
+            margin-bottom: 3px;
+        }
+        .collection-desc strong {
+            color: #d0d0e0;
+        }
     </style>
 </head>
 <body>
@@ -78,6 +86,10 @@
             <a href="#boss" class="sub-nav-link">BOSS点位</a>
             <span class="sub-nav-separator">|</span>
             <a href="#minerals" class="sub-nav-link">矿物点位</a>
+            <span class="sub-nav-separator">|</span>
+            <a href="#collection" class="sub-nav-link">采集物点位</a>
+            <span class="sub-nav-separator">|</span>
+            <a href="#others" class="sub-nav-link">其它点位</a>
         </nav>
 
         <!-- 小怪点位 -->
@@ -107,7 +119,7 @@
                         <div class="point-coords">X: 1661 / Y: 66 / Z: 2492</div>
                         <div class="point-desc"><strong>掉落物：</strong>粗铁</div>
                     </div>
-                    <!-- 新增：矿洞骷髅 -->
+                    <!-- 矿洞骷髅 -->
                     <div class="point-card">
                         <div class="point-name">矿洞骷髅</div>
                         <div class="point-coords">入口: X: 1590 / Y: 99 / Z: 2728<br>刷怪: X: 1583 / Y: 59 / Z: 2745</div>
@@ -120,7 +132,7 @@
                     <div class="point-card">
                         <div class="point-name">神殿雪骷</div>
                         <div class="point-coords">X: 2411 / Y: 207 / Z: 2843</div>
-                        <div class="point-desc"><strong>掉落物：</strong>冰</div>
+                        <div class="point-desc"><strong>掉落物：</strong>冰块</div>
                     </div>
                     <div class="point-card">
                         <div class="point-name">雪山骷髅</div>
@@ -334,7 +346,7 @@
             </article>
         </section>
 
-        <!-- 矿物点位（包裹在一个大卡片中） -->
+        <!-- 矿物点位 -->
         <section class="content-section" id="minerals">
             <article class="content-card">
                 <h2 class="content-title">矿物点位</h2>
@@ -360,6 +372,7 @@
                         <div class="point-name">矿洞</div>
                         <ul class="ore-list">
                             <li>X: 1143 / Y: 38 / Z: 1536  *4</li>
+                            <li>X: 1175 / Y: 35 / Z: 1660  *4</li>
                         </ul>
                     </div>
                 </div>
@@ -386,6 +399,7 @@
                         <div class="point-name">矿洞</div>
                         <ul class="ore-list">
                             <li>X: 1138 / Y: 38 / Z: 1525  *4</li>
+                            <li>X: 1178 / Y: 30 / Z: 1669</li>
                         </ul>
                     </div>
                 </div>
@@ -436,9 +450,41 @@
                         <div class="point-name">矿洞</div>
                         <ul class="ore-list">
                             <li>X: 1156 / Y: 37 / Z: 1528  *2</li>
+                            <li>X: 1181 / Y: 30 / Z: 1675  *2</li>
+                            <li>X: 1022 / Y: 128 / Z: 1686  *2</li>
+                            <li>X: 1023 / Y: 129 / Z: 1686  *2</li>
                         </ul>
                     </div>
                 </div>
+            </article>
+        </section>
+
+        <!-- 采集物点位（新增） -->
+        <section class="content-section" id="collection">
+            <article class="content-card">
+                <h2 class="content-title">采集物点位</h2>
+
+                <!-- 示例卡片，可按实际采集物顺序添加 -->
+                <div class="mobs-grid">
+                    <!-- 采集物卡片模板 -->
+                    <div class="point-card">
+                        <div class="point-name">采集物名称</div>
+                        <div class="point-coords">X: 0 / Y: 0 / Z: 0</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>区域名</p>
+                            <p><strong>采集需求：</strong>需求描述</p>
+                        </div>
+                    </div>
+                    <!-- 在此处继续添加更多采集物卡片 -->
+                </div>
+            </article>
+        </section>
+
+        <!-- 其它点位（新增，留空） -->
+        <section class="content-section" id="others">
+            <article class="content-card">
+                <h2 class="content-title">其它点位</h2>
+                <p class="content-text content-muted">暂无数据，敬请期待。</p>
             </article>
         </section>
     </div>
