@@ -60,12 +60,27 @@
             color: #e0e0f0;
         }
 
-        /* 采集物卡片自定义字段 */
+        /* 采集物卡片自定义字段 - 字体放大 */
         .collection-desc p {
+            font-size: 0.85rem;
             margin-bottom: 3px;
         }
         .collection-desc strong {
             color: #d0d0e0;
+        }
+        .collection-point-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e0e0f0;
+            margin-bottom: 8px;
+        }
+        .collection-point-coords {
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Noto Sans SC', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            letter-spacing: 0.02em;
+            margin-bottom: 6px;
+            word-break: break-all;
         }
     </style>
 </head>
@@ -81,19 +96,19 @@
 
         <!-- 页面内子导航 -->
         <nav class="sub-nav">
-            <a href="#mobs" class="sub-nav-link">小怪点位</a>
+            <a href="#mob" class="sub-nav-link">小怪点位</a>
             <span class="sub-nav-separator">|</span>
             <a href="#boss" class="sub-nav-link">BOSS点位</a>
             <span class="sub-nav-separator">|</span>
-            <a href="#minerals" class="sub-nav-link">矿物点位</a>
+            <a href="#mineral" class="sub-nav-link">矿物点位</a>
             <span class="sub-nav-separator">|</span>
             <a href="#collection" class="sub-nav-link">采集物点位</a>
             <span class="sub-nav-separator">|</span>
-            <a href="#others" class="sub-nav-link">其它点位</a>
+            <a href="#other" class="sub-nav-link">其它点位</a>
         </nav>
 
         <!-- 小怪点位 -->
-        <section class="content-section" id="mobs">
+        <section class="content-section" id="mob">
             <article class="content-card">
                 <h2 class="content-title">小怪点位</h2>
 
@@ -347,7 +362,7 @@
         </section>
 
         <!-- 矿物点位 -->
-        <section class="content-section" id="minerals">
+        <section class="content-section" id="mineral">
             <article class="content-card">
                 <h2 class="content-title">矿物点位</h2>
 
@@ -459,29 +474,147 @@
             </article>
         </section>
 
-        <!-- 采集物点位（新增） -->
+        <!-- 采集物点位（字体已放大） -->
         <section class="content-section" id="collection">
             <article class="content-card">
                 <h2 class="content-title">采集物点位</h2>
 
-                <!-- 示例卡片，可按实际采集物顺序添加 -->
                 <div class="mobs-grid">
-                    <!-- 采集物卡片模板 -->
+                    <!-- 兰花 -->
                     <div class="point-card">
-                        <div class="point-name">采集物名称</div>
-                        <div class="point-coords">X: 0 / Y: 0 / Z: 0</div>
+                        <div class="collection-point-name">兰花</div>
+                        <div class="collection-point-coords">X: 2145 / Y: 67 / Z: 2499</div>
                         <div class="point-desc collection-desc">
-                            <p><strong>所属区域：</strong>区域名</p>
-                            <p><strong>采集需求：</strong>需求描述</p>
+                            <p><strong>所属区域：</strong>石山</p>
+                            <p><strong>数量：</strong>临近共11个采集点</p>
+                            <p><strong>需求等级：</strong>1</p>
+                            <p><strong>快速走法：</strong>从城东门出后跟随指南针或坐标走</p>
+                            <p><strong>备注：</strong>无</p>
                         </div>
                     </div>
-                    <!-- 在此处继续添加更多采集物卡片 -->
+
+                    <!-- 胡萝卜 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">胡萝卜</div>
+                        <div class="collection-point-coords">X: 2023 / Y: 66 / Z: 2528</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>石山</p>
+                            <p><strong>数量：</strong>临近共6个采集点</p>
+                            <p><strong>需求等级：</strong>1</p>
+                            <p><strong>快速走法：</strong>从城西门出后跟随指南针或坐标走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 青竹笋 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">青竹笋</div>
+                        <div class="collection-point-coords">X: 1991 / Y: 66 / Z: 2500</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>石山</p>
+                            <p><strong>数量：</strong>临近共6个采集点</p>
+                            <p><strong>需求等级：</strong>2</p>
+                            <p><strong>快速走法：</strong>从城西门出后跟随指南针或坐标走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 雪莲 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">雪莲</div>
+                        <div class="collection-point-coords">X: 2812 / Y: 169 / Z: 2838</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>雪山</p>
+                            <p><strong>数量：</strong>临近共5个采集点</p>
+                            <p><strong>需求等级：</strong>2</p>
+                            <p><strong>快速走法：</strong>传送到雪山锚点后往东（X正）走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 火魂花 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">火魂花</div>
+                        <div class="collection-point-coords">X: 2461 / Y: 153 / Z: 1396</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>火山</p>
+                            <p><strong>数量：</strong>临近共5个采集点</p>
+                            <p><strong>需求等级：</strong>3</p>
+                            <p><strong>快速走法：</strong>传送到火山锚点后往北（Z负）走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 凛冬花卉 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">凛冬花卉</div>
+                        <div class="collection-point-coords">X: 2149 / Y: 28 / Z: 1635</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>地点未被定义</p>
+                            <p><strong>数量：</strong>临近共8个采集点</p>
+                            <p><strong>需求等级：</strong>3</p>
+                            <p><strong>快速走法：</strong>传送到火山锚点后往西（X负）走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 晶化牡丹 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">晶化牡丹</div>
+                        <div class="collection-point-coords">X: 1239 / Y: 11 / Z: 1393</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>矿洞</p>
+                            <p><strong>数量：</strong>临近共5个采集点</p>
+                            <p><strong>需求等级：</strong>4</p>
+                            <p><strong>快速走法：</strong>传送到矿洞锚点后往北（Z负）走或跟随指南针/坐标走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 光辉草果 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">光辉草果</div>
+                        <div class="collection-point-coords">X: 1171 / Y: 55 / Z: 1768</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>矿洞</p>
+                            <p><strong>数量：</strong>临近共4个采集点</p>
+                            <p><strong>需求等级：</strong>4</p>
+                            <p><strong>快速走法：</strong>传送到古堡锚点进入矿洞后往南（Z正）走或跟随指南针/坐标走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 光羽百合 -->
+                    <div class="point-card">
+                        <div class="collection-point-name">光羽百合</div>
+                        <div class="collection-point-coords">X: 1178 / Y: 177 / Z: 1710</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>高山</p>
+                            <p><strong>数量：</strong>临近共4个采集点</p>
+                            <p><strong>需求等级：</strong>5</p>
+                            <p><strong>快速走法：</strong>传送到古堡锚点后上山再往南（Z正）走或跟随指南针/坐标走</p>
+                            <p><strong>备注：</strong>无</p>
+                        </div>
+                    </div>
+
+                    <!-- 流光绣球（待填充） -->
+                    <div class="point-card">
+                        <div class="collection-point-name">流光绣球</div>
+                        <div class="collection-point-coords">坐标待添加</div>
+                        <div class="point-desc collection-desc">
+                            <p><strong>所属区域：</strong>待补充</p>
+                            <p><strong>数量：</strong>待补充</p>
+                            <p><strong>需求等级：</strong>5</p>
+                            <p><strong>快速走法：</strong>待补充</p>
+                            <p><strong>备注：</strong>待补充</p>
+                        </div>
+                    </div>
                 </div>
             </article>
         </section>
 
-        <!-- 其它点位（新增，留空） -->
-        <section class="content-section" id="others">
+        <!-- 其它点位（留空） -->
+        <section class="content-section" id="other">
             <article class="content-card">
                 <h2 class="content-title">其它点位</h2>
                 <p class="content-text content-muted">暂无数据，敬请期待。</p>
