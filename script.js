@@ -1,28 +1,42 @@
-// 动态生成导航栏
 document.addEventListener('DOMContentLoaded', function() {
-    const navSection = document.getElementById('main-nav');
-    if (navSection) {
-        navSection.innerHTML = `
-            <span class="nav-label">导航/目录</span>
-            <nav class="main-nav">
-                <a href="preface.html" class="nav-link">序言</a>
-                <span class="nav-separator">·</span>
-                <a href="point.html" class="nav-link">点位汇总</a>
-                <span class="nav-separator">·</span>
-                <a href="mob.html" class="nav-link">小怪详情</a>
-                <span class="nav-separator">·</span>
-                <a href="boss.html" class="nav-link">BOSS详情</a>
-                <span class="nav-separator">·</span>
-                <a href="item.html" class="nav-link">物品图鉴</a>
-                <span class="nav-separator">·</span>
-                <a href="player.html" class="nav-link">玩家图鉴</a>
-                <a href="interesting_thing.html" class="nav-link nav-hidden" style="margin-left: auto;">粒子趣事</a>
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+        // 判断当前页面是否在 page/ 目录下
+        const pathname = window.location.pathname;
+        const inPageFolder = pathname.includes('/page/');
+        // 根据位置决定路径前缀
+        const pagePrefix = inPageFolder ? '' : 'page/';
+        const imgPrefix = inPageFolder ? '../picture/' : 'picture/';
+
+        sidebar.innerHTML = `
+            <div class="sidebar-header">
+                <img src="${imgPrefix}粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
+                <h1 class="sidebar-title">粒子维度 附属Wiki</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="${pagePrefix}../index.html" class="nav-btn">序言</a>
+                <a href="${pagePrefix}point.html" class="nav-btn">点位汇总</a>
+                <a href="${pagePrefix}mob.html" class="nav-btn">小怪详情</a>
+                <a href="${pagePrefix}boss.html" class="nav-btn">BOSS详情</a>
+                <a href="${pagePrefix}item.html" class="nav-btn">物品图鉴</a>
+                <a href="${pagePrefix}player.html" class="nav-btn">玩家图鉴</a>
+                <a href="${pagePrefix}interesting_thing.html" class="nav-btn nav-hidden">粒子趣事</a>
             </nav>
+            <div class="sidebar-search">
+                <input type="text" class="search-input" placeholder="搜索…" id="wiki-search">
+                <button class="search-btn" id="search-button">搜索</button>
+            </div>
         `;
+        document.getElementById('search-button').addEventListener('click', function() {
+            const query = document.getElementById('wiki-search').value.trim();
+            if (query) {
+                alert('搜索功能未实装，您输入了：' + query);
+            }
+        });
     }
 });
 
-// 粒子背景动画（原有代码保持不变）
+// 粒子背景动画（保持不变）
 (function() {
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');
@@ -30,8 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let particles = [];
     const connectionDistance = 130;
     const mouseInfluenceDistance = 160;
-    let mouseX = -9999;
-    let mouseY = -9999;
+    let mouseX = -9999, mouseY = -9999;
 
     class Particle {
         constructor() {
@@ -47,9 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.radius = Math.random() * 1.8 + 0.6;
             this.baseAlpha = Math.random() * 0.4 + 0.18;
             this.alpha = this.baseAlpha;
-            this.hue = Math.random() < 0.5 ?
-                (Math.random() * 40 + 170) :
-                (Math.random() * 30 + 250);
+            this.hue = Math.random() < 0.5 ? (Math.random() * 40 + 170) : (Math.random() * 30 + 250);
             this.saturation = Math.random() * 30 + 55;
             this.lightness = Math.random() * 25 + 60;
         }
@@ -62,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.y > height + 20) this.y = -20;
             const dxM = mouseX - this.x;
             const dyM = mouseY - this.y;
-            const distM = Math.sqrt(dxM * dxM + dyM * dyM);
+            const distM = Math.sqrt(dxM*dxM + dyM*dyM);
             if (distM < mouseInfluenceDistance && distM > 0.1) {
                 const force = (1 - distM / mouseInfluenceDistance) * 0.5;
                 this.vx -= (dxM / distM) * force * 0.12;
@@ -71,26 +82,18 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 this.alpha += (this.baseAlpha - this.alpha) * 0.04;
             }
-            const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-            const maxSpeed = 1.0;
-            if (speed > maxSpeed) {
-                this.vx = (this.vx / speed) * maxSpeed;
-                this.vy = (this.vy / speed) * maxSpeed;
-            }
-            const minSpeed = 0.2;
-            if (speed < minSpeed && speed > 0) {
-                this.vx = (this.vx / speed) * minSpeed;
-                this.vy = (this.vy / speed) * minSpeed;
-            }
+            const speed = Math.sqrt(this.vx*this.vx + this.vy*this.vy);
+            if (speed > 1.0) { this.vx = (this.vx / speed) * 1.0; this.vy = (this.vy / speed) * 1.0; }
+            if (speed < 0.2 && speed > 0) { this.vx = (this.vx / speed) * 0.2; this.vy = (this.vy / speed) * 0.2; }
         }
         draw(ctx) {
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2);
             ctx.fillStyle = `hsla(${this.hue}, ${this.saturation}%, ${this.lightness}%, ${this.alpha})`;
             ctx.fill();
             if (this.alpha > 0.5) {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius * 2, 0, Math.PI * 2);
+                ctx.arc(this.x, this.y, this.radius * 2, 0, Math.PI*2);
                 ctx.fillStyle = `hsla(${this.hue}, ${this.saturation}%, ${this.lightness}%, ${this.alpha * 0.15})`;
                 ctx.fill();
             }
@@ -102,24 +105,18 @@ document.addEventListener('DOMContentLoaded', function() {
         height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
-        const area = width * height;
-        const targetCount = Math.min(140, Math.max(50, Math.floor(area / 14000)));
-        while (particles.length < targetCount) {
-            particles.push(new Particle());
-        }
-        while (particles.length > targetCount) {
-            particles.pop();
-        }
+        const targetCount = Math.min(140, Math.max(50, Math.floor(width * height / 14000)));
+        while (particles.length < targetCount) particles.push(new Particle());
+        while (particles.length > targetCount) particles.pop();
     }
 
     function initParticles() {
         particles = [];
-        const area = (width || window.innerWidth) * (height || window.innerHeight);
-        const targetCount = Math.min(140, Math.max(50, Math.floor(area / 14000)));
+        const targetCount = Math.min(140, Math.max(50, Math.floor(window.innerWidth * window.innerHeight / 14000)));
         for (let i = 0; i < targetCount; i++) {
             const p = new Particle();
-            p.x = Math.random() * (width || window.innerWidth);
-            p.y = Math.random() * (height || window.innerHeight);
+            p.x = Math.random() * window.innerWidth;
+            p.y = Math.random() * window.innerHeight;
             particles.push(p);
         }
     }
@@ -129,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
+                const dist = Math.sqrt(dx*dx + dy*dy);
                 if (dist < connectionDistance) {
                     const opacity = (1 - dist / connectionDistance) * 0.18;
                     const midHue = (particles[i].hue + particles[j].hue) / 2;
@@ -154,38 +151,13 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(animate);
     }
 
-    function onMouseMove(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    }
-
-    function onMouseLeave() {
-        mouseX = -9999;
-        mouseY = -9999;
-    }
-
-    function onTouchMove(e) {
-        if (e.touches.length > 0) {
-            mouseX = e.touches[0].clientX;
-            mouseY = e.touches[0].clientY;
-        }
-    }
-
-    function onTouchEnd() {
-        mouseX = -9999;
-        mouseY = -9999;
-    }
-
     resizeCanvas();
     initParticles();
     animate();
 
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-    });
-    document.addEventListener('mousemove', onMouseMove, { passive: true });
-    document.addEventListener('mouseleave', onMouseLeave);
-    document.addEventListener('touchmove', onTouchMove, { passive: true });
-    document.addEventListener('touchend', onTouchEnd);
-    document.addEventListener('touchcancel', onTouchEnd);
+    window.addEventListener('resize', resizeCanvas);
+    document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+    document.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999; });
+    document.addEventListener('touchmove', e => { if (e.touches[0]) { mouseX = e.touches[0].clientX; mouseY = e.touches[0].clientY; } });
+    document.addEventListener('touchend', () => { mouseX = -9999; mouseY = -9999; });
 })();
