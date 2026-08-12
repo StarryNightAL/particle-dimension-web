@@ -1,42 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     if (sidebar) {
-        // 判断当前页面是否在 page/ 目录下
-        const pathname = window.location.pathname;
-        const inPageFolder = pathname.includes('/page/');
-        // 根据位置决定路径前缀
-        const pagePrefix = inPageFolder ? '' : 'page/';
-        const imgPrefix = inPageFolder ? '../picture/' : 'picture/';
-
         sidebar.innerHTML = `
             <div class="sidebar-header">
-                <img src="${imgPrefix}粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
+                <img src="/picture/粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
                 <h1 class="sidebar-title">粒子维度 附属Wiki</h1>
             </div>
             <nav class="sidebar-nav">
-                <a href="${pagePrefix}../index.html" class="nav-btn">序言</a>
-                <a href="${pagePrefix}point.html" class="nav-btn">点位汇总</a>
-                <a href="${pagePrefix}mob.html" class="nav-btn">小怪详情</a>
-                <a href="${pagePrefix}boss.html" class="nav-btn">BOSS详情</a>
-                <a href="${pagePrefix}item.html" class="nav-btn">物品图鉴</a>
-                <a href="${pagePrefix}player.html" class="nav-btn">玩家图鉴</a>
-                <a href="${pagePrefix}interesting_thing.html" class="nav-btn nav-hidden">粒子趣事</a>
+                <a href="/index.html" class="nav-btn">序言</a>
+                <a href="/page/point.html" class="nav-btn">点位汇总</a>
+                <a href="/page/mob.html" class="nav-btn">小怪详情</a>
+                <a href="/page/boss.html" class="nav-btn">BOSS详情</a>
+                <a href="/page/item.html" class="nav-btn">物品图鉴</a>
+                <a href="/page/player.html" class="nav-btn">玩家图鉴</a>
+                <a href="/page/interesting_thing.html" class="nav-btn nav-hidden">粒子趣事</a>
             </nav>
-            <div class="sidebar-search">
-                <input type="text" class="search-input" placeholder="搜索…" id="wiki-search">
-                <button class="search-btn" id="search-button">搜索</button>
-            </div>
         `;
-        document.getElementById('search-button').addEventListener('click', function() {
-            const query = document.getElementById('wiki-search').value.trim();
-            if (query) {
-                alert('搜索功能未实装，您输入了：' + query);
-            }
-        });
     }
 });
 
-// 粒子背景动画（保持不变）
+// 粒子背景动画
 (function() {
     const canvas = document.getElementById('particle-canvas');
     const ctx = canvas.getContext('2d');

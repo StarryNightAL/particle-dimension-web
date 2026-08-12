@@ -126,46 +126,6 @@ body {
     opacity: 1;
 }
 
-.sidebar-search {
-    width: 100%;
-    display: flex;
-    gap: 4px;
-    margin-top: auto;
-}
-.search-input {
-    flex: 1 1 auto;
-    max-width: 140px;
-    font-family: var(--font-main);
-    font-size: 0.85rem;
-    padding: 8px 12px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
-    background: rgba(0,0,0,0.4);
-    color: #e0e0f0;
-    outline: none;
-    transition: border-color var(--transition-smooth);
-}
-.search-input:focus {
-    border-color: var(--accent-cyan);
-}
-.search-btn {
-    flex: 0 0 auto;
-    font-family: var(--font-main);
-    font-size: 0.85rem;
-    padding: 8px 14px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
-    background: rgba(94,234,219,0.1);
-    color: #e0e0f0;
-    cursor: pointer;
-    transition: all var(--transition-smooth);
-    white-space: nowrap;
-}
-.search-btn:hover {
-    background: rgba(94,234,219,0.25);
-    border-color: var(--accent-cyan);
-}
-
 /* ========== 右侧主内容区 ========== */
 .main-content {
     flex: 1;
@@ -321,6 +281,20 @@ body {
 .boss-info-item { font-size: 0.73rem; color: var(--text-secondary); }
 .boss-info-full { grid-column: span 2; font-size: 0.73rem; color: var(--text-secondary); }
 
+/* 矿物点位坐标列表 */
+.point-card .ore-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.point-card .ore-list li {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Noto Sans SC', monospace;
+    font-size: 0.92rem;
+    color: var(--accent-cyan);
+    margin-bottom: 3px;
+    line-height: 1.5;
+}
+
 /* 响应式 */
 @media (max-width: 900px) {
     .app-container {
@@ -341,26 +315,8 @@ body {
         flex-wrap: wrap;
         justify-content: center;
     }
-    .sidebar-search {
-        margin-top: 0;
-        width: auto;
-    }
     .main-content {
         height: auto;
         padding: 20px 16px;
     }
-}
-
-/* 矿物点位坐标列表 */
-.point-card .ore-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.point-card .ore-list li {
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Noto Sans SC', monospace;
-    font-size: 0.92rem;      /* 适当放大 */
-    color: var(--accent-cyan);
-    margin-bottom: 3px;
-    line-height: 1.5;
 }
