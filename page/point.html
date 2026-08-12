@@ -4,58 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>粒子维度 附属Wiki - 点位汇总</title>
+    <link rel="icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
-<style>
-    /* 页面内子导航样式 */
-    .sub-nav { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
-    .sub-nav-link { color: var(--text-secondary); text-decoration: none; padding: 4px 8px; border-radius: 6px; transition: all 0.3s; }
-    .sub-nav-link:hover { color: #fff; background: rgba(94,234,219,0.1); }
-    .sub-nav-separator { color: rgba(180,180,200,0.3); }
+    <style>
+        /* 页面内子导航样式 */
+        .sub-nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .sub-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .sub-nav-link:hover {
+            color: #fff;
+            background: rgba(94,234,219,0.1);
+        }
+        .sub-nav-separator {
+            color: rgba(180,180,200,0.3);
+        }
 
-    /* 放大卡片 + 坐标平滑 */
-    .point-card {
-        padding: 18px 16px 14px;
-    }
-    .point-name {
-        font-size: 1.05rem;
-        margin-bottom: 6px;
-    }
-    .point-coords {
-        font-family: var(--font-main);   /* 使用平滑字体，不再有像素感 */
-        font-size: 0.88rem;
-        color: var(--accent-cyan);
-        margin-bottom: 8px;
-        letter-spacing: 0.02em;
-    }
-    .point-desc {
-        font-size: 0.85rem;
-    }
-    .point-card .ore-list li {
-        font-family: var(--font-main);
-        font-size: 0.98rem;
-        color: var(--accent-cyan);
-        margin-bottom: 3px;
-        line-height: 1.5;
-    }
+        /* 放大卡片 + 坐标平滑 */
+        .point-card {
+            padding: 18px 16px 14px;
+        }
+        .point-name {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+        .point-coords {
+            font-family: var(--font-main);
+            font-size: 0.88rem;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            letter-spacing: 0.02em;
+        }
+        .point-desc {
+            font-size: 0.85rem;
+        }
+        .point-card .ore-list li {
+            font-family: var(--font-main);
+            font-size: 0.98rem;
+            color: var(--accent-cyan);
+            margin-bottom: 3px;
+            line-height: 1.5;
+        }
 
-    .boss-card {
-        padding: 20px 18px 16px;
-    }
-    .boss-card .point-name {
-        font-size: 1.1rem;
-    }
-    .boss-card .point-coords {
-        font-family: var(--font-main);
-        font-size: 0.88rem;
-    }
-    .boss-info-item,
-    .boss-info-full {
-        font-size: 0.82rem;
-    }
-</style>
+        .boss-card {
+            padding: 20px 18px 16px;
+        }
+        .boss-card .point-name {
+            font-size: 1.1rem;
+        }
+        .boss-card .point-coords {
+            font-family: var(--font-main);
+            font-size: 0.88rem;
+        }
+        .boss-info-item,
+        .boss-info-full {
+            font-size: 0.82rem;
+        }
+    </style>
 </head>
 <body>
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
@@ -261,7 +278,10 @@
                             </div>
                         </div>
                         <div class="boss-card">
-                            <div class="point-name" style="color: #FFFF55;">拟影•粒子幻构 <span style="color: gray;">（荒漠洞穴副本BOSS）</span></div>
+                            <div class="point-name" style="color: #FFFF55;">
+                                拟影•粒子幻构
+                                <span style="color: gray;">（荒漠洞穴副本BOSS）</span>
+                            </div>
                             <div class="point-coords">入场: X: 1464 / Y: 175 / Z: 2799</div>
                             <div class="boss-info-grid">
                                 <div class="boss-info-item"><strong>召唤消耗：</strong>无</div>
@@ -324,30 +344,140 @@
                     <h2 class="content-title">矿物点位</h2>
                     <h3 class="sub-area-title">铁矿</h3>
                     <div class="mobs-grid">
-                        <div class="point-card"><div class="point-name">石山</div><ul class="ore-list"><li>X: 1769 / Y: 28 / Z: 2445  *4</li><li>X: 1769 / Y: 27 / Z: 2437  *4</li><li>X: 1847 / Y: 28 / Z: 2586  *4</li></ul></div>
-                        <div class="point-card"><div class="point-name">雪山</div><ul class="ore-list"><li>X: 2256 / Y: 167 / Z: 2889</li><li>X: 2762 / Y: 179 / Z: 2829  *4</li></ul></div>
-                        <div class="point-card"><div class="point-name">矿洞</div><ul class="ore-list"><li>X: 1143 / Y: 38 / Z: 1536  *4</li><li>X: 1175 / Y: 35 / Z: 1660  *4</li></ul></div>
+                        <div class="point-card">
+                            <div class="point-name">石山</div>
+                            <ul class="ore-list">
+                                <li>X: 1769 / Y: 28 / Z: 2445  *4</li>
+                                <li>X: 1769 / Y: 27 / Z: 2437  *4</li>
+                                <li>X: 1847 / Y: 28 / Z: 2586  *4</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">雪山</div>
+                            <ul class="ore-list">
+                                <li>X: 2256 / Y: 167 / Z: 2889</li>
+                                <li>X: 2762 / Y: 179 / Z: 2829  *4</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">矿洞</div>
+                            <ul class="ore-list">
+                                <li>X: 1143 / Y: 38 / Z: 1536  *4</li>
+                                <li>X: 1175 / Y: 35 / Z: 1660  *4</li>
+                            </ul>
+                        </div>
                     </div>
                     <h3 class="sub-area-title">金矿</h3>
                     <div class="mobs-grid">
-                        <div class="point-card"><div class="point-name">雪山</div><ul class="ore-list"><li>X: 2379 / Y: 206 / Z: 2836</li><li>X: 2282 / Y: 180 / Z: 2870  *2</li><li>X: 2231 / Y: 155 / Z: 2886  *2</li><li>X: 2610 / Y: 189 / Z: 3011  *5</li></ul></div>
-                        <div class="point-card"><div class="point-name">沙漠</div><ul class="ore-list"><li>X: 1432 / Y: 209 / Z: 2929</li><li>X: 1466 / Y: 175 / Z: 2789  *2</li></ul></div>
-                        <div class="point-card"><div class="point-name">矿洞</div><ul class="ore-list"><li>X: 1138 / Y: 38 / Z: 1525  *4</li><li>X: 1178 / Y: 30 / Z: 1669</li><li>X: 1173 / Y: 26 / Z: 1469  *2</li><li>X: 1172 / Y: 26 / Z: 1465  *2</li></ul></div>
+                        <div class="point-card">
+                            <div class="point-name">石山</div>
+                            <ul class="ore-list">
+                                <li>X: 1585 / Y: 64 / Z: 1742</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">雪山</div>
+                            <ul class="ore-list">
+                                <li>X: 2379 / Y: 206 / Z: 2836</li>
+                                <li>X: 2282 / Y: 180 / Z: 2870  *2</li>
+                                <li>X: 2231 / Y: 155 / Z: 2886  *2</li>
+                                <li>X: 2610 / Y: 189 / Z: 3011  *5</li>
+                                <li>X: 2630 / Y: 191 / Z: 2814</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">雪山</div>
+                            <ul class="ore-list">
+                                <li>X: 2677 / Y: 120 / Z: 2828  *2</li>
+                                <li>X: 2614 / Y: 191 / Z: 2857  *2</li>
+                                <li>X: 2097 / Y: 112 / Z: 2888  *2</li>
+                                <li>X: 2064 / Y: 107 / Z: 2904  *2</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">沙漠</div>
+                            <ul class="ore-list">
+                                <li>X: 1432 / Y: 209 / Z: 2929  *2</li>
+                                <li>X: 1466 / Y: 175 / Z: 2789  *2</li>
+                                <li>X: 1515 / Y: 138 / Z: 2853  *2</li>
+                                <li>X: 1518 / Y: 140 / Z: 2787  *2</li>
+                                <li>X: 1463 / Y: 175 / Z: 2796  *2</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">矿洞</div>
+                            <ul class="ore-list">
+                                <li>X: 1138 / Y: 38 / Z: 1525  *4</li>
+                                <li>X: 1178 / Y: 30 / Z: 1669</li>
+                                <li>X: 1173 / Y: 26 / Z: 1469  *2</li>
+                                <li>X: 1172 / Y: 26 / Z: 1465  *2</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">沼泽</div>
+                            <ul class="ore-list">
+                                <li>X: 1776 / Y: 33 / Z: 2029  *2</li>
+                            </ul>
+                        </div>
                     </div>
                     <h3 class="sub-area-title">青金石</h3>
                     <div class="mobs-grid">
-                        <div class="point-card"><div class="point-name">沼泽</div><ul class="ore-list"><li>X: 1814 / Y: 28 / Z: 1908  *4</li><li>X: 1923 / Y: 28 / Z: 1957  *4</li><li>X: 1918 / Y: 28 / Z: 1891  *4</li><li>X: 1810 / Y: 25 / Z: 1897  *4</li></ul></div>
-                        <div class="point-card"><div class="point-name">矿洞</div><ul class="ore-list"><li>X: 1123 / Y: 46 / Z: 1520  *4</li><li>X: 1141 / Y: 38 / Z: 1520  *4</li></ul></div>
+                        <div class="point-card">
+                            <div class="point-name">沼泽</div>
+                            <ul class="ore-list">
+                                <li>X: 1814 / Y: 28 / Z: 1908  *4</li>
+                                <li>X: 1923 / Y: 28 / Z: 1957  *4</li>
+                                <li>X: 1918 / Y: 28 / Z: 1891  *4</li>
+                                <li>X: 1810 / Y: 25 / Z: 1897  *4</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">矿洞</div>
+                            <ul class="ore-list">
+                                <li>X: 1123 / Y: 46 / Z: 1520  *4</li>
+                                <li>X: 1141 / Y: 38 / Z: 1520  *4</li>
+                            </ul>
+                        </div>
                     </div>
                     <h3 class="sub-area-title">铜矿</h3>
                     <div class="mobs-grid">
-                        <div class="point-card"><div class="point-name">沼泽</div><ul class="ore-list"><li>X: 1839 / Y: 27 / Z: 1934  *4</li><li>X: 1981 / Y: 25 / Z: 1927  *4</li></ul></div>
-                        <div class="point-card"><div class="point-name">沙漠</div><ul class="ore-list"><li>X: 1449 / Y: 215 / Z: 2946  *4</li><li>X: 1492 / Y: 205 / Z: 2984  *4</li><li>X: 1483 / Y: 160 / Z: 2769  *4</li><li>X: 1424 / Y: 181 / Z: 2781  *4</li></ul></div>
-                        <div class="point-card"><div class="point-name">矿洞</div><ul class="ore-list"><li>X: 1171 / Y: 31 / Z: 1474  *4</li></ul></div>
+                        <div class="point-card">
+                            <div class="point-name">沼泽</div>
+                            <ul class="ore-list">
+                                <li>X: 1839 / Y: 27 / Z: 1934  *4</li>
+                                <li>X: 1981 / Y: 25 / Z: 1927  *4</li>
+                                <li>X: 1819 / Y: 26 / Z: 1909</li>
+                                <li>X: 1831 / Y: 26 / Z: 1929</li>
+                                <li>X: 1835 / Y: 26 / Z: 1907</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">沙漠</div>
+                            <ul class="ore-list">
+                                <li>X: 1449 / Y: 215 / Z: 2946  *4</li>
+                                <li>X: 1492 / Y: 205 / Z: 2984  *4</li>
+                                <li>X: 1483 / Y: 160 / Z: 2769  *4</li>
+                                <li>X: 1424 / Y: 181 / Z: 2781  *4</li>
+                            </ul>
+                        </div>
+                        <div class="point-card">
+                            <div class="point-name">矿洞</div>
+                            <ul class="ore-list">
+                                <li>X: 1171 / Y: 31 / Z: 1474  *4</li>
+                            </ul>
+                        </div>
                     </div>
                     <h3 class="sub-area-title">红石</h3>
                     <div class="mobs-grid">
-                        <div class="point-card"><div class="point-name">矿洞</div><ul class="ore-list"><li>X: 1156 / Y: 37 / Z: 1528  *2</li><li>X: 1181 / Y: 30 / Z: 1675  *2</li><li>X: 1022 / Y: 128 / Z: 1686  *2</li><li>X: 1023 / Y: 129 / Z: 1686  *2</li></ul></div>
+                        <div class="point-card">
+                            <div class="point-name">矿洞</div>
+                            <ul class="ore-list">
+                                <li>X: 1156 / Y: 37 / Z: 1528  *2</li>
+                                <li>X: 1181 / Y: 30 / Z: 1675  *2</li>
+                                <li>X: 1022 / Y: 128 / Z: 1686  *2</li>
+                                <li>X: 1023 / Y: 129 / Z: 1686  *2</li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -360,52 +490,112 @@
                         <div class="point-card">
                             <div class="point-name">兰花</div>
                             <div class="point-coords">X: 2145 / Y: 67 / Z: 2499</div>
-                            <div class="point-desc"><strong>所属区域：</strong>石山<br><strong>数量：</strong>临近共11个采集点<br><strong>需求等级：</strong>1<br><strong>快速走法：</strong>从城东门出后跟随指南针或坐标走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>石山<br>
+                                <strong>数量：</strong>临近共11个采集点<br>
+                                <strong>需求等级：</strong>1<br>
+                                <strong>快速走法：</strong>从城东门出后跟随指南针或坐标走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">胡萝卜</div>
                             <div class="point-coords">X: 2023 / Y: 66 / Z: 2528</div>
-                            <div class="point-desc"><strong>所属区域：</strong>石山<br><strong>数量：</strong>临近共6个采集点<br><strong>需求等级：</strong>1<br><strong>快速走法：</strong>从城西门出后跟随指南针或坐标走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>石山<br>
+                                <strong>数量：</strong>临近共6个采集点<br>
+                                <strong>需求等级：</strong>1<br>
+                                <strong>快速走法：</strong>从城西门出后跟随指南针或坐标走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">青竹笋</div>
                             <div class="point-coords">X: 1991 / Y: 66 / Z: 2500</div>
-                            <div class="point-desc"><strong>所属区域：</strong>石山<br><strong>数量：</strong>临近共6个采集点<br><strong>需求等级：</strong>2<br><strong>快速走法：</strong>从城西门出后跟随指南针或坐标走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>石山<br>
+                                <strong>数量：</strong>临近共6个采集点<br>
+                                <strong>需求等级：</strong>2<br>
+                                <strong>快速走法：</strong>从城西门出后跟随指南针或坐标走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">雪莲</div>
                             <div class="point-coords">X: 2812 / Y: 169 / Z: 2838</div>
-                            <div class="point-desc"><strong>所属区域：</strong>雪山<br><strong>数量：</strong>临近共5个采集点<br><strong>需求等级：</strong>2<br><strong>快速走法：</strong>传送到雪山锚点后往东（X正）走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>雪山<br>
+                                <strong>数量：</strong>临近共5个采集点<br>
+                                <strong>需求等级：</strong>2<br>
+                                <strong>快速走法：</strong>传送到雪山锚点后往东（X正）走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">火魂花</div>
                             <div class="point-coords">X: 2461 / Y: 153 / Z: 1396</div>
-                            <div class="point-desc"><strong>所属区域：</strong>火山<br><strong>数量：</strong>临近共5个采集点<br><strong>需求等级：</strong>3<br><strong>快速走法：</strong>传送到火山锚点后往北（Z负）走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>火山<br>
+                                <strong>数量：</strong>临近共5个采集点<br>
+                                <strong>需求等级：</strong>3<br>
+                                <strong>快速走法：</strong>传送到火山锚点后往北（Z负）走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">凛冬花卉</div>
                             <div class="point-coords">X: 2149 / Y: 28 / Z: 1635</div>
-                            <div class="point-desc"><strong>所属区域：</strong>地点未被定义<br><strong>数量：</strong>临近共8个采集点<br><strong>需求等级：</strong>3<br><strong>快速走法：</strong>传送到火山锚点后往西（X负）走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>地点未被定义<br>
+                                <strong>数量：</strong>临近共8个采集点<br>
+                                <strong>需求等级：</strong>3<br>
+                                <strong>快速走法：</strong>传送到火山锚点后往西（X负）走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">晶化牡丹</div>
                             <div class="point-coords">X: 1239 / Y: 11 / Z: 1393</div>
-                            <div class="point-desc"><strong>所属区域：</strong>矿洞<br><strong>数量：</strong>临近共5个采集点<br><strong>需求等级：</strong>4<br><strong>快速走法：</strong>传送到矿洞锚点后往北（Z负）走或跟随指南针/坐标走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>矿洞<br>
+                                <strong>数量：</strong>临近共5个采集点<br>
+                                <strong>需求等级：</strong>4<br>
+                                <strong>快速走法：</strong>传送到矿洞锚点后往北（Z负）走或跟随指南针/坐标走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">光辉草果</div>
                             <div class="point-coords">X: 1171 / Y: 55 / Z: 1768</div>
-                            <div class="point-desc"><strong>所属区域：</strong>矿洞<br><strong>数量：</strong>临近共4个采集点<br><strong>需求等级：</strong>4<br><strong>快速走法：</strong>传送到古堡锚点进入矿洞后往南（Z正）走或跟随指南针/坐标走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>矿洞<br>
+                                <strong>数量：</strong>临近共4个采集点<br>
+                                <strong>需求等级：</strong>4<br>
+                                <strong>快速走法：</strong>传送到古堡锚点进入矿洞后往南（Z正）走或跟随指南针/坐标走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">光羽百合</div>
                             <div class="point-coords">X: 1178 / Y: 177 / Z: 1710</div>
-                            <div class="point-desc"><strong>所属区域：</strong>高山<br><strong>数量：</strong>临近共4个采集点<br><strong>需求等级：</strong>5<br><strong>快速走法：</strong>传送到古堡锚点后上山再往南（Z正）走或跟随指南针/坐标走<br><strong>备注：</strong>无</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>高山<br>
+                                <strong>数量：</strong>临近共4个采集点<br>
+                                <strong>需求等级：</strong>5<br>
+                                <strong>快速走法：</strong>传送到古堡锚点后上山再往南（Z正）走或跟随指南针/坐标走<br>
+                                <strong>备注：</strong>无
+                            </div>
                         </div>
                         <div class="point-card">
                             <div class="point-name">流光绣球</div>
                             <div class="point-coords">X: 1384 / Y: -40 / Z: 1967</div>
-                            <div class="point-desc"><strong>所属区域：</strong>矿洞-晶海<br><strong>数量：</strong>临近共4个采集点<br><strong>需求等级：</strong>5<br><strong>快速走法：</strong>传送到矿洞深处锚点后再进入晶海锚点随后跟随指南针/坐标走（请一定带上指南针）<br><strong>备注：</strong>此采集物地形难走，注意不要迷路</div>
+                            <div class="point-desc">
+                                <strong>所属区域：</strong>矿洞-晶海<br>
+                                <strong>数量：</strong>临近共4个采集点<br>
+                                <strong>需求等级：</strong>5<br>
+                                <strong>快速走法：</strong>传送到矿洞深处锚点后再进入晶海锚点随后跟随指南针/坐标走（请一定带上指南针）<br>
+                                <strong>备注：</strong>此采集物地形难走，注意不要迷路
+                            </div>
                         </div>
                     </div>
                 </article>
