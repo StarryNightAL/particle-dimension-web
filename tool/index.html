@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具调用 · 粒子维度</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <div class="app-container">
+        <aside id="sidebar"></aside>
+        <main class="main-content">
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title">⚔️ 基岩版近战伤害计算器</h2>
+                    <!-- tool.js 会把工具 UI 渲染到这个宿主容器中 -->
+                    <div id="tool-app"></div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="/script.js"></script>
+    <script type="module" src="tool.js"></script>
+</body>
+</html>

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="/page/boss.html" class="nav-btn">BOSS详情</a>
                 <a href="/page/item.html" class="nav-btn">物品图鉴</a>
                 <a href="/page/player.html" class="nav-btn">玩家图鉴</a>
-                <a href="/page/interesting_thing.html" class="nav-btn nav-hidden">粒子趣事</a>
+                <a href="/tool/index.html" class="nav-btn">工具调用</a>
             </nav>
         `;
     }
