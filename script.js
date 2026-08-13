@@ -1,19 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     if (sidebar) {
+        // 计算相对当前页面的站点根前缀（page/ 与 tool/ 子目录需要 ../，兼容 GitHub Pages 子路径部署）
+        const path = window.location.pathname;
+        const prefix = (path.includes('/page/') || path.includes('/tool/')) ? '../' : '';
         sidebar.innerHTML = `
             <div class="sidebar-header">
-                <img src="/picture/粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
+                <img src="${prefix}picture/粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
                 <h1 class="sidebar-title">粒子维度 附属Wiki</h1>
             </div>
             <nav class="sidebar-nav">
-                <a href="/index.html" class="nav-btn">序言</a>
-                <a href="/page/point.html" class="nav-btn">点位汇总</a>
-                <a href="/page/mob.html" class="nav-btn">小怪详情</a>
-                <a href="/page/boss.html" class="nav-btn">BOSS详情</a>
-                <a href="/page/item.html" class="nav-btn">物品图鉴</a>
-                <a href="/page/player.html" class="nav-btn">玩家图鉴</a>
-                <a href="/tool/index.html" class="nav-btn">工具调用</a>
+                <a href="${prefix}index.html" class="nav-btn">序言</a>
+                <a href="${prefix}page/point.html" class="nav-btn">点位汇总</a>
+                <a href="${prefix}page/mob.html" class="nav-btn">小怪详情</a>
+                <a href="${prefix}page/boss.html" class="nav-btn">BOSS详情</a>
+                <a href="${prefix}page/item.html" class="nav-btn">物品图鉴</a>
+                <a href="${prefix}page/player.html" class="nav-btn">玩家图鉴</a>
+                <a href="${prefix}tool/index.html" class="nav-btn">工具调用</a>
             </nav>
         `;
     }
