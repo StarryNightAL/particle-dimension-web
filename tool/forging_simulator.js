@@ -1227,14 +1227,26 @@ export const particleForgeTool = {
                 '含量250/混乱150/结构290',
             ].join('\n'),
         };
+        // 材料列表关键词着色：含量=绿 #00FF00，混乱=紫 #FF55FF，稳定=蓝 #00FFFF
+        function colorizeMaterials(text) {
+            return text
+                .replace(/含量/g, '<span style="color:#00FF00">含量</span>')
+                .replace(/混乱/g, '<span style="color:#FF55FF">混乱</span>')
+                .replace(/稳定/g, '<span style="color:#00FFFF">稳定</span>');
+        }
+        function renderDoc(key) {
+            let html = DOCS[key] || '';
+            if (key === 'materials') html = colorizeMaterials(html);
+            docText.innerHTML = html;
+        }
         docBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 docBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                docText.innerHTML = DOCS[btn.dataset.doc] || '';
+                renderDoc(btn.dataset.doc);
             });
         });
         // 默认展示「锻造须看」内容
-        docText.innerHTML = DOCS[docBtns[0].dataset.doc] || '';
+        renderDoc(docBtns[0].dataset.doc);
     }
 };
