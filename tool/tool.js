@@ -137,7 +137,7 @@ style.textContent = `
         color: #bbb;
         font-weight: 400;
     }
-    /* 窄屏回退为单列 */
+    /* 窄屏回退为单列（已禁用：强制 PC 布局）
     @media (max-width: 640px) {
         .tool-app {
             grid-template-columns: 1fr;
@@ -151,6 +151,7 @@ style.textContent = `
             grid-column: auto;
         }
     }
+    */
     /* 工具页子导航（仿 point.html 的 sub-nav） */
     #tool-apps .sub-nav {
         display: flex;

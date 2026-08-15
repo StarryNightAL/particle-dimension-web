@@ -91,14 +91,14 @@ document.addEventListener('DOMContentLoaded', function() {
         height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
-        const targetCount = Math.min(140, Math.max(50, Math.floor(width * height / 14000)));
+        const targetCount = 110; // 强制 PC 端：固定粒子数量，不随窗口缩放
         while (particles.length < targetCount) particles.push(new Particle());
         while (particles.length > targetCount) particles.pop();
     }
 
     function initParticles() {
         particles = [];
-        const targetCount = Math.min(140, Math.max(50, Math.floor(window.innerWidth * window.innerHeight / 14000)));
+        const targetCount = 110; // 强制 PC 端：固定粒子数量
         for (let i = 0; i < targetCount; i++) {
             const p = new Particle();
             p.x = Math.random() * window.innerWidth;

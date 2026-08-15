@@ -329,12 +329,28 @@ export const particleForgeTool = {
                 font-size: 0.8rem;
                 line-height: 1.6;
             }
+            /* 版权声明（跨整行，置底居中） */
+            .forge-copyright {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 14px 16px;
+                color: #94a3b8;
+                font-size: 0.85rem;
+                line-height: 1.8;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .forge-copyright .line1 {
+                font-size: 1rem;
+                color: var(--accent-blue, #60a5fa);
+            }
+            /* 窄屏回退为单列（已禁用：强制 PC 布局）
             @media (max-width: 640px) {
                 .forge-app .forge-templates,
                 .forge-app .forge-values,
                 .forge-app .forge-zones,
                 .forge-app .forge-targets { grid-template-columns: 1fr; }
             }
+            */
         `;
         document.head.appendChild(style);
 
@@ -417,8 +433,8 @@ export const particleForgeTool = {
                 <div class="forge-section">
                     <div class="forge-subtitle">🎯 目标搜索</div>
                     <div class="forge-targets">
-                        <label>粒子含量目标<input type="number" id="forge-target-content" min="1" max="299" value="290"></label>
-                        <label>粒子混乱度目标<input type="number" id="forge-target-chaos" min="1" max="299" value="100"></label>
+                        <label>粒子含量目标<input type="number" id="forge-target-content" min="1" max="299" value="250"></label>
+                        <label>粒子混乱度目标<input type="number" id="forge-target-chaos" min="1" max="299" value="150"></label>
                         <label>结构稳定度目标<input type="number" id="forge-target-stability" min="1" max="299" value="290"></label>
                     </div>
                     <div class="forge-row">
@@ -457,6 +473,11 @@ export const particleForgeTool = {
                     </div>
                 </div>
             </div>
+            <div class="forge-copyright">
+                <div class="line1">love乄辰编写  结果仅供参考</div>
+                <div>星夜StarN  获授权后修改</div>
+                <div>love乄辰  版权所有  仿冒必究</div>
+            </div>
         `;
 
         // ---------- 3. 状态与数据 ----------
@@ -480,8 +501,8 @@ export const particleForgeTool = {
         };
 
         const materials = {
-            iron: { name: "铁", effects: [{ funnel: 2, type: "stability", min: 15, max: 25 }] },
-            gold: { name: "金", effects: [
+            iron: { name: "铁锭", effects: [{ funnel: 2, type: "stability", min: 15, max: 25 }] },
+            gold: { name: "金锭", effects: [
                 { funnel: 1, type: "content", min: 20, max: 30 },
                 { funnel: 2, type: "chaos", min: 10, max: 20 },
                 { funnel: 3, type: "content", min: 8, max: 17 }
@@ -733,12 +754,13 @@ export const particleForgeTool = {
 
         resetBtn.addEventListener('click', () => {
             const activeTemplate = container.querySelector('.forge-tpl.active').dataset.template;
-            state.content = templates[activeTemplate].content;
-            state.chaos = templates[activeTemplate].chaos;
-            state.stability = templates[activeTemplate].stability;
+            const tpl = templates[activeTemplate];
+            state.content = tpl.content;
+            state.chaos = tpl.chaos;
+            state.stability = tpl.stability;
             state.reduceChances = 7;
             updateDisplay();
-            addLog("模拟已重置", "info");
+            addLog(`模拟已重置 | 当前模板: ${tpl.name} (含量=${tpl.content}, 混乱度=${tpl.chaos}, 稳定度=${tpl.stability})`, "info");
         });
 
         searchBtn.addEventListener('click', () => {
@@ -1067,33 +1089,33 @@ export const particleForgeTool = {
                 '以下会把粒子含量/粒子混乱度/结构稳定度简称为含量,混乱,稳定',
                 '当材料写增加某到某时,说明这次结算会从这个数值区间中随机选一个数结算材料效果',
                 '',
-                '1.铁*9',
+                '1.铁锭*9',
                 '-/稳定+15到+25/-',
-                '2.金*8',
+                '2.金锭*8',
                 '含量+20到+30/混乱+10到+20/含量+8到+17',
-                '3.石英3',
+                '3.石英*3',
                 '混乱-25到-35/含量-15到-25/混乱-10到-15',
-                '4.烈焰棒1',
+                '4.烈焰棒*1',
                 '含量+40到+50/混乱+30到+40/含量+25到+27',
                 '5.龙息*16',
                 '含量+8到+12/含量+20到+30/-',
-                '6.爆裂紫颂果16',
+                '6.爆裂紫颂果*16',
                 '-/混乱+20到+30/混乱+15到+20',
-                '7.钻石3',
+                '7.钻石*3',
                 '-/混乱-40到-50/稳定+40到+50',
                 '8.黑曜石',
                 '-/混乱-25/稳定+45到+60',
                 '9.哭泣的黑曜石',
                 '含量+60到+75/混乱+40到+50/混乱+30到+40',
-                '10.粒子水晶2',
+                '10.粒子水晶*2',
                 '稳定+10到+15/混乱-8到-12/含量+5到+10',
-                '十一.幻尘之沙1',
+                '十一.幻尘之沙*1',
                 '含量+4到+6/-/混乱+22到+25',
-                '十二.下界合金锭1',
+                '十二.下界合金锭*1',
                 '-/混乱-50到-52/稳定+80到+82',
                 '十三.末影结晶',
                 '含量+28到+30/混乱+28到+30/-',
-                '十四.纯净影晶1',
+                '十四.纯净影晶*1',
                 '含量+6/混乱+6/-',
                 '十五.粒子圣晶',
                 '含量+80到+81/含量-6/稳定-6',
