@@ -329,6 +329,38 @@ export const particleForgeTool = {
                 font-size: 0.8rem;
                 line-height: 1.6;
             }
+            /* 最终结算行（跨整行，位于操作日志上方） */
+            .forge-final {
+                grid-column: 1 / -1;
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .forge-final-btn {
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: 1px solid rgba(251, 191, 36, 0.4);
+                background: rgba(251, 191, 36, 0.12);
+                color: #fbbf24;
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: inherit;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+            .forge-final-btn:hover { background: rgba(251, 191, 36, 0.22); }
+            .forge-final-result {
+                flex: 1;
+                background: rgba(10, 10, 20, 0.6);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 10px;
+                padding: 10px 14px;
+                font-size: 0.95rem;
+                color: #e0e0f0;
+                line-height: 1.6;
+                min-height: 20px;
+            }
             /* 版权声明（跨整行，置底居中） */
             .forge-copyright {
                 grid-column: 1 / -1;
@@ -391,21 +423,21 @@ export const particleForgeTool = {
                     <div class="forge-row">
                         <select id="forge-material">
                             <option value="">选择材料</option>
-                            <option value="iron">铁</option>
-                            <option value="gold">金</option>
+                            <option value="iron_ingot">铁锭</option>
+                            <option value="gold_ingot">金锭</option>
                             <option value="quartz">石英</option>
-                            <option value="blaze">烈焰棒</option>
-                            <option value="dragon">龙息</option>
-                            <option value="chorus">爆裂紫颂果</option>
+                            <option value="blaze_rod">烈焰棒</option>
+                            <option value="dragon_breath">龙息</option>
+                            <option value="popped_chorus_fruit">爆裂紫颂果</option>
                             <option value="diamond">钻石</option>
                             <option value="obsidian">黑曜石</option>
-                            <option value="crystal">粒子水晶</option>
+                            <option value="particle_crystal">粒子水晶</option>
                             <option value="crying_obsidian">哭泣黑曜石</option>
-                            <option value="sand">幻尘之沙</option>
-                            <option value="alloy">下界合金锭</option>
-                            <option value="ender">末影水晶</option>
-                            <option value="shadow">纯净影晶</option>
-                            <option value="holy">粒子圣晶</option>
+                            <option value="phantom_sand">幻尘之沙</option>
+                            <option value="netherite_ingot">下界合金锭</option>
+                            <option value="ender_crystal">末影结晶</option>
+                            <option value="pure_shadow_crystal">纯净影晶</option>
+                            <option value="particle_divine_crystal">粒子圣晶</option>
                         </select>
                         <div class="forge-funnels">
                             <span>漏斗:</span>
@@ -465,6 +497,10 @@ export const particleForgeTool = {
                     <div class="forge-doc-text" id="forge-doc-text"></div>
                 </div>
             </div>
+            <div class="forge-final">
+                <button class="forge-final-btn" id="forge-final-btn">✔️ 最终结算</button>
+                <div class="forge-final-result" id="forge-final-result"></div>
+            </div>
             <div class="forge-log-row">
                 <div class="forge-section">
                     <div class="forge-subtitle">📜 操作日志</div>
@@ -501,8 +537,8 @@ export const particleForgeTool = {
         };
 
         const materials = {
-            iron: { name: "铁锭", effects: [{ funnel: 2, type: "stability", min: 15, max: 25 }] },
-            gold: { name: "金锭", effects: [
+            iron_ingot: { name: "铁锭", effects: [{ funnel: 2, type: "stability", min: 15, max: 25 }] },
+            gold_ingot: { name: "金锭", effects: [
                 { funnel: 1, type: "content", min: 20, max: 30 },
                 { funnel: 2, type: "chaos", min: 10, max: 20 },
                 { funnel: 3, type: "content", min: 8, max: 17 }
@@ -512,16 +548,16 @@ export const particleForgeTool = {
                 { funnel: 2, type: "content", min: -25, max: -15 },
                 { funnel: 3, type: "chaos", min: -15, max: -10 }
             ] },
-            blaze: { name: "烈焰棒", effects: [
+            blaze_rod: { name: "烈焰棒", effects: [
                 { funnel: 1, type: "content", min: 40, max: 50 },
                 { funnel: 2, type: "chaos", min: 30, max: 40 },
                 { funnel: 3, type: "content", min: 25, max: 27 }
             ] },
-            dragon: { name: "龙息", effects: [
+            dragon_breath: { name: "龙息", effects: [
                 { funnel: 1, type: "content", min: 8, max: 12 },
                 { funnel: 2, type: "content", min: 20, max: 30 }
             ] },
-            chorus: { name: "爆裂紫颂果", effects: [
+            popped_chorus_fruit: { name: "爆裂紫颂果", effects: [
                 { funnel: 2, type: "chaos", min: 20, max: 30 },
                 { funnel: 3, type: "chaos", min: 15, max: 20 }
             ] },
@@ -533,7 +569,7 @@ export const particleForgeTool = {
                 { funnel: 2, type: "chaos", min: -25, max: -25 },
                 { funnel: 3, type: "stability", min: 45, max: 60 }
             ] },
-            crystal: { name: "粒子水晶", effects: [
+            particle_crystal: { name: "粒子水晶", effects: [
                 { funnel: 1, type: "stability", min: 10, max: 15 },
                 { funnel: 2, type: "chaos", min: -12, max: -8 },
                 { funnel: 3, type: "content", min: 5, max: 10 }
@@ -543,23 +579,23 @@ export const particleForgeTool = {
                 { funnel: 2, type: "chaos", min: 40, max: 50 },
                 { funnel: 3, type: "chaos", min: 30, max: 40 }
             ] },
-            sand: { name: "幻尘之沙", rare: true, effects: [
+            phantom_sand: { name: "幻尘之沙", rare: true, effects: [
                 { funnel: 1, type: "content", min: 4, max: 6 },
                 { funnel: 3, type: "chaos", min: 22, max: 25 }
             ] },
-            alloy: { name: "下界合金锭", rare: true, effects: [
+            netherite_ingot: { name: "下界合金锭", rare: true, effects: [
                 { funnel: 2, type: "chaos", min: -52, max: -50 },
                 { funnel: 3, type: "stability", min: 80, max: 82 }
             ] },
-            ender: { name: "末影水晶", rare: true, effects: [
+            ender_crystal: { name: "末影结晶", rare: true, effects: [
                 { funnel: 1, type: "content", min: 28, max: 30 },
                 { funnel: 2, type: "chaos", min: 28, max: 30 }
             ] },
-            shadow: { name: "纯净影晶", rare: true, effects: [
+            pure_shadow_crystal: { name: "纯净影晶", rare: true, effects: [
                 { funnel: 1, type: "content", min: 6, max: 6 },
                 { funnel: 2, type: "chaos", min: 6, max: 6 }
             ] },
-            holy: { name: "粒子圣晶", rare: true, effects: [
+            particle_divine_crystal: { name: "粒子圣晶", rare: true, effects: [
                 { funnel: 1, type: "content", min: 80, max: 81 },
                 { funnel: 2, type: "content", min: -6, max: -6 },
                 { funnel: 3, type: "stability", min: -6, max: -6 }
@@ -593,6 +629,8 @@ export const particleForgeTool = {
         const searchStats = container.querySelector('#forge-search-stats');
         const templateBtns = container.querySelectorAll('.forge-tpl');
         const useRareMaterialsCheckbox = container.querySelector('#forge-use-rare');
+        const finalBtn = container.querySelector('#forge-final-btn');
+        const finalResult = container.querySelector('#forge-final-result');
 
         // ---------- 5. 通用函数 ----------
         function updateDisplay() {
@@ -761,6 +799,30 @@ export const particleForgeTool = {
             state.reduceChances = 7;
             updateDisplay();
             addLog(`模拟已重置 | 当前模板: ${tpl.name} (含量=${tpl.content}, 混乱度=${tpl.chaos}, 稳定度=${tpl.stability})`, "info");
+        });
+
+        // 最终结算：根据当前数值查产物表
+        const PRODUCTS = [
+            { name: '粒子圣书<粒子构筑·屏障>', color: '#55FFFF', content: 80, chaos: 120, stability: 260 },
+            { name: '粒子圣书<粒子连携·守护>', color: '#55FF55', content: 100, chaos: 220, stability: 100 },
+            { name: '粒子圣书<粒子连携·岩域>', color: '#FFAA00', content: 280, chaos: 90, stability: 150 },
+            { name: '粒子圣书<粒子超载·连接>', color: '#FF5555', content: 295, chaos: 30, stability: 295 },
+            { name: '粒子圣核', color: '#FF5555', content: 250, chaos: 150, stability: 290 },
+        ];
+        const escapeHtml = (s) => s.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        finalBtn.addEventListener('click', () => {
+            const found = PRODUCTS.find(p =>
+                p.content === state.content && p.chaos === state.chaos && p.stability === state.stability
+            );
+            if (found) {
+                finalResult.innerHTML = `🎉 结算成功！产出：<span style="color:${found.color};font-weight:700">${escapeHtml(found.name)}</span><br>所需数值: 含量=${found.content} 混乱度=${found.chaos} 稳定度=${found.stability}`;
+                addLog(`最终结算: 产出 ${found.name}`, "reduce");
+            } else {
+                if (confirm("当前数值不在产物表中，确认结算？")) {
+                    finalResult.textContent = "无产出: 数值对应的产物不存在";
+                    addLog(`最终结算: 无产出 (含量=${state.content}, 混乱度=${state.chaos}, 稳定度=${state.stability})`, "warning");
+                }
+            }
         });
 
         searchBtn.addEventListener('click', () => {
@@ -1125,14 +1187,14 @@ export const particleForgeTool = {
                 '产物介绍格式:',
                 '物品/所需粒子含量/所需粒子混乱度/所需结构稳定度',
                 '',
-                '<span style="color:#55FFFF">粒子圣书&lt;粒子构筑·屏障&gt;</span>',
+                '<span style="color:#55FFFF;font-weight:700">粒子圣书&lt;粒子构筑·屏障&gt;</span>',
                 '含量80/混乱120/结构260',
                 '原地吟唱一段时间后展开防御屏障,展开屏障期间对半径2格的怪持续造成2点击退伤害,同时给予半径4格的全部玩家抗性提升3,3半径6格的怪造成缓慢II',
                 '吟唱时间:3s',
                 '持续时间:7s',
                 '使用期间每秒消耗2级经验,增加2s排斥粒子和特殊粒子冷却,切换手中物品和移动会中断技能',
                 '',
-                '<span style="color:#55FF55">粒子圣书&lt;粒子连携·守护&gt;</span>',
+                '<span style="color:#55FF55;font-weight:700">粒子圣书&lt;粒子连携·守护&gt;</span>',
                 '含量100/混乱220/结构100',
                 '粒子量20级且冷却全部为0后手持圣书低头可以触发,触发后无需一直低头。',
                 '触发后每0.5s吟唱增加2s排斥粒子冷却,3s支援粒子冷却,1s末影粒子冷却,消耗1级粒子量并增加1点吟唱值,切换其他物品或者进行较大移动会中断吟唱,吟唱期间自身持续获得3s缓慢III',
@@ -1140,7 +1202,7 @@ export const particleForgeTool = {
                 '吟唱值到达25点后触发技能并结束吟唱,给予半径7格内玩家30s伤害吸收IV,30s抗性提升II,30s速度II',
                 '注:吟唱期间粒子量低于1会不增加吟唱值和技能冷却,等粒子量回复到1后继续增加吟唱,所以如果粒子量不足会导致吟唱后期速度变慢。',
                 '',
-                '<span style="color:#FFAA00">粒子圣书&lt;粒子连携·岩域&gt;</span>',
+                '<span style="color:#FFAA00;font-weight:700">粒子圣书&lt;粒子连携·岩域&gt;</span>',
                 '含量280/混乱90/结构150',
                 '触发与维持条件同连携守护',
                 '触发后每0.5s增加2s排斥粒子冷却,1s末影粒子冷却,3s特殊粒子冷却,消耗1级粒子量并增加1级吟唱值。',
@@ -1151,7 +1213,7 @@ export const particleForgeTool = {
                 '吟唱值在23到25时每0.5s给予半径10格敌人10层燃烧',
                 '吟唱值达到25级时释放技能,结束吟唱并给予半径8格玩家20s力量II',
                 '',
-                '<span style="color:#FF5555">粒子圣书&lt;粒子超载·连接&gt;</span>',
+                '<span style="color:#FF5555;font-weight:700">粒子圣书&lt;粒子超载·连接&gt;</span>',
                 '含量295/混乱30/结构295',
                 '手持低头触发吟唱,原地吟唱5s后进入连接状态,获得超强增幅:',
                 '粒子量锁定为15级,无法增加和减少',
@@ -1161,7 +1223,7 @@ export const particleForgeTool = {
                 '连接状态持续25s',
                 '连接结束后如果命数大于等于2则会损失一条命数。同时粒子量归零,排斥粒子cd被设定为200s',
                 '',
-                '<span style="color:#FF5555">粒子圣核</span>',
+                '<span style="color:#FF5555;font-weight:700">粒子圣核</span>',
                 '含量250/混乱150/结构290',
             ].join('\n'),
         };
