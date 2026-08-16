@@ -5,6 +5,7 @@
 
 import { meleeDamageTool } from './melee_damage_calculator.js';
 import { particleForgeTool } from './forging_simulator.js';
+import { levelExpTool } from './level_exp_calculator.js';
 
 // ---------- 1. 注入工具专属样式（作用于所有 .tool-app 卡片，主题与 Wiki 保持一致） ----------
 const style = document.createElement('style');
@@ -184,7 +185,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ---------- 2. 工具注册表（新增工具时在此追加即可） ----------
-const TOOLS = [meleeDamageTool, particleForgeTool];
+const TOOLS = [meleeDamageTool, particleForgeTool, levelExpTool];
 
 // ---------- 3. 泛化表单控件工厂（根据 field.type 渲染 select / number） ----------
 function createFieldControl(field) {
