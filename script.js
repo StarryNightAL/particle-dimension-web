@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     if (sidebar) {
-        // 计算相对当前页面的站点根前缀（page/ 与 tool/ 子目录需要 ../，兼容 GitHub Pages 子路径部署）
+        // 计算相对当前页面的站点根前缀（page/、tool/、fun/ 子目录需要 ../，兼容 GitHub Pages 子路径部署）
         const path = window.location.pathname;
-        const prefix = (path.includes('/page/') || path.includes('/tool/')) ? '../' : '';
+        const prefix = (path.includes('/page/') || path.includes('/tool/') || path.includes('/fun/')) ? '../' : '';
         sidebar.innerHTML = `
             <div class="sidebar-header">
                 <img src="${prefix}picture/粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="${prefix}page/item.html" class="nav-btn">物品图鉴</a>
                 <a href="${prefix}page/player.html" class="nav-btn">玩家图鉴</a>
                 <a href="${prefix}tool/index.html" class="nav-btn">工具调用</a>
+                <a href="${prefix}fun/index.html" class="nav-btn">休闲娱乐</a>
             </nav>
         `;
     }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>休闲娱乐 · 粒子维度</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../font/fonts.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <div class="app-container">
+        <aside id="sidebar"></aside>
+        <main class="main-content">
+            <section class="content-section">
+                <!-- fun.js 会为每个注册的娱乐项目动态生成卡片 -->
+                <div id="fun-apps"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+    <script type="module" src="fun.js"></script>
+</body>
+</html>
