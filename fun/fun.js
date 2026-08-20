@@ -5,10 +5,11 @@
 //       新增娱乐项目：新建 fun/xxx.js 导出 { id, title, render }，
 //       并在此处 import 后加入 FUNS 数组即可。
 // ============================================================
-import { funDemo } from './fun_demo.js';
+import { crateSimulator } from './crate_simulator.js';
+import { gachaSimulator } from './gacha_simulator.js';
 
 // 项目注册表（新增娱乐项目在此追加）
-const FUNS = [funDemo];
+const FUNS = [crateSimulator, gachaSimulator];
 
 // ---------- 1. 通用样式（作用于所有 .fun-app 卡片体 + 子导航） ----------
 const style = document.createElement('style');
