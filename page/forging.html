@@ -47,6 +47,72 @@
             border-color: rgba(94, 234, 219, 0.3);
             text-shadow: 0 0 6px rgba(94, 234, 219, 0.3);
         }
+
+        /* 物品/道具卡片（图片+文字，同 item.html） */
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        /* 一行一个 */
+        .item-grid-1 {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        /* 一行两个 */
+        .item-grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        /* 一行三个 */
+        .item-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .item-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 14px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: all 0.3s;
+        }
+        .item-card:hover {
+            border-color: rgba(94, 234, 219, 0.3);
+            box-shadow: 0 3px 22px rgba(0, 0, 0, 0.35), 0 0 32px rgba(94, 234, 219, 0.1);
+            transform: translateY(-2px);
+            background: rgba(24, 24, 48, 0.7);
+        }
+        .item-card img {
+            width: 128px;
+            height: 128px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px;
+            flex-shrink: 0;
+        }
+        .item-info {
+            flex: 1;
+        }
+        .item-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e0e0f0;
+            margin-bottom: 4px;
+        }
+        .item-meta {
+            font-size: 0.82rem;
+            color: #b0b0c8;
+            line-height: 1.6;
+        }
+        .item-meta p {
+            margin-bottom: 2px;
+        }
+        .item-meta strong {
+            color: #d0d0e0;
+        }
     </style>
 </head>
 <body>
@@ -59,18 +125,314 @@
                     <h2 class="content-title">锻造、饰品与道具</h2>
 
                     <nav class="sub-nav">
-                        <a href="#basic-material" class="sub-nav-btn">基础材料</a>
+                        <a href="#basic-item" class="sub-nav-btn">基础物品</a>
                         <a href="#general-item" class="sub-nav-btn">一般物品</a>
                         <a href="#advanced-item" class="sub-nav-btn">进阶物品</a>
                         <a href="#high-item" class="sub-nav-btn">高级物品</a>
+                        <a href="#hell-advanced-item" class="sub-nav-btn">地狱进阶物品</a>
+                        <a href="#hell-high-item" class="sub-nav-btn">地狱高级物品</a>
                         <a href="#tier4-forging" class="sub-nav-btn">四阶锻造</a>
                         <a href="#prismarine-forging" class="sub-nav-btn">晶海锻造</a>
                         <a href="#tier5-forging" class="sub-nav-btn">五阶锻造</a>
                         <a href="#special-forging" class="sub-nav-btn">特殊锻造</a>
                     </nav>
+                </article>
+            </section>
 
-                    <!-- 内容待填充 -->
+            <!-- 基础物品 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="basic-item">基础物品</h2>
+                    <h3 class="sub-area-title">武器</h3>
+                    <div class="item-grid item-grid-3">
+                        <!-- 压缩石剑 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/basic-item/weapon/压缩石剑.png" alt="压缩石剑.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">压缩石剑（锋利II 击退I）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>圆石*16 + 木棍*1（成功率30%）</p>
+                                    <p><strong>精心锻造：</strong><br>圆石*64 + 铁锭*2（成功率100%）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 铁剑 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/basic-item/weapon/铁剑.png" alt="铁剑.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">铁剑（耐久III）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>铁锭*2 + 木棍*1（成功率30%）</p>
+                                    <p><strong>精心锻造：</strong><br>铁锭*8 + 木棍*1（成功率100%）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 枯骨斧 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/basic-item/weapon/枯骨斧.png" alt="枯骨斧.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">枯骨斧（锋利II 耐久III 经验修补I）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>铁块*2 + 永恒枯骨*1（成功率20%）</p>
+                                    <p><strong>精心锻造：</strong><br>铁块*8 + 永恒枯骨*4（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>手持时周期性获得速度I效果。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <h3 class="sub-area-title">材料</h3>
+                    <div class="item-grid item-grid-3">
+                        <!-- 铁块 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/basic-item/material/铁块.png" alt="铁块.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">铁块</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>泥土*12 + 木棍*1（成功率0.01%）</p>
+                                    <p><strong>精心锻造：</strong><br>铁锭*12 + 木棍*10（成功率100%）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sub-area-title">食物/消耗品</h3>
+                    <div class="item-grid item-grid-3">
+                        <!-- 金苹果 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/basic-item/consumable/金苹果.png" alt="金苹果.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">金苹果</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>金锭*2 + 苹果*1（成功率30%）</p>
+                                    <p><strong>精心锻造：</strong><br>金锭*8 + 苹果*1（成功率75%）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 上等牛排 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/basic-item/consumable/上等牛排.png" alt="上等牛排.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">上等牛排</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>腐肉*8 + 木棍*5（成功率20%）</p>
+                                    <p><strong>精心锻造：</strong><br>腐肉*32 + 木棍*5（成功率75%）</p>
+                                    <p><strong>特殊效果：</strong>手持食用后自身获得60秒抗性提升II。</p>
+                                    <p><strong>介绍：</strong>“粒子加工，外焦里嫩，二十分熟。”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 一般物品 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="general-item">一般物品</h2>
+                    <h3 class="sub-area-title">武器</h3>
+                    <div class="item-grid item-grid-3">
+                        <!-- 钻石轻剑（耐久I） -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/weapon/钻石轻剑.png" alt="钻石轻剑.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">钻石轻剑（耐久I）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>钻石*2 + 木棍*1（成功率20%）</p>
+                                    <p><strong>精心锻造：</strong><br>钻石*4 + 极寒凝晶*4（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>钻石打造的剑允许被多次附魔。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 钻石轻剑（耐久III） -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/weapon/钻石轻剑.png" alt="钻石轻剑.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">钻石轻剑（耐久III）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>钻石*3 + 木棍*1（成功率20%）</p>
+                                    <p><strong>精心锻造：</strong><br>钻石*6 + 极寒凝晶*4（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>同上（允许多次附魔）。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sub-area-title">特殊物品</h3>
+                    <div class="item-grid item-grid-2">
+                        <!-- 初级生命之晶 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/special/初级生命之晶.png" alt="初级生命之晶.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">初级生命之晶（命数上限+1）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>极寒凝晶*1 + 永恒枯骨*1（成功率20%）</p>
+                                    <p><strong>精心锻造：</strong><br>极寒凝晶*4 + 永恒枯骨*8（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>在教堂使用后自身命数上限+1，只能生效一次。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sub-area-title">材料</h3>
+                    <div class="item-grid item-grid-3">
+                        <!-- 铁锭 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/material/铁锭.png" alt="铁锭.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">铁锭</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>泥土*1 + 木棍*1（成功率0.01%）</p>
+                                    <p><strong>精心锻造：</strong><br>铁粒*15 + 木棍*3（成功率100%）</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 金锭 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/material/金锭.png" alt="金锭.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">金锭</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>金粒*3（成功率30%）</p>
+                                    <p><strong>精心锻造：</strong><br>金粒*10（成功率100%）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sub-area-title">食物/消耗品</h3>
+                    <div class="item-grid item-grid-3">
+                        <!-- 速度I药水 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/consumable/速度I药水.png" alt="速度I药水.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">速度I药水（180秒）</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>末影之息*1 + 酿造粉*4（成功率50%）</p>
+                                    <p><strong>精心锻造：</strong><br>魔蛛眼*1 + 酿造粉*2（成功率80%）</p>
+                                    <p><strong>特殊效果：</strong>药水效果不会因使用图腾等而丢失；手持药水低头使用。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 速食干粮 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/consumable/速食干粮.png" alt="速食干粮.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">速食干粮*16</div>
+                                <div class="item-meta">
+                                    <p><strong>风险锻造：</strong><br>腐肉*32 + 猪排*16（成功率40%）</p>
+                                    <p><strong>精心锻造：</strong><br>永恒枯骨*1 + 猪排*16（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>手持后立刻回满饱食度。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="sub-area-title">饰品</h3>
+                    <div class="item-grid item-grid-2">
+                        <!-- 黄金头骨 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/accessory/黄金头骨.png" alt="黄金头骨.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">黄金头骨（保护类饰品）</div>
+                                <div class="item-meta">
+                                    <p><strong>精心锻造：</strong><br>鳞头骨*15 + 金锭*20 + 粒子水晶*3（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>保护类饰品，放在背包从右数第一格时激活；生命值归0时获得暂时永久的生命恢复II效果。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 至蓝水晶 -->
+                        <div class="item-card">
+                            <img src="../picture/forging/general-item/accessory/至蓝水晶.png" alt="至蓝水晶.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">至蓝水晶（攻击类饰品）</div>
+                                <div class="item-meta">
+                                    <p><strong>精心锻造：</strong><br>粒子水晶*8 + 极寒凝晶*5（成功率100%）</p>
+                                    <p><strong>特殊效果：</strong>攻击类饰品，放在背包从左往右数第二格时激活；每2秒额外回蓝8点。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 进阶物品 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="advanced-item">进阶物品</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 高级物品 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="high-item">高级物品</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 地狱进阶物品 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="hell-advanced-item">地狱进阶物品</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 地狱高级物品 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="hell-high-item">地狱高级物品</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 四阶锻造 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="tier4-forging">四阶锻造</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 晶海锻造 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="prismarine-forging">晶海锻造</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 五阶锻造 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="tier5-forging">五阶锻造</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
+                </article>
+            </section>
+
+            <!-- 特殊锻造 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="special-forging">特殊锻造</h2>
+                    <div class="item-grid">
+                        <!-- 物品卡片：<div class="item-card"><img src="../picture/item/xxx.png" alt="xxx"><div class="item-info"><div class="item-name">xxx</div><div class="item-meta"><p><strong>类型：</strong>...</p></div></div></div> -->
+                    </div>
                 </article>
             </section>
         </main>
