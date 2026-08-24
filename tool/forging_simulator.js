@@ -387,6 +387,7 @@ export const particleForgeTool = {
         document.head.appendChild(style);
 
         // ---------- 2. 构建 DOM ----------
+        // ender_crystal:末影结晶 不是 end_crystal:末影水晶
         container.innerHTML = `
             <div class="forge-app">
                 <div class="forge-section">

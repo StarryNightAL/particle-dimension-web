@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粒子维度 附属Wiki - 锻造、饰品与道具</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../font/fonts.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* 页面内子导航（按钮式）
+           按钮尺寸可通过下方变量调整：
+           --subnav-gap           按钮间距
+           --subnav-font-size     文字大小
+           --subnav-padding-y     上下内边距
+           --subnav-padding-x     左右内边距
+           --subnav-radius        圆角
+        */
+        .sub-nav {
+            --subnav-gap: 16px;
+            --subnav-font-size: 1.05rem;
+            --subnav-padding-y: 8px;
+            --subnav-padding-x: 16px;
+            --subnav-radius: 8px;
+
+            display: flex;
+            gap: var(--subnav-gap);
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .sub-nav-btn {
+            font-family: var(--font-main);
+            font-weight: 500;
+            font-size: var(--subnav-font-size);
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--subnav-radius);
+            padding: var(--subnav-padding-y) var(--subnav-padding-x);
+            text-decoration: none;
+            transition: all var(--transition-smooth);
+        }
+        .sub-nav-btn:hover {
+            color: #fff;
+            background: rgba(94, 234, 219, 0.15);
+            border-color: rgba(94, 234, 219, 0.3);
+            text-shadow: 0 0 6px rgba(94, 234, 219, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="app-container">
+        <aside id="sidebar"></aside>
+        <main class="main-content">
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title">锻造、饰品与道具</h2>
+
+                    <nav class="sub-nav">
+                        <a href="#basic-material" class="sub-nav-btn">基础材料</a>
+                        <a href="#general-item" class="sub-nav-btn">一般物品</a>
+                        <a href="#advanced-item" class="sub-nav-btn">进阶物品</a>
+                        <a href="#high-item" class="sub-nav-btn">高级物品</a>
+                        <a href="#tier4-forging" class="sub-nav-btn">四阶锻造</a>
+                        <a href="#prismarine-forging" class="sub-nav-btn">晶海锻造</a>
+                        <a href="#tier5-forging" class="sub-nav-btn">五阶锻造</a>
+                        <a href="#special-forging" class="sub-nav-btn">特殊锻造</a>
+                    </nav>
+
+                    <!-- 内容待填充 -->
+
+                </article>
+            </section>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

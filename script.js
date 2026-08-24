@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="${prefix}page/mob.html" class="nav-btn">小怪详情</a>
                 <a href="${prefix}page/boss.html" class="nav-btn">BOSS详情</a>
                 <a href="${prefix}page/item.html" class="nav-btn">物品图鉴</a>
+                <a href="${prefix}page/forging.html" class="nav-btn">锻造、饰品与道具</a>
                 <a href="${prefix}page/player.html" class="nav-btn">玩家图鉴</a>
                 <a href="${prefix}tool/index.html" class="nav-btn">工具调用</a>
                 <a href="${prefix}fun/index.html" class="nav-btn">休闲娱乐</a>
