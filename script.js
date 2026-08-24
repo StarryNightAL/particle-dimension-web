@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const prefix = (path.includes('/page/') || path.includes('/tool/') || path.includes('/fun/')) ? '../' : '';
         sidebar.innerHTML = `
             <div class="sidebar-header">
-                <img src="${prefix}picture/粒子维度俯瞰全景图.png" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
+                <img src="${prefix}picture/粒子维度俯瞰全景图.webp" alt="粒子维度俯瞰全景图" class="sidebar-thumbnail">
                 <h1 class="sidebar-title">粒子维度 附属Wiki</h1>
             </div>
             <nav class="sidebar-nav">
