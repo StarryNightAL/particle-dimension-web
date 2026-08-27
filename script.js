@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h1 class="sidebar-title">粒子维度 附属Wiki</h1>
             </div>
             <nav class="sidebar-nav">
-                <a href="${prefix}index.html" class="nav-btn">序言</a>
+                <a href="${prefix}index.html" class="nav-btn">首页</a>
                 <a href="${prefix}page/point.html" class="nav-btn">点位汇总</a>
                 <a href="${prefix}page/mob.html" class="nav-btn">小怪详情</a>
                 <a href="${prefix}page/boss.html" class="nav-btn">BOSS详情</a>
