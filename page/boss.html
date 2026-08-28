@@ -39,6 +39,36 @@
         .boss-summary strong {
             color: #d0d0e0;
         }
+        .boss-sub-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 14px 16px 10px;
+            margin-bottom: 14px;
+        }
+        .boss-sub-card:last-child {
+            margin-bottom: 0;
+        }
+        .boss-name {
+            font-family: var(--font-main);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            color: #e0e0f0;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sub-region-title {
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: #c0c0d8;
+            margin: 18px 0 10px;
+            padding-left: 8px;
+            border-left: 2px solid var(--accent-gold);
+        }
     </style>
 </head>
 <body>
@@ -61,11 +91,13 @@
                 </article>
             </section>
 
-            <!-- 天灾·僵尸 -->
+            <!-- 石山 -->
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title" style="color: #FF5555;">天灾·僵尸</h2>
-                    <div class="boss-detail">
+                    <h2 class="content-title">石山</h2>
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FF5555;">天灾·僵尸</h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>X: 1711 / Y: 67 / Z: 2371</p>
                             <p><strong>召唤消耗：</strong>无</p>
@@ -87,14 +119,12 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
-                </article>
-            </section>
+                    </div>
 
-            <!-- 天灾·洞穴骷髅 -->
-            <section class="content-section">
-                <article class="content-card">
-                    <h2 class="content-title" style="color: #FF5555;">天灾·洞穴骷髅</h2>
-                    <div class="boss-detail">
+                    <!-- 天灾·洞穴骷髅 -->
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FF5555;">天灾·洞穴骷髅</h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>X: 1590 / Y: 99 / Z: 2728</p>
                             <p><strong>召唤消耗：</strong>无</p>
@@ -117,14 +147,73 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    </div>
+
+                    <!-- 拟影·虚界幻兽 -->
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #AA00AA;">拟影·虚界幻兽</h3>
+                        <div class="boss-detail">
+                        <div class="boss-summary">
+                            <p><strong>坐标：</strong>入场: X: 2310 / Y: 42 / Z: 2169</p>
+                            <p><strong>召唤消耗：</strong>幻尘之沙（每人一个）</p>
+                            <p><strong>开启箱子消耗：</strong>（无箱子，直接掉落）</p>
+                            <p><strong>箱子爆率：</strong>纯净影晶（全场唯一，随机分配）</p>
+                            <p><strong>入场特殊需求：</strong>手持虚界节点指针低头踩压力板</p>
+                        </div>
+                        <p class="content-text"><strong>Boss名：</strong>拟影·虚界幻兽</p>
+                        <p class="content-text"><strong>简略介绍：</strong>升四阶的必经之路；三阶最严厉的父亲</p>
+                        <p class="content-text"><strong>召唤物：</strong>幻尘之沙（每人一个）</p>
+                        <p class="content-text"><strong>战利品：</strong>纯净影晶（全场只有一个，随机分发给一个人）</p>
+                        <p class="content-text"><strong>进入场地限制：</strong>需要手持虚界指针低头踩压力板进入，每个人都应交一个幻尘之沙</p>
+                        <p class="content-text"><strong>经验：</strong>无</p>
+                        <p class="content-text"><strong>特点：</strong>幻兽每爆一个图腾就召唤一个拟态幻影，若是多人按人头算，总体难度非常困难（仅限三阶）</p>
+                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <ul class="skill-list">
+                            <li>混沌空间：每个拟态幻影随机召唤虚空裂痕，触碰到虚空裂痕，造成超高帧伤，虚空裂痕会移动</li>
+                            <li>虚界潜移：每个拟态幻影开始移动，造成超高帧伤</li>
+                            <li>虚界幻影：每个拟态幻影召唤两个合金套僵尸，剑伤害较低，附魔有击退二消失诅咒一</li>
+                            <li>影袭：幻兽隐身并且速度增加，在此期间无视伤害</li>
+                        </ul>
+                    </div>
+                    <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    </div>
                 </article>
             </section>
 
-            <!-- 天灾·雪山骷髅 -->
+            <!-- 雪山 -->
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title" style="color: #FF5555;">天灾·雪山骷髅</h2>
-                    <div class="boss-detail">
+                    <h2 class="content-title">雪山</h2>
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FF5555;">天灾·极寒冰骷</h3>
+                        <div class="boss-detail">
+                        <div class="boss-summary">
+                            <p><strong>坐标：</strong>X: 2416 / Y: 207 / Z: 2844</p>
+                            <p><strong>召唤消耗：</strong>铁块*2</p>
+                            <p><strong>开启箱子消耗：</strong>银币*1200</p>
+                            <p><strong>箱子爆率：</strong>40%-极寒凝晶*2&nbsp;&nbsp;40%-钻石*1&nbsp;&nbsp;20%-粒子水晶*2</p>
+                        </div>
+                        <p class="content-text"><strong>Boss名：</strong>天灾·极寒冰骷</p>
+                        <p class="content-text"><strong>简略介绍：</strong>与狂尸同名的钻石批发商</p>
+                        <p class="content-text"><strong>战利品：</strong>粒子水晶，钻石，极寒凝晶</p>
+                        <p class="content-text"><strong>进入场地限制：</strong>达到15级，并获得雪山之晶</p>
+                        <p class="content-text"><strong>经验：</strong>80点</p>
+                        <p class="content-text"><strong>特点：</strong>冻雪伤害巨高，召唤的小怪都是无敌的，而且数量巨多</p>
+                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <ul class="skill-list">
+                            <li>极寒侵袭：降低一等级粒子量，并且极寒等级上升1级，极寒等级上升到6级时，全场受到压制后的缓慢二，极寒等级上升到10级时，极寒已至，全场获得凋零Buff，随后极寒等级重置回3级</li>
+                            <li>雪骨回魂：召唤一堆无敌的骷髅小怪（四个小包各召唤三个，Boss周围召唤三个）</li>
+                            <li>冻雪：对站在雪块上的玩家造成真伤</li>
+                            <li>极寒之视：对未低头的玩家造成伤害</li>
+                        </ul>
+                    </div>
+                    <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    </div>
+
+                    <!-- 天灾·雪山骷髅 -->
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FF5555;">天灾·雪山骷髅</h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>X: 2076 / Y: 109 / Z: 2954</p>
                             <p><strong>召唤消耗：</strong>骷髅头骨*1</p>
@@ -148,43 +237,17 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
-                </article>
-            </section>
-
-            <!-- 天灾·极寒冰骷 -->
-            <section class="content-section">
-                <article class="content-card">
-                    <h2 class="content-title" style="color: #FF5555;">天灾·极寒冰骷</h2>
-                    <div class="boss-detail">
-                        <div class="boss-summary">
-                            <p><strong>坐标：</strong>X: 2416 / Y: 207 / Z: 2844</p>
-                            <p><strong>召唤消耗：</strong>铁块*2</p>
-                            <p><strong>开启箱子消耗：</strong>银币*1200</p>
-                            <p><strong>箱子爆率：</strong>40%-极寒凝晶*2&nbsp;&nbsp;40%-钻石*1&nbsp;&nbsp;20%-粒子水晶*2</p>
-                        </div>
-                        <p class="content-text"><strong>Boss名：</strong>天灾·极寒冰骷</p>
-                        <p class="content-text"><strong>简略介绍：</strong>与狂尸同名的钻石批发商</p>
-                        <p class="content-text"><strong>战利品：</strong>粒子水晶，钻石，极寒凝晶</p>
-                        <p class="content-text"><strong>进入场地限制：</strong>达到15级，并获得雪山之晶</p>
-                        <p class="content-text"><strong>经验：</strong>80点</p>
-                        <p class="content-text"><strong>特点：</strong>冻雪伤害巨高，召唤的小怪都是无敌的，而且数量巨多</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
-                        <ul class="skill-list">
-                            <li>极寒侵袭：降低一等级粒子量，并且极寒等级上升1级，极寒等级上升到6级时，全场受到压制后的缓慢二，极寒等级上升到10级时，极寒已至，全场获得凋零Buff，随后极寒等级重置回3级</li>
-                            <li>雪骨回魂：召唤一堆无敌的骷髅小怪（四个小包各召唤三个，Boss周围召唤三个）</li>
-                            <li>冻雪：对站在雪块上的玩家造成真伤</li>
-                            <li>极寒之视：对未低头的玩家造成伤害</li>
-                        </ul>
                     </div>
-                    <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
                 </article>
             </section>
 
-            <!-- 天灾·沼泽魔蛛 -->
+            <!-- 沼泽 -->
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title" style="color: #FF5555;">天灾·沼泽魔蛛</h2>
-                    <div class="boss-detail">
+                    <h2 class="content-title">沼泽</h2>
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FF5555;">天灾·沼泽魔蛛</h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>跑酷开始: X: 1873 / Y: 28 / Z: 1938<br>入场: X: 1824 / Y: 41 / Z: 1918</p>
                             <p><strong>召唤消耗：</strong>金锭*10</p>
@@ -209,14 +272,17 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    </div>
                 </article>
             </section>
 
-            <!-- 天灾·荒漠狂尸 -->
+            <!-- 沙漠 -->
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title" style="color: #FF5555;">天灾·荒漠狂尸</h2>
-                    <div class="boss-detail">
+                    <h2 class="content-title">沙漠</h2>
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FF5555;">天灾·荒漠狂尸</h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>X: 1401 / Y: 202 / Z: 2914</p>
                             <p><strong>召唤消耗：</strong>爆裂紫颂果*32</p>
@@ -238,17 +304,15 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
-                </article>
-            </section>
+                    </div>
 
-            <!-- 拟影·粒子幻构 -->
-            <section class="content-section">
-                <article class="content-card">
-                    <h2 class="content-title" style="color: #FFFF55;">
-                        拟影·粒子幻构
-                        <span style="color: gray;">（荒漠洞穴副本BOSS）</span>
-                    </h2>
-                    <div class="boss-detail">
+                    <!-- 拟影·粒子幻构 -->
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #FFFF55;">
+                            拟影·粒子幻构
+                            <span style="color: gray;">（荒漠洞穴副本BOSS）</span>
+                        </h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>入场: X: 1464 / Y: 175 / Z: 2799</p>
                             <p><strong>召唤消耗：</strong>无</p>
@@ -272,14 +336,17 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    </div>
                 </article>
             </section>
 
-            <!-- 拟影·梦魇 -->
+            <!-- 火山 -->
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title" style="color: #555555;">拟影·梦魇</h2>
-                    <div class="boss-detail">
+                    <h2 class="content-title">火山</h2>
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #555555;">拟影·梦魇</h3>
+                        <div class="boss-detail">
                         <div class="boss-summary">
                             <p><strong>坐标：</strong>X: 2398 / Y: 44 / Z: 1752</p>
                             <p><strong>召唤消耗：</strong>无</p>
@@ -305,39 +372,48 @@
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    </div>
                 </article>
             </section>
 
-            <!-- 拟影·虚界幻兽 -->
+            <!-- 矿洞与晶海 -->
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title" style="color: #AA00AA;">拟影·虚界幻兽</h2>
-                    <div class="boss-detail">
-                        <div class="boss-summary">
-                            <p><strong>坐标：</strong>入场: X: 2310 / Y: 42 / Z: 2169</p>
-                            <p><strong>召唤消耗：</strong>幻尘之沙（每人一个）</p>
-                            <p><strong>开启箱子消耗：</strong>（无箱子，直接掉落）</p>
-                            <p><strong>箱子爆率：</strong>纯净影晶（全场唯一，随机分配）</p>
-                            <p><strong>入场特殊需求：</strong>手持虚界节点指针低头踩压力板</p>
+                    <h2 class="content-title">矿洞与晶海</h2>
+                    <h3 class="sub-region-title">矿洞</h3>
+                    <div class="boss-sub-card">
+                        <h3 class="boss-name" style="color: #00AAAA;">天灾·突变晶核</h3>
+                        <div class="boss-detail">
+                            <div class="boss-summary">
+                                <p><strong>坐标：</strong>X: 1093 / Y: 35 / Z: 1500</p>
+                                <p><strong>召唤消耗：</strong>中型紫晶芽*8</p>
+                                <p><strong>开启箱子消耗：</strong>银币*3000</p>
+                                <p><strong>箱子爆率：</strong>60%-大型紫水晶芽*2&nbsp;&nbsp;20%-红石粉*8&nbsp;&nbsp;20%-粒子水晶*3</p>
+                            </div>
+                            <p class="content-text"><strong>Boss名：</strong>天灾·突变晶核</p>
+                            <p class="content-text"><strong>别名：</strong>果冻一, 果一</p>
+                            <p class="content-text"><strong>简略介绍：</strong>AAA大型紫水晶簇批发商；人少打着有点费时间；箱子抽到红石粉是真难受</p>
+                            <p class="content-text"><strong>战利品：</strong>回响碎片，粒子水晶，星晶，粒子圣晶</p>
+                            <p class="content-text"><strong>进入场地限制：</strong>能够进入矿洞，等级52级及以上</p>
+                            <p class="content-text"><strong>经验：</strong>145点</p>
+                            <p class="content-text"><strong>特点：</strong>需要先破盾</p>
+                            <p class="content-text"><strong>主要技能：</strong></p>
+                            <ul class="skill-list">
+                                <li>粘连：持续粘连紧贴的玩家并持续造成伤害，直至玩家死亡/跑出锁定范围或技能结束</li>
+                                <li>增生：生成15只“不稳定的晶体”，靠近时会爆炸并造成约12心伤害（受抗性提升减免）</li>
+                                <li>晶化：释放后一段时间对所有不在红石收集器上的玩家施加缓慢、失明、虚弱、黑暗各5秒</li>
+                                <li>分裂：生成4只“大型晶核”</li>
+                            </ul>
+                            <p class="content-text"><strong>额外备注：</strong>打本体之前需要先对其使用“红石脉冲”削盾直至晶体外壳消失</p>
                         </div>
-                        <p class="content-text"><strong>Boss名：</strong>拟影·虚界幻兽</p>
-                        <p class="content-text"><strong>简略介绍：</strong>升四阶的必经之路；三阶最严厉的父亲</p>
-                        <p class="content-text"><strong>召唤物：</strong>幻尘之沙（每人一个）</p>
-                        <p class="content-text"><strong>战利品：</strong>纯净影晶（全场只有一个，随机分发给一个人）</p>
-                        <p class="content-text"><strong>进入场地限制：</strong>需要手持虚界指针低头踩压力板进入，每个人都应交一个幻尘之沙</p>
-                        <p class="content-text"><strong>经验：</strong>无</p>
-                        <p class="content-text"><strong>特点：</strong>幻兽每爆一个图腾就召唤一个拟态幻影，若是多人按人头算，总体难度非常困难（仅限三阶）</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
-                        <ul class="skill-list">
-                            <li>混沌空间：每个拟态幻影随机召唤虚空裂痕，触碰到虚空裂痕，造成超高帧伤，虚空裂痕会移动</li>
-                            <li>虚界潜移：每个拟态幻影开始移动，造成超高帧伤</li>
-                            <li>虚界幻影：每个拟态幻影召唤两个合金套僵尸，剑伤害较低，附魔有击退二消失诅咒一</li>
-                            <li>影袭：幻兽隐身并且速度增加，在此期间无视伤害</li>
-                        </ul>
                     </div>
-                    <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
+                    <h3 class="sub-region-title">晶海</h3>
+                    <div class="boss-sub-card">
+                        <p class="content-text content-muted">暂无数据，敬请期待。</p>
+                    </div>
                 </article>
             </section>
+
         </main>
     </div>
 
