@@ -185,13 +185,13 @@
 
                     <h3 class="sub-area-title">消歧义与部分名词</h3>
                     <p class="content-text">
-                        <strong>保护类 / 防御类</strong>：以减伤、回复、抗性为主，如黄金头骨、喀俄涅奏鸣曲。
+                        <strong>保护类 / 防御类</strong>：以减伤、回复、抗性为主，如黄金头骨、喀俄涅奏鸣曲。需放在背包从左往右第一格。
                     </p>
                     <p class="content-text">
-                        <strong>攻击类</strong>：以输出、增伤、标记为主，如至蓝水晶、幻尘•虚界回响。
+                        <strong>攻击类</strong>：以输出、增伤、标记为主，如至蓝水晶、幻尘•虚界回响。需放在背包从左往右第二格。
                     </p>
                     <p class="content-text">
-                        <strong>特殊类</strong>：功能独特或难以归类，如末影储能晶体、根源仿制核心。
+                        <strong>特殊类</strong>：功能独特或难以归类，如末影储能晶体、根源仿制核心。需放在背包从左往右第三格。
                     </p>
                     <p class="content-text">
                         <strong>「传说饰品」</strong>：稀有度标注，仅对<span class="content-highlight">铸造者本人</span>生效，请勿转交他人穿戴。
@@ -212,14 +212,34 @@
                 <article class="content-card">
                     <h2 class="content-title" id="protection-accessory">保护类饰品</h2>
                     <div class="item-grid item-grid-1">
+                        <!-- 猎人协会勋章 -->
+                        <div class="item-card">
+                            <img src="../picture/accessory/猎人协会勋章.png" alt="猎人协会勋章.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">猎人协会勋章（保护类饰品）</div>
+                                <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在接待员旁边的木桶获取</p>
+                                    <p><strong>需求材料：</strong>无</p>
+                                    <p><strong>特殊效果：</strong>保护类饰品，放在背包从左数第一格时激活；命数为0时获得暂时永久的生命恢复I效果。</p>
+                                    <p><strong>描述：</strong></p>
+                                </div>
+                            </div>
+                            <!-- 饰品子卡片：禁锻 -->
+                            <div class="item-sub-card item-sub-card-lock">
+                                <span>禁锻</span>
+                                <span>该饰品无法进行饰品锤锻</span>
+                            </div>
+                        </div>
+
                         <!-- 黄金头骨 -->
                         <div class="item-card">
                             <img src="../picture/forging/general-item/accessory/黄金头骨.png" alt="黄金头骨.png" loading="lazy">
                             <div class="item-info">
                                 <div class="item-name">黄金头骨（保护类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>骷髅头骨*15 + 金锭*20 + 粒子水晶*3</p>
-                                    <p><strong>特殊效果：</strong>保护类饰品，放在背包从右数第一格时激活；命数为0时获得暂时永久的生命恢复II效果。</p>
+                                    <p><strong>特殊效果：</strong>保护类饰品，放在背包从左数第一格时激活；命数为0时获得暂时永久的生命恢复II效果。</p>
                                 </div>
                             </div>
                             <!-- 饰品子卡片：+1 -->
@@ -282,6 +302,7 @@
                             <div class="item-info">
                                 <div class="item-name">岩火项链（保护类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>下界合金锭*2 + 黑曜石*8 + 哭泣的黑石*3 + 粒子水晶*18 + 地狱砖*64</p>
                                     <p><strong>特殊：</strong>保护类饰品，放在背包从左往右数第一格时激活。命数大于等于2时每10秒获得3秒抗火效果，如果此时自身燃烧层数低于6层则清除燃烧。命数小于等于1时获得暂时永久的抗性提升效果。</p>
                                 </div>
@@ -333,6 +354,7 @@
                             <div class="item-info">
                                 <div class="item-name">喀俄涅奏鸣曲（防御类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>树脂砖*67 + 雪莲*48 + 极寒凝晶*24 + 冰*24 + 火魂花*24 + 粒子水晶*24</p>
                                     <p><strong>效果：</strong>自身灼烧大于等于5层时每1秒获得一层坚冰。坚冰大于等于5层时每秒恢复3粒子，每5秒减少1秒支援系粒子冷却。无视坚冰到达10层时的缓慢效果。</p>
                                 </div>
@@ -384,6 +406,7 @@
                             <div class="item-info">
                                 <div class="item-name">远古潮汐本源（保护类传说饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>粒子水晶*128 + 远古海棱晶*12 + 红石粒子源*12 + 潮汐鱼鳞*14 + 大型紫水晶芽*30 + 晶渊石*50 + 侵蚀海绵*3 + 源晶*20 + 下界合金锭*5 + 粒子圣核*4 + 粒子圣晶*3</p>
                                     <p><strong>主动技能：</strong>当潮汐意志等于10层时蹲下低头释放，自身进入16秒潮汐守护状态并对半径7格敌人造成5秒硬控，同时潮汐意志归零，扣除10点粒子量并增加60秒特殊粒子冷却。</p>
                                     <p><strong>被动技能：</strong>每次受到攻击加一层潮汐意志并给予半径5格敌人2秒虚弱II；每次命数降低给予半径5格敌人4秒硬控和5秒虚弱III；叠层&gt;1时，6秒获得瞬间治疗I效果，潮汐意志上限10层，半径15无怪每秒减少一层。潮汐守护：获得伤害吸收IV，抗性提升III，生命恢复II，受到致命伤害立刻结束守护状态，恢复一定血量并获得2秒抗性II。</p>
@@ -426,12 +449,81 @@
                 <article class="content-card">
                     <h2 class="content-title" id="attack-accessory">攻击类饰品</h2>
                     <div class="item-grid item-grid-1">
+                        <!-- 赫菲斯托斯奏鸣曲 -->
+                        <div class="item-card">
+                            <img src="../picture/accessory/赫菲斯托斯奏鸣曲.png" alt="赫菲斯托斯奏鸣曲.png" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name">赫菲斯托斯奏鸣曲（攻击类饰品）</div>
+                                <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在商店购买获取</p>
+                                    <p><strong>购买材料：</strong>银币*20000</p>
+                                    <p><strong>特殊效果：</strong>攻击类饰品，放在背包从左数第二格时激活；每2秒对半径5格敌人造成3层燃烧</p>
+                                </div>
+                            </div>
+                            <!-- 饰品子卡片：+1 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-1">+1</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: 灵魂土*8 + 魔蛛眼*12 + 烈焰粉*20 + 煤炭*20 + 铜*8
+                                </div>
+                                <div class="sub-card-effect">每2秒对半径5格敌人造成3层---&gt;4层燃烧</div>
+                            </div>
+                            <!-- 饰品子卡片：+2 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-2">+2</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: MATERIAL_DATA
+                                </div>
+                                <div class="sub-card-effect">EFFECT_DATA</div>
+                            </div>
+                            <!-- 饰品子卡片：+3 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-3">+3</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: MATERIAL_DATA
+                                </div>
+                                <div class="sub-card-effect">EFFECT_DATA</div>
+                            </div>
+                            <!-- 饰品子卡片：+4 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-4">+4</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: MATERIAL_DATA
+                                </div>
+                                <div class="sub-card-effect">
+                                    每2秒对半径6格敌人造成4层燃烧<br>
+                                    半径7格燃烧敌人时获得速度I/1秒，半径4格有燃烧敌人时每秒获得2秒力量I
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!-- 至蓝水晶 -->
                         <div class="item-card">
                             <img src="../picture/forging/general-item/accessory/至蓝水晶.png" alt="至蓝水晶.png" loading="lazy">
                             <div class="item-info">
                                 <div class="item-name">至蓝水晶（攻击类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>粒子水晶*8 + 极寒凝晶*5</p>
                                     <p><strong>特殊效果：</strong>攻击类饰品：放在背包从左往右数第二格时激活。粒子量低于5级时每2秒额外回蓝8点，粒子量低于10级每2秒额外回蓝4点</p>
                                 </div>
@@ -449,6 +541,45 @@
                                 </div>
                                 <div class="sub-card-effect">EFFECT_DATA</div>
                             </div>
+                            <!-- 饰品子卡片：+2 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-2">+2</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: MATERIAL_DATA
+                                </div>
+                                <div class="sub-card-effect">EFFECT_DATA</div>
+                            </div>
+                            <!-- 饰品子卡片：+3 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-3">+3</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: MATERIAL_DATA
+                                </div>
+                                <div class="sub-card-effect">EFFECT_DATA</div>
+                            </div>
+                            <!-- 饰品子卡片：+4 -->
+                            <div class="item-sub-card">
+                                <div class="sub-card-header">
+                                    <span class="sub-card-plus plus-4">+4</span>
+                                    <span>需求锻造值xxx</span>
+                                    <span>重置数xx</span>
+                                    <span>选择数xx</span>
+                                </div>
+                                <div class="sub-card-material">
+                                    锤锻消耗材料: MATERIAL_DATA
+                                </div>
+                                <div class="sub-card-effect">粒子量小于5级回复13粒子/2秒&nbsp;&nbsp;粒子量小于10级回复9粒子/2秒&nbsp;&nbsp;粒子量小于15级回复5粒子/2秒</div>
+                            </div>
                         </div>
 
                         <!-- 幻尘·虚界回响 -->
@@ -457,6 +588,7 @@
                             <div class="item-info">
                                 <div class="item-name">幻尘•虚界回响（攻击类传说饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>地狱砖*128 + 净魂石英*48 + 熔痕藤蔓*10 + 粒子水晶*40 + 铜锭*40 + 粒子枯枝*16 + 大型水晶簇*12 + 粒子圣晶*3 + 纯净影晶*1 + 下界合金锭*3</p>
                                     <p><strong>主动技能：</strong>手持虚影残片[需额外合成]立刻向前加速5秒，对碰到的敌人附加印记。加速结束2秒后引爆造成10点带击退的近战伤害，附加一层虚影印记，同时虚影残片变为回响乐章，并在原地留下虚影回响（存在5秒）。5秒内玩家需给予怪物至少一个标记才可手持乐章低头传送回节点（r=10，离远后不会返回节点）。返回后对回响范围5格内的敌人造成40近战伤害，并附加一层虚影印记，自身获得10秒伤害吸收IV并获得3秒力量II和3秒速度II。</p>
                                     <p><strong>被动技能：</strong>每4秒为半径四格的怪物施加一层虚影标记，当怪物虚影层数=3时造成2秒硬控和10点伤害并立刻给予半径5格内最近的拥有虚界回响饰品的玩家3秒力量III，同时立刻重置怪物当前虚影层数。</p>
@@ -514,6 +646,7 @@
                             <div class="item-info">
                                 <div class="item-name">虚影残片（饰品主动技能触发物）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>金锭*128 + 硫火裂片*16 + 回响碎片*16 + 红石*60 + 粒子水晶*60 + 哭泣的黑曜石*5 + 烬灭符文石*10 + 粒子圣晶*3 + 纯净影晶*1 + 粒子圣核*1 + 末影结晶*3</p>
                                     <p><strong>介绍：</strong>幻尘•虚界回响主动技能触发道具。锻造该饰品后手持此物可以触发饰品技能。注：移动虚界位置会卸下此主动物品。在卸下后该物品会变成无命名恶魂之泪。再次将其放在对应位置可以重新装配。</p>
                                 </div>
@@ -531,6 +664,7 @@
                             <div class="item-info">
                                 <div class="item-name">凛冬噬渊之巢（攻击类传说饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>沉眠冰卵*3 + 光羽百合*30 + 晶化牡丹*60 + 沉重核心*2 + 粒子水晶*128 + 粒子圣核*4 + 根源躯块*80 + 冰*40 + 坚韧蛛网*60 + 合金锭*2 + 星晶*300 + 源晶*10</p>
                                     <p><strong>主动技能：</strong>粒子达到22级且特殊粒子冷却归零后手持浮冰释放。技能消耗12级粒子量，增加20秒特殊粒子冷却、10秒支援粒子冷却与5秒末影粒子冷却。释放后自身获得20秒伤害吸收V、抗性提升II和速度II，同时使最近的一个敌人进入凛冰状态。凛冰状态持续1秒，期间敌人无法移动和攻击，同时持续吸收周围全部玩家的坚冰层数。凛冰结束后根据坚冰层数0/5/10/15/20时，该实体受到30/60/95/140/185点打击伤害并获得2秒/3秒/5秒/8秒缓慢V。</p>
                                     <p><strong>被动技能：</strong>每5秒时周围最近一个带有坚冰的敌人受到5点穿甲伤害与2秒缓慢V，同时使其附加2层坚冰。持续使周围10格内敌人坚冰不会减少同时无法获得坚冰抗性。</p>
@@ -570,6 +704,7 @@
                             <div class="item-info">
                                 <div class="item-name">神圣冰脉（特殊类传说饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>粒子圣晶*3 + 粒子水晶*80 + 铜锭*80 + 金锭*80 + 极寒凝晶*60 + 钻石*24 + 雪莲*80</p>
                                     <p><strong>主动技能：</strong>冰脉冲击（手持钻石剑/斧抬头触发），对半径5格敌人造成3秒缓慢III和10点伤害，自身获得10秒速度II及5层坚冰效果。特殊粒子冷却3秒，粒子消耗5级，主动需10级以上粒子释放。</p>
                                     <p><strong>被动：</strong>每15秒获得持续15秒伤害吸收I；粒子量位于0~15级时每秒额外回蓝2点；对半径5格敌人每秒叠加1点冰冻值，到达5后减速并造成7点伤害。</p>
@@ -645,6 +780,7 @@
                             <div class="item-info">
                                 <div class="item-name">根源仿制核心（特殊类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>根源躯块*60 + 再生根源*14 + 魔蛛眼*16 + 烈焰棒*10 + 粒子水晶*16 + 地狱砖*120 + 永恒枯骨*16</p>
                                     <p><strong>主动-根源爆发：</strong>携带时低头潜行强制扣除自身20血，获得10秒生命恢复III、抗性II、速度I和10秒力量II（随机独立CD 0~45秒）。</p>
                                     <p><strong>被动-根源寄生：</strong>携带时每5秒对周围怪物造成5伤害（无击退），同时自身获得3秒生命恢复II效果。</p>
@@ -665,6 +801,7 @@
                             <div class="item-info">
                                 <div class="item-name">轻灵之眼（特殊类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>坚韧蛛网*6 + 粒子水晶*3 + 铜锭*20 + 青竹笋*20</p>
                                     <p><strong>特殊效果：</strong>装配后获得速度II效果，同时粒子量暂时归零并暂时永久虚弱255。</p>
                                 </div>
@@ -729,6 +866,7 @@
                             <div class="item-info">
                                 <div class="item-name">末影储能晶体（特殊类饰品）</div>
                                 <div class="item-meta">
+                                    <p><strong>饰品来源：</strong>在锻造空间锻造获取</p>
                                     <p><strong>锻造材料：</strong><br>爆裂紫颂果*128 + 龙息*128 + 粒子水晶*40 + 红石*60 + 曲影孢子*32 + 大型水晶簇*10 + 末影结晶*1</p>
                                     <p><strong>主动技能-虚能回溯：</strong>手持龙息后分层记录玩家当前粒子量。11级到15级为第一层，16到20级第二层，21到25级为第三层，26级往上为第四层。记录层数后10秒触发经验回溯。第/一/二/三/四层回溯效果：10秒后粒子量低于15级将立刻回复到15级 / 低于20级将回复到20级 / 低于25级将回复到25级 / 低于30级立刻恢复到30级。回溯后增加若干秒末影粒子效果。</p>
                                     <p><strong>被动技能：</strong>每7秒额外减少1秒末影粒子冷却。</p>
