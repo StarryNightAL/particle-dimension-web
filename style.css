@@ -291,6 +291,72 @@ body {
     line-height: 1.5;
 }
 
+/* ===== 折叠框（小标题样式，[展开]/[折叠]） ===== */
+.fold-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+.fold-box {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+}
+/* 标题行 —— 与 .sub-area-title 同款 */
+.fold-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0 2px 6px;
+    border-left: 2px solid var(--accent-cyan);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #c0c0d8;
+    transition: color var(--transition-smooth);
+}
+.fold-header::-webkit-details-marker { display: none; }
+.fold-header:hover { color: #fff; }
+.fold-title { flex: 0 0 auto; }
+/* [展开] / [折叠] —— 字号、颜色均可单独控制 */
+.fold-toggle {
+    font-family: inherit;   /* 字体跟随标题 */
+    font-weight: inherit;   /* 字重跟随标题，单独调就改成 400 */
+    font-size: 0.78rem;     /* 单独控制字号 */
+    letter-spacing: inherit;
+    color: var(--fold-toggle-color, #5eeadcd2);
+    white-space: nowrap;
+}
+.fold-toggle::after { content: '[展开]'; }
+.fold-box[open] .fold-toggle::after { content: '[折叠]'; }
+/* 内容区 */
+.fold-body {
+    margin: 8px 0 2px 8px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: #c0c0d4;
+    line-height: 1.75;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    animation: foldIn 0.25s ease;
+}
+.fold-body p { margin-bottom: 6px; }
+.fold-body p:last-child { margin-bottom: 0; }
+.fold-body strong { color: #d8d8e8; }
+@keyframes foldIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* 特别注意：仅左侧竖线换金色，其余同款 */
+.fold-box.fold-warn .fold-header {
+    border-left-color: var(--accent-gold);
+}
+
 /* 响应式（已禁用：强制以 PC 端布局显示，侧边栏不再折叠）
 @media (max-width: 900px) {
     .app-container {
