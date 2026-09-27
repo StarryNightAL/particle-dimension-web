@@ -12,10 +12,37 @@
             font-size: 0.95rem !important;
             color: #e0e0e8 !important;
         }
+        ul.skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
         .skill-list li {
+            position: relative;
+            padding-left: 1.05em;
             font-size: 0.95rem;
             color: #e0e0e8;
             margin-bottom: 6px;
+        }
+        .skill-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.56em;
+            width: 0.38em;
+            height: 0.38em;
+            border-radius: 50%;
+            background: currentColor;
+        }
+        .skill-list .skill-sub-list {
+            list-style: none;
+            padding-left: 0.7em;
+            margin-top: 3px;
+        }
+        .skill-list .skill-sub-list > li {
+            padding-left: 0;
+        }
+        .skill-list .skill-sub-list > li::before {
+            content: none;
         }
         .credit-text {
             font-size: 0.75rem;
@@ -110,7 +137,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>五级</p>
                         <p class="content-text"><strong>经验：</strong>30点</p>
                         <p class="content-text"><strong>特点：</strong>拥有二阶段，是目前为止为数不多击杀后可爆出符文的boss（截止目前2月22日）</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>振地：赋予一二秒漂浮</li>
                             <li>重击：天灾伤害乘1.5倍（正常跳劈伤害）并赋予四五秒缓慢二</li>
@@ -137,7 +164,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>击败洞穴外的精英骷髅并达到10级</p>
                         <p class="content-text"><strong>经验：</strong>50点</p>
                         <p class="content-text"><strong>特点：</strong>几乎所有技能都是给天灾力量，所以相对新手来说，洞穴骷髅的伤害较高</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>钢铁重斧·斧击：给天灾几秒力量，同时给予你二三秒缓慢三</li>
                             <li>破风之弓·弓魂召唤：召唤四只骷髅（会内斗）</li>
@@ -164,10 +191,10 @@
                         <p class="content-text"><strong>简略介绍：</strong>升四阶的必经之路；三阶最严厉的父亲</p>
                         <p class="content-text"><strong>召唤物：</strong>幻尘之沙（每人一个）</p>
                         <p class="content-text"><strong>战利品：</strong>纯净影晶（全场只有一个，随机分发给一个人）</p>
-                        <p class="content-text"><strong>进入场地限制：</strong>需要手持虚界指针低头踩压力板进入，每个人都应交一个幻尘之沙</p>
+                        <p class="content-text"><strong>进入场地限制：</strong>需要手持虚界指针低头踩压力板进入，每人交一个幻尘之沙，无人正在挑战此BOSS</p>
                         <p class="content-text"><strong>经验：</strong>无</p>
                         <p class="content-text"><strong>特点：</strong>幻兽每爆一个图腾就召唤一个拟态幻影，若是多人按人头算，总体难度非常困难（仅限三阶）</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>混沌空间：每个拟态幻影随机召唤虚空裂痕，触碰到虚空裂痕，造成超高帧伤，虚空裂痕会移动</li>
                             <li>虚界潜移：每个拟态幻影开始移动，造成超高帧伤</li>
@@ -194,7 +221,7 @@
                             <p class="content-text"><strong>进入场地限制：</strong>击败第一、二层的怪，本游戏日未进入过试炼塔，完成石山试炼前段部分</p>
                             <p class="content-text"><strong>经验：</strong>无</p>
                             <p class="content-text"><strong>特点：</strong>准确来说不是boss,而是试炼塔首领,因为没有boss血条,boss有二阶段,为激怒状态,其头盔由金头盔变成钻石头盔。有普通、困难、噩梦三个难度</p>
-                            <p class="content-text"><strong>主要技能：</strong></p>
+                            <p class="content-text"><strong>主动技能：</strong></p>
                             <ul class="skill-list">
                                 <li>蓄力重斩：Boss爆炸造成范围伤害</li>
                                 <li>闪现突刺：Boss向前突刺一段距离,并传送到玩家身边</li>
@@ -224,7 +251,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>达到15级，并获得雪山之晶</p>
                         <p class="content-text"><strong>经验：</strong>80点</p>
                         <p class="content-text"><strong>特点：</strong>冻雪伤害巨高，召唤的小怪都是无敌的，而且数量巨多</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>极寒侵袭：降低一等级粒子量，并且极寒等级上升1级，极寒等级上升到6级时，全场受到压制后的缓慢二，极寒等级上升到10级时，极寒已至，全场获得凋零Buff，随后极寒等级重置回3级</li>
                             <li>雪骨回魂：召唤一堆无敌的骷髅小怪（四个小包各召唤三个，Boss周围召唤三个）</li>
@@ -251,7 +278,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>无</p>
                         <p class="content-text"><strong>经验：</strong>无</p>
                         <p class="content-text"><strong>特点：</strong>天灾的金头盔炸的时候获得3秒无敌，并造成伤害两次，无敌的时候，金头盔仍然消耗耐久，所以不要在无敌的时候攻击天灾</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>粒子附加：获得一段时间的力量</li>
                             <li>骨链拉扯：把玩家向天灾拉去</li>
@@ -259,6 +286,10 @@
                             <li>粒子渗透：对周围玩家造成伤害并造成减速</li>
                             <li>枯骨深渊：对周围所有玩家造成缓慢二失明效果</li>
                             <li>枯骨永夜：将天灾附近的场地地板变成灵魂沙，场地有多少名玩家就会召唤玩家数双倍的骷髅；骷髅会随时间掉血</li>
+                        </ul>
+                        <p class="content-text"><strong>被动技能：</strong></p>
+                        <ul class="skill-list">
+                            <li>{未命名}：每次金头盔碎裂时天灾获得3秒无敌并对周围玩家造成两次伤害</li>
                         </ul>
                     </div>
                     <p class="credit-text">此卡片除蓝框部分外由玩家狐望江提供</p>
@@ -280,7 +311,7 @@
                             <p class="content-text"><strong>进入场地限制：</strong>15级并击败前四层怪物</p>
                             <p class="content-text"><strong>经验：</strong>无</p>
                             <p class="content-text"><strong>特点：</strong>（原版机制）生成完成时爆炸并造成49心伤害但不召唤凋灵骷髅，半血时爆炸造成49.5心伤害并召唤凋灵骷髅</p>
-                            <p class="content-text"><strong>主要技能：</strong></p>
+                            <p class="content-text"><strong>主动技能：</strong></p>
                             <ul class="skill-list">
                                 <li>凋灵之首：造成爆炸并附加凋零效果</li>
                                 <li>冲刺：向前突刺</li>
@@ -310,7 +341,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>20级</p>
                         <p class="content-text"><strong>经验：</strong>120点</p>
                         <p class="content-text"><strong>特点：</strong>伤害巨高（相对新手），速度巨快（狂暴时），有二阶段，一阶段一堆小弟根本分不清谁是本体（其实还挺好认的）</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>魔蛛吐丝：给予你缓慢五</li>
                             <li>粒子振波：造成两次伤害</li>
@@ -345,7 +376,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>等级达到30级，完成主线2-9</p>
                         <p class="content-text"><strong>经验：</strong>130点</p>
                         <p class="content-text"><strong>特点：</strong>移形很烦，决斗也很烦，粒子量总是上不去</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>移形：移动到紫色圈子内，否则造成巨量伤害，基本上就是炸命</li>
                             <li>移形爆发：移行结束后释放，造成巨量伤害</li>
@@ -375,7 +406,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>37级</p>
                         <p class="content-text"><strong>经验：</strong>100点</p>
                         <p class="content-text"><strong>特点：</strong>遇见boss之前需要击杀大量僵尸和骷髅</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>粒子爆发：无法躲避，靠的越近伤害越高</li>
                             <li>拟影往昔：召唤小怪，用粒子爆发能刚好炸掉</li>
@@ -409,7 +440,7 @@
                         <p class="content-text"><strong>进入场地限制：</strong>完成噩梦回响前置任务</p>
                         <p class="content-text"><strong>经验：</strong>无</p>
                         <p class="content-text"><strong>特点：</strong>召唤技能比较恶心</p>
-                        <p class="content-text"><strong>主要技能：</strong></p>
+                        <p class="content-text"><strong>主动技能：</strong></p>
                         <ul class="skill-list">
                             <li>迷幻现实：召唤大量骷髅</li>
                             <li>无由审判：召唤三次弱化审判</li>
@@ -440,7 +471,7 @@
                             <p class="content-text"><strong>进入场地限制：</strong>有雷暴定位指针，无人正在攻打此BOSS</p>
                             <p class="content-text"><strong>经验：</strong>160点</p>
                             <p class="content-text"><strong>特点：</strong>技能较有挑战性，每爆一次图腾在苦力怕位置爆炸并造成42.5心伤害</p>
-                            <p class="content-text"><strong>主要技能：</strong></p>
+                            <p class="content-text"><strong>主动技能：</strong></p>
                             <ul class="skill-list">
                                 <li>高压雷区：场上随机两个位置生成电柱并与苦力怕连接，碰到连接线的玩家会受到单次8心的伤害，电柱会击退周围的玩家</li>
                                 <li>硝化火链：锁定一名玩家生成火链（火链生成后不会移动），在0.5秒后激活火链，对火链沿途所有玩家造成伤害并施加5层灼烧</li>
@@ -453,7 +484,7 @@
 
                     <!-- 火山能源中枢核心 -->
                     <div class="boss-sub-card">
-                        <h3 class="boss-name" style="color: #FF5555;">火山能源中枢核心</h3>
+                        <h3 class="boss-name" style="color: #FF5555;">火山能源中枢核心<span style="color: gray;">（火山能源中枢副本BOSS）</span></h3>
                         <div class="boss-detail">
                             <div class="boss-summary">
                                 <p><strong>坐标：</strong>X: 2542 / Y: 125 / Z: 1497</p>
@@ -484,21 +515,24 @@
                             </ul>
                             <p class="content-text"><strong>其它效果：</strong></p>
                             <ul class="skill-list">
-                                <li>热量：此效果作为中枢BOSS效果</li>
-                                <li>「热量」处于不同阶段时获得不同效果</li>
-                                <li>100+：使全体每获得灼烧，使全体玩家获得凋零、缓慢、虚弱，使全体怪物获得力量、速度、抗性提升，使本体获得80%免伤</li>
-                                <li>80~99：使全体获得灼烧，使全体玩家获得缓慢、虚弱，使全体怪物获得力量、速度、抗性提升，使本体获得50%免伤</li>
-                                <li>60~79：使全体获得灼烧，使全体玩家获得缓慢、使全体怪物获得力量、抗性提升，使本体获得20%免伤</li>
-                                <li>40~59：使全体获得燃烧，使全体获得缓慢，使全体怪物获得力量</li>
-                                <li>20~39：使全体怪物获得力量</li>
-                                <li>0~19：无效果</li>
-                                <li>进入战斗时boss初始会拥有50「热量」</li>
+                                <li>热量：此效果作为中枢BOSS效果
+                                    <ul class="skill-sub-list">
+                                        <li>「热量」处于不同阶段时获得不同效果</li>
+                                        <li>100+：使全体每获得灼烧，使全体玩家获得凋零、缓慢、虚弱，使全体怪物获得力量、速度、抗性提升，使本体获得80%免伤</li>
+                                        <li>80~99：使全体获得灼烧，使全体玩家获得缓慢、虚弱，使全体怪物获得力量、速度、抗性提升，使本体获得50%免伤</li>
+                                        <li>60~79：使全体获得灼烧，使全体玩家获得缓慢、使全体怪物获得力量、抗性提升，使本体获得20%免伤</li>
+                                        <li>40~59：使全体获得燃烧，使全体获得缓慢，使全体怪物获得力量</li>
+                                        <li>20~39：使全体怪物获得力量</li>
+                                        <li>0~19：无效果</li>
+                                        <li>进入战斗时boss初始会拥有50「热量」</li>
+                                    </ul>
+                                </li>
                                 <li>灼烧：每秒造成伤害，层数达到10层时全部灼烧转为爆燃</li>
                                 <li>爆燃：按层数在短时间内造成大量伤害</li>
                                 <li>坚冰：每层坚冰可抵消一层灼烧或爆燃</li>
                             </ul>
                         </div>
-                        <p class="credit-text">此卡片除蓝框部分外由玩家[管理员]ALuNaa提供，由星夜StarN修改</p>
+                        <p class="credit-text">此卡片除蓝框部分外由[管理员]ALuNaa提供，由星夜StarN修改</p>
                     </div>
                 </article>
             </section>
@@ -524,7 +558,7 @@
                             <p class="content-text"><strong>进入场地限制：</strong>能够进入矿洞，等级43级及以上</p>
                             <p class="content-text"><strong>经验：</strong>145点</p>
                             <p class="content-text"><strong>特点：</strong>需要先破盾</p>
-                            <p class="content-text"><strong>主要技能：</strong></p>
+                            <p class="content-text"><strong>主动技能：</strong></p>
                             <ul class="skill-list">
                                 <li>粘连：持续粘连紧贴的玩家并持续造成伤害，直至玩家死亡/跑出锁定范围或技能结束</li>
                                 <li>增生：生成15只“不稳定的晶体”，靠近时会爆炸并造成约12心伤害（受抗性提升减免）</li>
@@ -556,15 +590,19 @@
                             </div>
                             <p class="content-text"><strong>Boss名：</strong>尘封·烬魇·熵蚀者</p>
                             <p class="content-text"><strong>简略介绍：</strong>三个阶段，虚界饰品必经之路，藤蔓的唯一产出BOSS</p>
-                            <p class="content-text"><strong>战利品：</strong>余烬之匙*4</p>
+                            <p class="content-text"><strong>战利品：</strong>余烬之匙*4 (此物品可看作箱子，需要在地狱主基地开启)</p>
                             <p class="content-text"><strong>进入场地限制：</strong>能够进入地狱主基地，没有人正在挑战此BOSS，身上有入场材料</p>
                             <p class="content-text"><strong>经验：</strong>无</p>
                             <p class="content-text"><strong>特点：</strong>需要清掉四波小怪后进入二阶段，再将坐骑打死后进入三阶段</p>
-                            <p class="content-text"><strong>主要技能：</strong></p>
+                            <p class="content-text"><strong>主动技能：</strong></p>
                             <ul class="skill-list">
-                                <li>深渊熔岩：技能释放时陆续响起五次钟声，第五次钟声响起时将所有未站在镶金黑石上的所有玩家传送到场地中央的岩浆中并硬控3秒，被硬控时每秒扣2心</li>
+                                <li>深渊熔岩：技能释放时陆续响起五次钟声，第五次钟声响起时将所有未站在镶金黑石上的所有玩家传送到场地中央的岩浆中并硬控4秒</li>
                                 <li>熵流溃爆：对BOSS周围的玩家造成约6心伤害并附加18层侵蚀，对不在周围的玩家附加12层侵蚀</li>
                                 <li>崩塌岩块：在所有玩家头上召唤一个较大火焰弹竖直砸下，被砸到的玩家直接扣一命</li>
+                            </ul>
+                            <p class="content-text"><strong>被动技能：</strong></p>
+                            <ul class="skill-list">
+                                <li>{未命名}：场地内处于岩浆中的玩家在受到原版岩浆伤害的基础上额外每秒扣2心</li>
                             </ul>
                             <p class="content-text"><strong>其它效果：</strong></p>
                             <ul class="skill-list">
