@@ -206,6 +206,81 @@ body {
     gap: 12px;
 }
 
+/* ============================================================
+   栅格布局：每行显示数量统一控制
+   调整各规则中的 repeat(N, 1fr) 即可改变对应列表每行显示的个数
+   （从各页面内联 <style> 与 JS 注入样式中抽取汇总）
+   ============================================================ */
+
+/* 物品 / 道具 / 饰品卡片：默认每行 4 个，可加 -1 / -2 / -3 覆盖 */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+/* 一行一个 */
+.item-grid-1 { grid-template-columns: repeat(1, 1fr); }
+/* 一行两个 */
+.item-grid-2 { grid-template-columns: repeat(2, 1fr); }
+/* 一行三个 */
+.item-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* 玩家卡片：每行 3 个 */
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* 工具调用页表单：每行 2 列 */
+.tool-app {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 16px;
+    align-items: start;
+}
+.tool-app h1,
+.tool-app .sub,
+.tool-app .row,
+.tool-app .btn-calc,
+.tool-app .result-box,
+.tool-app .note {
+    grid-column: 1 / -1;
+}
+
+/* 开箱模拟器：左右 2 栏 */
+.crate-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+/* 锻造模拟器：模板 / 数值 / 区域 / 目标 各 3 列 */
+.forge-app .forge-templates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.forge-app .forge-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.forge-app .forge-zones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    font-size: 0.78rem;
+    color: #fca5a5;
+}
+.forge-app .forge-targets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
 .point-card {
     background: rgba(20,20,40,0.6);
     border: 1px solid rgba(255,255,255,0.07);

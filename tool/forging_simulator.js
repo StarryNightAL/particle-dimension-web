@@ -34,11 +34,7 @@ export const particleForgeTool = {
                 padding-left: 8px;
                 border-left: 3px solid var(--accent-cyan, #5eeadb);
             }
-            .forge-app .forge-templates {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-            }
+            /* .forge-templates 栅格布局已抽取到 style.css 统一管理 */
             .forge-app .forge-tpl {
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(255, 255, 255, 0.12);
@@ -61,11 +57,7 @@ export const particleForgeTool = {
                 color: var(--text-secondary, #b0b0c8);
                 margin-top: 4px;
             }
-            .forge-app .forge-values {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 12px;
-            }
+            /* .forge-values 栅格布局已抽取到 style.css 统一管理 */
             .forge-app .forge-value {
                 background: rgba(10, 10, 20, 0.6);
                 border: 1px solid rgba(255, 255, 255, 0.1);
@@ -94,13 +86,7 @@ export const particleForgeTool = {
             .forge-app .forge-status.ok { background: rgba(34, 197, 94, 0.15); color: #86efac; }
             .forge-app .forge-status.warning { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
             .forge-app .forge-status.error { background: rgba(239, 68, 68, 0.18); color: #f87171; }
-            .forge-app .forge-zones {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
-                font-size: 0.78rem;
-                color: #fca5a5;
-            }
+            /* .forge-zones 栅格布局已抽取到 style.css 统一管理 */
             .forge-app .forge-zone-warn {
                 margin-top: 8px;
                 font-size: 0.78rem;
@@ -179,12 +165,7 @@ export const particleForgeTool = {
                 font-weight: 700;
                 color: #86efac;
             }
-            .forge-app .forge-targets {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-                margin-bottom: 10px;
-            }
+            /* .forge-targets 栅格布局已抽取到 style.css 统一管理 */
             .forge-app .forge-targets label {
                 display: flex;
                 flex-direction: column;

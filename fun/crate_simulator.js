@@ -14,12 +14,7 @@ export const crateSimulator = {
                 font-family: var(--font-main, 'Segoe UI', Tahoma, sans-serif);
                 color: #e0e0f0;
             }
-            .crate-wrap {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-                align-items: start;
-            }
+            /* 栅格布局（display / grid-template-columns / gap）已抽取到 style.css 统一管理 */
             .crate-main {
                 display: flex;
                 flex-direction: column;

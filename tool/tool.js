@@ -10,22 +10,11 @@ import { levelExpTool } from './level_exp_calculator.js';
 // ---------- 1. 注入工具专属样式（作用于所有 .tool-app 卡片，主题与 Wiki 保持一致） ----------
 const style = document.createElement('style');
 style.textContent = `
+    /* 栅格布局（display / grid-template-columns / gap / grid-column）已抽取到 style.css 统一管理 */
     .tool-app {
         font-family: var(--font-main, 'Segoe UI', Tahoma, sans-serif);
         color: #e0e0f0;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px 16px;
-        align-items: start;
-    }
-    .tool-app h1,
-    .tool-app .sub,
-    .tool-app .row,
-    .tool-app .btn-calc,
-    .tool-app .result-box,
-    .tool-app .note {
-        grid-column: 1 / -1;
     }
     .tool-app h1 {
         text-align: center;
