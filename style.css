@@ -351,6 +351,17 @@ body {
 .boss-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
 .boss-info-item { font-size: 0.73rem; color: var(--text-secondary); }
 .boss-info-full { grid-column: span 2; font-size: 0.73rem; color: var(--text-secondary); }
+/* BOSS 区域内的子区域标题（如「矿洞」「晶海」） */
+.sub-region-title {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: #c0c0d8;
+    margin: 18px 0 10px;
+    padding-left: 8px;
+    border-left: 2px solid var(--accent-gold);
+}
 
 /* 矿物点位坐标列表 */
 .point-card .ore-list {
