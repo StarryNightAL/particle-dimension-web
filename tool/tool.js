@@ -1,6 +1,7 @@
 // ============================================================
-// 文件名: toolcall.js
-// 说明: 动态创建整个 UI，并调用 melee_damage_calculator.js 进行计算
+// 文件名: tool.js
+// 说明: 工具页渲染器：按 TOOLS 注册表为每个工具动态创建卡片并渲染
+//       （自定义 render 优先，否则按 fields 泛化渲染）
 // ============================================================
 
 import { meleeDamageTool } from './melee_damage_calculator.js';

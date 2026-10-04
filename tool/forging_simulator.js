@@ -1,5 +1,5 @@
 // ============================================================
-// 文件名: particle_forge_calculator.js
+// 文件名: forging_simulator.js
 // 说明: 粒子锻造模拟器（自定义渲染工具）
 //       通过 particleForgeTool 定义导出，提供 render(container) 构建完整 UI。
 //       样式采用轻量局部注入，融入 Wiki 卡片主题，不依赖原 HTML 的深色主题。
@@ -86,6 +86,13 @@ export const particleForgeTool = {
             .forge-app .forge-status.ok { background: rgba(34, 197, 94, 0.15); color: #86efac; }
             .forge-app .forge-status.warning { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
             .forge-app .forge-status.error { background: rgba(239, 68, 68, 0.18); color: #f87171; }
+            /* 实战模式锻造失败：同色系红底 + 高亮加粗红字，突出可见 */
+            .forge-app .forge-status.failed {
+                background: rgba(239, 68, 68, 0.32);
+                color: #ff4d4d;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+            }
             /* .forge-zones 栅格布局已抽取到 style.css 统一管理 */
             .forge-app .forge-zone-warn {
                 margin-top: 8px;
@@ -441,7 +448,10 @@ export const particleForgeTool = {
                         <button class="forge-btn" id="forge-reduce-stability">降低稳定度</button>
                     </div>
 
-                    <button class="forge-btn forge-btn-reset" id="forge-reset">重置模拟</button>
+                    <div class="forge-row" style="margin-bottom:0">
+                        <button class="forge-btn forge-btn-reset" id="forge-reset">重置模拟</button>
+                        <label class="forge-check"><input type="checkbox" id="forge-battle-mode"> 启用实战模式</label>
+                    </div>
                 </div>
 
                 <div class="forge-section">
@@ -464,8 +474,6 @@ export const particleForgeTool = {
                     <div class="forge-search-stats" id="forge-search-stats"></div>
                     <div class="forge-result" id="forge-result" style="display:none"></div>
                     <div id="forge-search-status"></div>
-                </div>
-
                 </div>
             </div>
             <div class="forge-side">
@@ -585,6 +593,9 @@ export const particleForgeTool = {
         };
 
         let selectedFunnel = 1;
+        let battleMode = false;   // 实战模式：无效数值不再阻挡，直接判定锻造失败
+        let isFailing = false;    // 失败提示停留中（防止重复触发）
+        let failTimer = null;     // 失败提示后的延迟重置定时器
         let isSearching = false;
         let searchTimeout = null;
 
@@ -601,6 +612,7 @@ export const particleForgeTool = {
         const addBtn = container.querySelector('#forge-add');
         const reduceBtns = container.querySelectorAll('#forge-reduce-content, #forge-reduce-chaos, #forge-reduce-stability');
         const resetBtn = container.querySelector('#forge-reset');
+        const battleModeCheckbox = container.querySelector('#forge-battle-mode');
         const targetContent = container.querySelector('#forge-target-content');
         const targetChaos = container.querySelector('#forge-target-chaos');
         const targetStability = container.querySelector('#forge-target-stability');
@@ -737,6 +749,11 @@ export const particleForgeTool = {
             else if (effect.type === 'chaos') state.chaos += change;
             else if (effect.type === 'stability') state.stability += change;
             if (!isValidState()) {
+                if (battleMode) {
+                    // 实战模式：不阻挡，直接判定锻造失败
+                    failForge();
+                    return;
+                }
                 state = oldState;
                 addLog(`添加${material.name}到漏斗${selectedFunnel}失败: 将导致无效状态`, "error");
                 alert("添加失败: 操作后数值将进入禁区或超出边界！");
@@ -761,6 +778,11 @@ export const particleForgeTool = {
                 else if (type === 'stability') state.stability -= 1;
                 state.reduceChances -= 1;
                 if (!isValidState()) {
+                    if (battleMode) {
+                        // 实战模式：不阻挡，直接判定锻造失败
+                        failForge();
+                        return;
+                    }
                     state = oldState;
                     addLog(`降低${type}失败: 将导致无效状态`, "error");
                     alert("降低失败: 操作后数值将进入禁区或超出边界！");
@@ -772,7 +794,15 @@ export const particleForgeTool = {
             });
         });
 
-        resetBtn.addEventListener('click', () => {
+        // 以当前激活模板重置模拟
+        function resetSimulation() {
+            // 取消尚未执行的失败重置，避免重复重置
+            if (failTimer) {
+                clearTimeout(failTimer);
+                failTimer = null;
+            }
+            isFailing = false;
+
             const activeTemplate = container.querySelector('.forge-tpl.active').dataset.template;
             const tpl = templates[activeTemplate];
             state.content = tpl.content;
@@ -781,6 +811,31 @@ export const particleForgeTool = {
             state.reduceChances = 7;
             updateDisplay();
             addLog(`模拟已重置 | 当前模板: ${tpl.name} (含量=${tpl.content}, 混乱度=${tpl.chaos}, 稳定度=${tpl.stability})`, "info");
+        }
+
+        const FAIL_HOLD_MS = 1200;   // 失败提示停留时长（ms）
+
+        // 锻造失败：状态条先显示红色失败提示 → 记录日志 → 弹窗提示 → 停留片刻后以当前模板重置
+        function failForge() {
+            if (isFailing) return;   // 停留期间忽略重复触发
+            isFailing = true;
+
+            statusEl.textContent = "无效数值，锻造失败";
+            statusEl.className = "forge-status failed";
+
+            addLog("锻造已失败：触碰禁数或数值超出范围", "error");
+
+            alert("无效数值，锻造失败");
+
+            failTimer = setTimeout(resetSimulation, FAIL_HOLD_MS);
+        }
+
+        resetBtn.addEventListener('click', resetSimulation);
+
+        // 实战模式开关
+        battleModeCheckbox.addEventListener('change', () => {
+            battleMode = battleModeCheckbox.checked;
+            addLog(battleMode ? "已启用实战模式，无效数值将直接导致锻造失败" : "已关闭实战模式", "info");
         });
 
         // 最终结算：根据当前数值查产物表
