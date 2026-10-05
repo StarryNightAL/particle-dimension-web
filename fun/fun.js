@@ -18,26 +18,7 @@ style.textContent = `
         color: #e0e0f0;
         width: 100%;
     }
-    #fun-apps .sub-nav {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-    #fun-apps .sub-nav-link {
-        color: var(--text-secondary);
-        text-decoration: none;
-        padding: 4px 8px;
-        border-radius: 6px;
-        transition: all 0.3s;
-    }
-    #fun-apps .sub-nav-link:hover {
-        color: #fff;
-        background: rgba(94, 234, 219, 0.1);
-    }
-    #fun-apps .sub-nav-separator {
-        color: rgba(180, 180, 200, 0.3);
-    }
+    /* .sub-nav / .sub-nav-link / .sub-nav-separator 已由 style.css 全局提供 */
     #fun-apps .fun-card {
         margin-bottom: 24px;
     }

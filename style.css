@@ -178,6 +178,12 @@ body {
 }
 .content-text:last-child { margin-bottom: 0; }
 
+/* BOSS 页正文：字号与颜色略大（原先为 boss.html 内联 !important 覆盖） */
+.boss-page .content-text {
+    font-size: 0.95rem;
+    color: #e0e0e8;
+}
+
 .boss-intro {
     font-size: 0.95rem;
     color: #c8c8dc;
@@ -281,11 +287,110 @@ body {
     margin-bottom: 10px;
 }
 
+/* ============================================================
+   物品 / 道具 / 饰品卡片（item.html / forging.html / accessory.html 共用）
+   饰品卡片换行布局见各页的内联覆盖（.item-card { flex-wrap; align-items }）
+   ============================================================ */
+.item-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(20, 20, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 14px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all 0.3s;
+}
+.item-card:hover {
+    border-color: rgba(94, 234, 219, 0.3);
+    box-shadow: 0 3px 22px rgba(0, 0, 0, 0.35), 0 0 32px rgba(94, 234, 219, 0.1);
+    transform: translateY(-2px);
+    background: rgba(24, 24, 48, 0.7);
+}
+.item-card img {
+    width: 128px;
+    height: 128px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px;
+    flex-shrink: 0;
+}
+.item-info {
+    flex: 1;
+}
+.item-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e0e0f0;
+    margin-bottom: 4px;
+}
+.item-meta {
+    font-size: 0.82rem;
+    color: #b0b0c8;
+    line-height: 1.6;
+}
+.item-meta p {
+    margin-bottom: 2px;
+}
+.item-meta strong {
+    color: #d0d0e0;
+}
+
+/* ============================================================
+   页面内子导航（链接式 / 按钮式）
+   item / point / accessory / forging / fun 共用
+   按钮尺寸可用 --subnav-* 变量微调，间距用 --subnav-gap
+   ============================================================ */
+.sub-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--subnav-gap, 24px);
+    margin-bottom: 20px;
+}
+/* 链接式（item.html / point.html / fun） */
+.sub-nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+.sub-nav-link:hover {
+    color: #fff;
+    background: rgba(94, 234, 219, 0.1);
+}
+.sub-nav-separator {
+    color: rgba(180, 180, 200, 0.3);
+}
+/* 按钮式（accessory.html / forging.html） */
+.sub-nav-btn {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: var(--subnav-font-size, 1.05rem);
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--subnav-radius, 8px);
+    padding: var(--subnav-padding-y, 8px) var(--subnav-padding-x, 16px);
+    text-decoration: none;
+    transition: all var(--transition-smooth);
+}
+.sub-nav-btn:hover {
+    color: #fff;
+    background: rgba(94, 234, 219, 0.15);
+    border-color: rgba(94, 234, 219, 0.3);
+    text-shadow: 0 0 6px rgba(94, 234, 219, 0.3);
+}
+
 .point-card {
     background: rgba(20,20,40,0.6);
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 12px;
-    padding: 15px 14px 12px;
+    padding: 18px 16px 14px;
     backdrop-filter: blur(14px);
     transition: all 0.3s;
     position: relative;
@@ -308,14 +413,15 @@ body {
     background: rgba(24,24,48,0.7);
 }
 .point-card:hover::before { opacity: 1; }
-.point-name { font-weight: 700; font-size: 0.9rem; color: #ececf2; margin-bottom: 4px; }
+.point-name { font-weight: 700; font-size: 1.05rem; color: #ececf2; margin-bottom: 6px; }
 .point-coords {
-    font-family: 'SF Mono', monospace;
-    font-size: 0.72rem;
+    font-family: var(--font-main);
+    font-size: 0.88rem;
     color: var(--accent-cyan);
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
 }
-.point-desc { font-size: 0.73rem; color: var(--text-secondary); padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
+.point-desc { font-size: 0.85rem; color: var(--text-secondary); padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
 .point-desc strong { color: #d0d0e0; }
 
 /* BOSS 卡片 */
@@ -324,7 +430,7 @@ body {
     background: rgba(20,20,40,0.6);
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 12px;
-    padding: 18px 16px 14px;
+    padding: 20px 18px 16px;
     backdrop-filter: blur(14px);
     transition: all 0.3s;
     position: relative;
@@ -346,11 +452,11 @@ body {
     background: rgba(24,24,48,0.7);
 }
 .boss-card:hover::before { opacity: 1; }
-.boss-card .point-name { font-weight: 700; font-size: 0.95rem; color: var(--boss-name-color); margin-bottom: 6px; }
-.boss-card .point-coords { font-size: 0.75rem; color: var(--accent-cyan); margin-bottom: 8px; }
+.boss-card .point-name { font-weight: 700; font-size: 1.1rem; color: var(--boss-name-color); margin-bottom: 6px; }
+.boss-card .point-coords { font-family: var(--font-main); font-size: 0.88rem; color: var(--accent-cyan); margin-bottom: 8px; }
 .boss-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
-.boss-info-item { font-size: 0.73rem; color: var(--text-secondary); }
-.boss-info-full { grid-column: span 2; font-size: 0.73rem; color: var(--text-secondary); }
+.boss-info-item { font-size: 0.82rem; color: var(--text-secondary); }
+.boss-info-full { grid-column: span 2; font-size: 0.82rem; color: var(--text-secondary); }
 /* BOSS 区域内的子区域标题（如「矿洞」「晶海」） */
 .sub-region-title {
     font-family: var(--font-main);
@@ -370,8 +476,8 @@ body {
     list-style: none;
 }
 .point-card .ore-list li {
-    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Noto Sans SC', monospace;
-    font-size: 0.92rem;
+    font-family: var(--font-main);
+    font-size: 0.98rem;
     color: var(--accent-cyan);
     margin-bottom: 3px;
     line-height: 1.5;

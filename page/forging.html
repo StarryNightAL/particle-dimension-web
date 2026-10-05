@@ -8,93 +8,12 @@
     <link rel="stylesheet" href="../font/fonts.css">
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* 页面内子导航（按钮式）
-           按钮尺寸可通过下方变量调整：
-           --subnav-gap           按钮间距
-           --subnav-font-size     文字大小
-           --subnav-padding-y     上下内边距
-           --subnav-padding-x     左右内边距
-           --subnav-radius        圆角
-        */
+        /* .sub-nav / .sub-nav-btn / .item-card 主样式已抽取到 style.css 统一管理。
+           本页子导航为按钮式：间距覆盖为 16px；
+           --subnav-font-size / --subnav-padding-y / --subnav-padding-x / --subnav-radius
+           仍可在此处微调按钮尺寸。 */
         .sub-nav {
             --subnav-gap: 16px;
-            --subnav-font-size: 1.05rem;
-            --subnav-padding-y: 8px;
-            --subnav-padding-x: 16px;
-            --subnav-radius: 8px;
-
-            display: flex;
-            gap: var(--subnav-gap);
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .sub-nav-btn {
-            font-family: var(--font-main);
-            font-weight: 500;
-            font-size: var(--subnav-font-size);
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--subnav-radius);
-            padding: var(--subnav-padding-y) var(--subnav-padding-x);
-            text-decoration: none;
-            transition: all var(--transition-smooth);
-        }
-        .sub-nav-btn:hover {
-            color: #fff;
-            background: rgba(94, 234, 219, 0.15);
-            border-color: rgba(94, 234, 219, 0.3);
-            text-shadow: 0 0 6px rgba(94, 234, 219, 0.3);
-        }
-
-        /* 物品/道具卡片（图片+文字，同 item.html） */
-        .item-card {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(20, 20, 40, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 12px;
-            padding: 14px;
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            transition: all 0.3s;
-        }
-        .item-card:hover {
-            border-color: rgba(94, 234, 219, 0.3);
-            box-shadow: 0 3px 22px rgba(0, 0, 0, 0.35), 0 0 32px rgba(94, 234, 219, 0.1);
-            transform: translateY(-2px);
-            background: rgba(24, 24, 48, 0.7);
-        }
-        .item-card img {
-            width: 128px;
-            height: 128px;
-            object-fit: contain;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 6px;
-            flex-shrink: 0;
-        }
-        .item-info {
-            flex: 1;
-        }
-        .item-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #e0e0f0;
-            margin-bottom: 4px;
-        }
-        .item-meta {
-            font-size: 0.82rem;
-            color: #b0b0c8;
-            line-height: 1.6;
-        }
-        .item-meta p {
-            margin-bottom: 2px;
-        }
-        .item-meta strong {
-            color: #d0d0e0;
         }
     </style>
 </head>
