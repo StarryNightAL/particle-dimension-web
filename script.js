@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="${prefix}page/forging.html" class="nav-btn">锻造与道具</a>
                 <a href="${prefix}page/accessory.html" class="nav-btn">饰品详情</a>
                 <a href="${prefix}page/player.html" class="nav-btn">玩家图鉴</a>
+                <a href="${prefix}page/economy.html" class="nav-btn">经济体系</a>
                 <a href="${prefix}tool/index.html" class="nav-btn">工具调用</a>
                 <a href="${prefix}fun/index.html" class="nav-btn">休闲娱乐</a>
             </nav>

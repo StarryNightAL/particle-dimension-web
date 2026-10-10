@@ -184,6 +184,15 @@ body {
     color: #e0e0e8;
 }
 
+/* 经济体系页：正文与子标题字号独立调大（仅作用于 .economy-page，不影响其它页） */
+.economy-page .content-text {
+    font-size: 0.9rem;
+    line-height: 1.85;
+}
+.economy-page .sub-area-title {
+    font-size: 1rem;
+}
+
 .boss-intro {
     font-size: 0.95rem;
     color: #c8c8dc;
