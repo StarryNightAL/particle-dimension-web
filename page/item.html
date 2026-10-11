@@ -7,6 +7,70 @@
     <link rel="icon" href="../favicon.ico">
     <link rel="stylesheet" href="../font/fonts.css">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .item-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(20, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 14px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: all 0.3s;
+        }
+        .item-card:hover {
+            border-color: rgba(94, 234, 219, 0.3);
+            box-shadow: 0 3px 22px rgba(0, 0, 0, 0.35), 0 0 32px rgba(94, 234, 219, 0.1);
+            transform: translateY(-2px);
+            background: rgba(24, 24, 48, 0.7);
+        }
+        .item-card img {
+            width: 128px;
+            height: 128px;
+            object-fit: contain;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px;
+            flex-shrink: 0;
+        }
+        .item-info { flex: 1; }
+        .item-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #e0e0f0;
+            margin-bottom: 4px;
+        }
+        .item-meta {
+            font-size: 0.82rem;
+            color: #b0b0c8;
+            line-height: 1.6;
+        }
+        .item-meta p { margin-bottom: 2px; }
+        .item-meta strong { color: #d0d0e0; }
+
+        .sub-nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .sub-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .sub-nav-link:hover {
+            color: #fff;
+            background: rgba(94, 234, 219, 0.1);
+        }
+        .sub-nav-separator {
+            color: rgba(180, 180, 200, 0.3);
+        }
+    </style>
 </head>
 <body>
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
@@ -14,260 +78,291 @@
         <aside id="sidebar"></aside>
         <main class="main-content">
             <nav class="sub-nav">
-                <a href="#basic" class="sub-nav-link">基础材料</a>
+                <a href="#basic_item" class="sub-nav-link">基础材料</a>
                 <span class="sub-nav-separator">|</span>
-                <a href="#advanced" class="sub-nav-link">进阶材料</a>
+                <a href="#common_item" class="sub-nav-link">一般材料</a>
+                <span class="sub-nav-separator">|</span>
+                <a href="#main_quest_item" class="sub-nav-link">主线材料</a>
+                <span class="sub-nav-separator">|</span>
+                <a href="#mineral_item" class="sub-nav-link">矿物</a>
+                <span class="sub-nav-separator">|</span>
+                <a href="#skill_item" class="sub-nav-link">技能材料</a>
+                <span class="sub-nav-separator">|</span>
+                <a href="#side_quest_item" class="sub-nav-link">支线材料</a>
+                <span class="sub-nav-separator">|</span>
+                <a href="#advanced_item" class="sub-nav-link">进阶材料</a>
             </nav>
+
 
             <section class="content-section">
                 <article class="content-card">
-                    <h2 class="content-title">物品图鉴</h2>
-
-                    <!-- 基础材料 -->
-                    <h3 class="sub-area-title" id="basic">基础材料</h3>
-                    <div class="item-grid">
-                        <!-- 皮革 -->
+                    <h2 class="content-title" id="basic_item">基础材料</h2>
+                    <div class="item-grid item-grid-3">
                         <div class="item-card">
-                            <img src="../picture/item/皮革.png" alt="皮革">
+                            <img src="../picture/item/basic_item/皮革.png" alt="皮革" loading="lazy">
                             <div class="item-info">
-                                <div class="item-name">皮革</div>
+                                <div class="item-name" style="color:#FFFFFF">皮革</div>
                                 <div class="item-meta">
-                                    <p><strong>类型：</strong>新手基础材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打野狼获取</p>
-                                    <p><strong>主要用途：</strong>用于新手的主线任务和盔甲</p>
+                                    <p><strong>描述：</strong>新手期常见的基础合成原料</p>
+                                    <p><strong>主要获取方式：</strong>打野狼</p>
+                                    <p><strong>主要用途：</strong>制作装备、提交主线任务</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- 木棍 -->
                         <div class="item-card">
-                            <img src="../picture/item/木棍.png" alt="木棍">
+                            <img src="../picture/item/basic_item/木棍.png" alt="木棍" loading="lazy">
                             <div class="item-info">
-                                <div class="item-name">木棍</div>
+                                <div class="item-name" style="color:#FFFFFF">木棍</div>
                                 <div class="item-meta">
-                                    <p><strong>类型：</strong>新手基础材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打游荡尸壳获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务和日常任务</p>
+                                    <p><strong>描述：</strong>新手期常见的基础合成原料</p>
+                                    <p><strong>主要获取方式：</strong>打游荡尸壳</p>
+                                    <p><strong>主要用途：</strong>制作装备、提交主线任务</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- 圆石 -->
                         <div class="item-card">
-                            <img src="../picture/item/圆石.png" alt="圆石">
+                            <img src="../picture/item/basic_item/圆石.png" alt="圆石" loading="lazy">
                             <div class="item-info">
-                                <div class="item-name">圆石</div>
+                                <div class="item-name" style="color:#FFFFFF">圆石</div>
                                 <div class="item-meta">
-                                    <p><strong>类型：</strong>新手基础材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打石山守卫者获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务和盔甲</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 粗铁 -->
-                        <div class="item-card">
-                            <img src="../picture/item/粗铁.png" alt="粗铁">
-                            <div class="item-info">
-                                <div class="item-name">粗铁</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>一般材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打精英骷髅或挖矿获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、日常任务、盔甲、锻造</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 冰 -->
-                        <div class="item-card">
-                            <img src="../picture/item/冰.png" alt="冰">
-                            <div class="item-info">
-                                <div class="item-name">冰</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打神殿骷髅获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 金粒 -->
-                        <div class="item-card">
-                            <img src="../picture/item/金粒.png" alt="金粒">
-                            <div class="item-info">
-                                <div class="item-name">金粒</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>一般材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打雪山骷髅、雪山精英骷髅、挖矿、分解金锭获取</p>
-                                    <p><strong>主要用途：</strong>合成金锭</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 蜘蛛眼 -->
-                        <div class="item-card">
-                            <img src="../picture/item/蜘蛛眼.png" alt="蜘蛛眼">
-                            <div class="item-info">
-                                <div class="item-name">蜘蛛眼</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料、日常任务耗材</p>
-                                    <p><strong>主要获取方式：</strong>通过打沼泽魔蛛获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、日常任务</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 糖 -->
-                        <div class="item-card">
-                            <img src="../picture/item/糖.png" alt="糖">
-                            <div class="item-info">
-                                <div class="item-name">糖</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打沼泽女巫获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、治愈光环升三阶</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 红石粉 -->
-                        <div class="item-card">
-                            <img src="../picture/item/红石粉.png" alt="红石粉">
-                            <div class="item-info">
-                                <div class="item-name">红石粉</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>一般材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打沼泽女巫、挖矿获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、锻造、治愈光环升三阶</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 瞬间治疗1药水 -->
-                        <div class="item-card">
-                            <img src="../picture/item/瞬间治疗1药水.png" alt="瞬间治疗1药水">
-                            <div class="item-info">
-                                <div class="item-name">瞬间治疗1药水</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>技能材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打沼泽女巫获取（喝药水时击杀有概率掉落）</p>
-                                    <p><strong>主要用途：</strong>用于治愈光环升三阶</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 烈焰粉 -->
-                        <div class="item-card">
-                            <img src="../picture/item/烈焰粉.png" alt="烈焰粉">
-                            <div class="item-info">
-                                <div class="item-name">烈焰粉</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>一般材料、耗材</p>
-                                    <p><strong>主要获取方式：</strong>通过打沙漠骷髅获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、烈焰棒锻造</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 火焰弹 -->
-                        <div class="item-card">
-                            <img src="../picture/item/火焰弹.png" alt="火焰弹">
-                            <div class="item-info">
-                                <div class="item-name">火焰弹</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打粒子冲击体获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 幽匿块 -->
-                        <div class="item-card">
-                            <img src="../picture/item/幽匿块.gif" alt="幽匿块">
-                            <div class="item-info">
-                                <div class="item-name">幽匿块</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>支线材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打梦魇异常获取</p>
-                                    <p><strong>主要用途：</strong>用于梦魇回响支线</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 树脂砖 -->
-                        <div class="item-card">
-                            <img src="../picture/item/树脂砖.png" alt="树脂砖">
-                            <div class="item-info">
-                                <div class="item-name">树脂砖</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>一般材料</p>
-                                    <p><strong>主要获取方式：</strong>通过打火山骷髅获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、锻造饰品、锤锻虚界回响+3饰品</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 中型紫晶芽 -->
-                        <div class="item-card">
-                            <img src="../picture/item/中型紫晶芽.png" alt="中型紫晶芽">
-                            <div class="item-info">
-                                <div class="item-name">中型紫晶芽</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料、耗材</p>
-                                    <p><strong>主要获取方式：</strong>通过打芽孢变异体获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、召唤天灾•突变晶核</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 海晶砂粒 -->
-                        <div class="item-card">
-                            <img src="../picture/item/海晶砂粒.png" alt="海晶砂粒">
-                            <div class="item-info">
-                                <div class="item-name">海晶砂粒</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料、耗材</p>
-                                    <p><strong>主要获取方式：</strong>通过打疯尸获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、召唤远古•深渊晶冻体</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 海晶碎片 -->
-                        <div class="item-card">
-                            <img src="../picture/item/海晶碎片.png" alt="海晶碎片">
-                            <div class="item-info">
-                                <div class="item-name">海晶碎片</div>
-                                <div class="item-meta">
-                                    <p><strong>类型：</strong>主线材料、耗材</p>
-                                    <p><strong>主要获取方式：</strong>通过打守卫者获取</p>
-                                    <p><strong>主要用途：</strong>用于主线任务、召唤远古•深渊晶冻体</p>
+                                    <p><strong>描述：</strong>石山区域常见的基础材料</p>
+                                    <p><strong>主要获取方式：</strong>打石山守卫者</p>
+                                    <p><strong>主要用途：</strong>制作装备、提交主线任务</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </article>
+            </section>
 
-                    <!-- 进阶材料 -->
-                    <h3 class="sub-area-title" id="advanced" style="margin-top: 30px;">进阶材料</h3>
-                    <div class="item-grid">
-                        <!-- 粒子水晶 -->
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="common_item">一般材料</h2>
+                    <div class="item-grid item-grid-3">
                         <div class="item-card">
-                            <img src="../picture/item/粒子水晶.png" alt="粒子水晶">
+                            <img src="../picture/item/common_item/烈焰粉.png" alt="烈焰粉" loading="lazy">
                             <div class="item-info">
-                                <div class="item-name">粒子水晶</div>
+                                <div class="item-name" style="color:#FFFFFF">烈焰粉</div>
                                 <div class="item-meta">
-                                    <p><strong>类型：</strong>进阶材料、玩家市场通用交易货币</p>
-                                    <p><strong>主要获取方式：</strong>通过开BOSS箱子获取</p>
-                                    <p><strong>主要用途：</strong>盔甲、技能升阶、饰品锻造、饰品锤锻等</p>
+                                    <p><strong>描述：</strong>沙漠区域的掉落材料</p>
+                                    <p><strong>主要获取方式：</strong>打沙漠骷髅</p>
+                                    <p><strong>主要用途：</strong>主线任务、烈焰棒锻造</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- 粒子圣晶 -->
                         <div class="item-card">
-                            <img src="../picture/item/粒子圣晶.png" alt="粒子圣晶">
+                            <img src="../picture/item/common_item/树脂砖.png" alt="树脂砖" loading="lazy">
                             <div class="item-info">
-                                <div class="item-name">粒子圣晶</div>
+                                <div class="item-name" style="color:#FFFFFF">树脂砖</div>
                                 <div class="item-meta">
-                                    <p><strong>类型：</strong>进阶材料、玩家市场交易货币</p>
-                                    <p><strong>主要获取方式：</strong>通过开BOSS箱子获取，如梦魇等</p>
-                                    <p><strong>主要用途：</strong>技能升阶、饰品锻造、饰品锤锻等</p>
+                                    <p><strong>描述：</strong>火山区域的掉落材料</p>
+                                    <p><strong>主要获取方式：</strong>打火山骷髅</p>
+                                    <p><strong>主要用途：</strong>主线任务、锻造饰品、锤锻虚界回响+3饰品</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- 粒子圣核 -->
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="main_quest_item">主线材料</h2>
+                    <div class="item-grid item-grid-3">
                         <div class="item-card">
-                            <img src="../picture/item/粒子圣核.png" alt="粒子圣核">
+                            <img src="../picture/item/main_quest_item/冰.png" alt="冰" loading="lazy">
                             <div class="item-info">
-                                <div class="item-name">粒子圣核</div>
+                                <div class="item-name" style="color:#FFFFFF">冰</div>
                                 <div class="item-meta">
-                                    <p><strong>类型：</strong>进阶材料</p>
-                                    <p><strong>主要获取方式：</strong>通过锻造获取</p>
-                                    <p><strong>主要用途：</strong>晶海支线任务、饰品锤锻等</p>
+                                    <p><strong>描述：</strong>雪山区域的主线材料</p>
+                                    <p><strong>主要获取方式：</strong>打神殿骷髅</p>
+                                    <p><strong>主要用途：</strong>提交主线任务</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/main_quest_item/蜘蛛眼.png" alt="蜘蛛眼" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">蜘蛛眼</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>沼泽区域的掉落材料</p>
+                                    <p><strong>主要获取方式：</strong>打沼泽魔蛛</p>
+                                    <p><strong>主要用途：</strong>主线任务、日常任务</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/main_quest_item/糖.png" alt="糖" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">糖</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>沼泽区域的掉落材料</p>
+                                    <p><strong>主要获取方式：</strong>打沼泽女巫</p>
+                                    <p><strong>主要用途：</strong>主线任务、治愈光环升三阶</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/main_quest_item/火焰弹.png" alt="火焰弹" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">火焰弹</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>沙漠区域的主线材料</p>
+                                    <p><strong>主要获取方式：</strong>打粒子冲击体</p>
+                                    <p><strong>主要用途：</strong>提交主线任务</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/main_quest_item/中型紫晶芽.png" alt="中型紫晶芽" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">中型紫晶芽</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>矿洞区域的主线材料</p>
+                                    <p><strong>主要获取方式：</strong>打芽孢变异体</p>
+                                    <p><strong>主要用途：</strong>主线任务、召唤天灾•突变晶核</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/main_quest_item/海晶砂粒.png" alt="海晶砂粒" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">海晶砂粒</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>晶海区域的主线材料</p>
+                                    <p><strong>主要获取方式：</strong>打疯尸</p>
+                                    <p><strong>主要用途：</strong>主线任务、召唤远古•深渊晶冻体</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/main_quest_item/海晶碎片.png" alt="海晶碎片" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">海晶碎片</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>晶海区域的主线材料</p>
+                                    <p><strong>主要获取方式：</strong>打守卫者</p>
+                                    <p><strong>主要用途：</strong>主线任务、召唤远古•深渊晶冻体</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="mineral_item">矿物</h2>
+                    <div class="item-grid item-grid-3">
+                        <div class="item-card">
+                            <img src="../picture/item/mineral_item/粗铁.png" alt="粗铁" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">粗铁</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>常见矿石资源，用途广泛</p>
+                                    <p><strong>主要获取方式：</strong>打精英骷髅或挖矿</p>
+                                    <p><strong>主要用途：</strong>主线任务、日常任务、盔甲、锻造</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/mineral_item/金粒.png" alt="金粒" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">金粒</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>金锭的合成原料</p>
+                                    <p><strong>主要获取方式：</strong>打雪山骷髅、雪山精英骷髅、挖矿、分解金锭</p>
+                                    <p><strong>主要用途：</strong>合成金锭</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/mineral_item/红石粉.png" alt="红石粉" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">红石粉</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>常见矿物材料</p>
+                                    <p><strong>主要获取方式：</strong>打沼泽女巫、挖矿</p>
+                                    <p><strong>主要用途：</strong>主线任务、锻造、治愈光环升三阶</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="skill_item">技能材料</h2>
+                    <div class="item-grid item-grid-3">
+                        <div class="item-card">
+                            <img src="../picture/item/skill_item/瞬间治疗1药水.png" alt="瞬间治疗1药水" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">瞬间治疗1药水</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>由沼泽女巫掉落的技能材料</p>
+                                    <p><strong>主要获取方式：</strong>打沼泽女巫（喝药水时击杀有概率掉落）</p>
+                                    <p><strong>主要用途：</strong>治愈光环升三阶</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="side_quest_item">支线材料</h2>
+                    <div class="item-grid item-grid-3">
+                        <div class="item-card">
+                            <img src="../picture/item/side_quest_item/幽匿块.gif" alt="幽匿块" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFFFFF">幽匿块</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>梦魇回响支线所需材料</p>
+                                    <p><strong>主要获取方式：</strong>打梦魇异常</p>
+                                    <p><strong>主要用途：</strong>梦魇回响支线</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card">
+                    <h2 class="content-title" id="advanced_item">进阶材料</h2>
+                    <div class="item-grid item-grid-3">
+                        <div class="item-card">
+                            <img src="../picture/item/advanced_item/粒子水晶.png" alt="粒子水晶" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FFAA00">粒子水晶</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>跨区域的进阶材料，由 BOSS 箱子产出</p>
+                                    <p><strong>主要获取方式：</strong>开启 BOSS 箱子</p>
+                                    <p><strong>主要用途：</strong>盔甲、技能升阶、饰品锻造、饰品锤锻</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/advanced_item/粒子圣晶.png" alt="粒子圣晶" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FF5555">粒子圣晶</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>高阶 BOSS 箱子产出的进阶材料</p>
+                                    <p><strong>主要获取方式：</strong>开启特定的 BOSS 箱子（如梦魇等）</p>
+                                    <p><strong>主要用途：</strong>技能升阶、饰品锻造、饰品锤锻</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-card">
+                            <img src="../picture/item/advanced_item/粒子圣核.png" alt="粒子圣核" loading="lazy">
+                            <div class="item-info">
+                                <div class="item-name" style="color:#FF5555">粒子圣核</div>
+                                <div class="item-meta">
+                                    <p><strong>描述：</strong>由锻造获得的进阶材料</p>
+                                    <p><strong>主要获取方式：</strong>锻造</p>
+                                    <p><strong>主要用途：</strong>任务、饰品锤锻</p>
                                 </div>
                             </div>
                         </div>
