@@ -192,7 +192,36 @@ body {
 .economy-page .sub-area-title {
     font-size: 1rem;
 }
-
+/* ============================================================
+   通用数据表格（wiki-table，如 economy.html 的汇率/经济数据）
+   用法：<div class="wiki-table-wrap"><table class="wiki-table">...</table></div>
+   ============================================================ */
+.wiki-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 12px 0;
+}
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.wiki-table th,
+.wiki-table td {
+    padding: 8px 14px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.wiki-table thead th {
+    background: rgba(255, 255, 255, 0.09);
+    color: var(--text-primary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+.wiki-table tbody tr:hover {
+    background: rgba(94, 234, 219, 0.06);
+}
 .boss-intro {
     font-size: 0.95rem;
     color: #c8c8dc;
