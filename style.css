@@ -34,7 +34,9 @@ body {
     color: var(--text-primary);
     line-height: 1.5;
     letter-spacing: 0.02em;
-    overflow-x: hidden;
+    /* 使用浏览器原生滚动条：窗口不足时横向滚动，而不是裁切内容；
+       不使用内部滚动容器，整页统一由浏览器滚动。 */
+    overflow-x: auto;
 }
 
 #particle-canvas {
