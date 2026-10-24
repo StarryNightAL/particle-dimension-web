@@ -589,30 +589,3 @@ body {
 .fold-box.fold-warn .fold-header {
     border-left-color: var(--accent-gold);
 }
-
-/* 响应式（已禁用：强制以 PC 端布局显示，侧边栏不再折叠）
-@media (max-width: 900px) {
-    .app-container {
-        flex-direction: column;
-    }
-    #sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 16px;
-        justify-content: center;
-    }
-    .sidebar-nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .main-content {
-        height: auto;
-        padding: 20px 16px;
-    }
-}
-*/

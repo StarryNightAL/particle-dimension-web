@@ -363,14 +363,6 @@ export const particleForgeTool = {
                 font-size: 1rem;
                 color: var(--accent-blue, #60a5fa);
             }
-            /* 窄屏回退为单列（已禁用：强制 PC 布局）
-            @media (max-width: 640px) {
-                .forge-app .forge-templates,
-                .forge-app .forge-values,
-                .forge-app .forge-zones,
-                .forge-app .forge-targets { grid-template-columns: 1fr; }
-            }
-            */
         `;
         document.head.appendChild(style);
 
