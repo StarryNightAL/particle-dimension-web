@@ -256,18 +256,22 @@ body {
    （从各页面内联 <style> 与 JS 注入样式中抽取汇总）
    ============================================================ */
 
-/* 物品 / 道具 / 饰品卡片：默认每行 4 个，可加 -1 / -2 / -3 覆盖 */
-.item-grid {
+/* 内容卡片网格：默认每行 4 个，可加 -1 / -2 / -3 / -4 / -5 覆盖 */
+.content-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 /* 一行一个 */
-.item-grid-1 { grid-template-columns: repeat(1, 1fr); }
+.content-grid-1 { grid-template-columns: repeat(1, 1fr); }
 /* 一行两个 */
-.item-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.content-grid-2 { grid-template-columns: repeat(2, 1fr); }
 /* 一行三个 */
-.item-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.content-grid-3 { grid-template-columns: repeat(3, 1fr); }
+/* 一行四个 */
+.content-grid-4 { grid-template-columns: repeat(4, 1fr); }
+/* 一行五个 */
+.content-grid-5 { grid-template-columns: repeat(5, 1fr); }
 
 /* 玩家卡片：每行 3 个 */
 .player-grid {
@@ -462,9 +466,8 @@ body {
 .point-desc { font-size: 0.85rem; color: var(--text-secondary); padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
 .point-desc strong { color: #d0d0e0; }
 
-/* BOSS 卡片 */
+/* BOSS 卡片（列数由所在 .content-grid-N 决定，此处不再跨列） */
 .boss-card {
-    grid-column: span 2;
     background: rgba(20,20,40,0.6);
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 12px;
