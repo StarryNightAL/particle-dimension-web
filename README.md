@@ -132,6 +132,16 @@ export const myTool = {
 
 目前线上 `page/item.html` 以手工维护为准。`local/user/script/parse_item.py` 是本地/历史生成脚本，未纳入版本库；如需恢复自动生成，请先把数据源纳入版本管理，并同步更新生成模板中的 CSS 类名与输出路径。
 
+### BOSS 页数据说明
+
+BOSS 数据采用和物品页一致的“规范 + 数据”结构：
+
+- `local/user/data/boss.txt`：数据源规范、区域中英文映射与格式示例；
+- `local/user/data/boss.json`：实际 BOSS 数据，结构为 `bosses → region → BOSS 数组`；
+- `local/user/script/parse_boss.py`：读取上述两个文件，校验后生成 `local/user/tmp/boss_parsed.json`，不会直接改写 `page/boss.html`。
+
+目前 `boss.json` 已包含 `page/boss.html` 中的全部 19 个 BOSS；但页面本身仍是手写 HTML，尚未改为由 `boss.json` 生成。
+
 ## 样式约定
 
 - 全站颜色、字体、圆角、过渡等变量集中在 `style.css` 的 `:root`。
