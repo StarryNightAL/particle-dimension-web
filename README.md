@@ -138,9 +138,9 @@ BOSS 数据采用和物品页一致的“规范 + 数据”结构：
 
 - `local/user/data/boss.txt`：数据源规范、区域中英文映射与格式示例；
 - `local/user/data/boss.json`：实际 BOSS 数据，结构为 `bosses → region → BOSS 数组`；
-- `local/user/script/parse_boss.py`：读取上述两个文件，校验后生成 `local/user/tmp/boss_parsed.json`，不会直接改写 `page/boss.html`。
+- `local/user/script/parse_boss.py`：读取上述两个文件，校验后生成 `local/user/tmp/boss_parsed.json`、`local/user/tmp/boss_render.html` 和 `local/user/page/new_boss.html`，不会直接改写 `page/boss.html`。
 
-目前 `boss.json` 已包含 `page/boss.html` 中的全部 19 个 BOSS；但页面本身仍是手写 HTML，尚未改为由 `boss.json` 生成。
+目前 `boss.json` 已包含 `page/boss.html` 中的全部 19 个 BOSS；生成的预览页在 `local/user/page/new_boss.html`，确认无误后再替换 `page/boss.html`。预览页内的资源路径按最终放入 `page/` 目录编写（`../style.css` 等），在 `local/user/page/` 直接打开时需自行同步或调整资源路径。
 
 ## 样式约定
 
