@@ -128,7 +128,7 @@ style.textContent = `
         color: #bbb;
         font-weight: 400;
     }
-    /* 工具页子导航（仿 point.html 的 sub-nav） */
+    /* 工具页子导航（仿 gazetteer.html 的 sub-nav） */
     #tool-apps .sub-nav {
         display: flex;
         gap: 24px;
@@ -286,7 +286,7 @@ function renderTool(tool, container) {
 // ---------- 6. 为每个工具动态创建卡片并渲染 ----------
 const host = document.getElementById('tool-apps');
 if (host) {
-    // 子导航（仿 point.html 的 sub-nav，点击锚点跳转到对应工具卡片）
+    // 子导航（仿 gazetteer.html 的 sub-nav，点击锚点跳转到对应工具卡片）
     const subNav = document.createElement('nav');
     subNav.className = 'sub-nav';
     TOOLS.forEach((tool, i) => {

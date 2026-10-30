@@ -394,7 +394,7 @@ body {
     gap: var(--subnav-gap, 24px);
     margin-bottom: 20px;
 }
-/* 链接式（item.html / point.html / fun） */
+/* 链接式（item.html / gazetteer.html / fun） */
 .sub-nav-link {
     color: var(--text-secondary);
     text-decoration: none;
@@ -430,7 +430,7 @@ body {
     text-shadow: 0 0 6px rgba(94, 234, 219, 0.3);
 }
 
-.point-card {
+.gazetteer-card {
     background: rgba(20,20,40,0.6);
     border: 1px solid rgba(255,255,255,0.07);
     border-radius: 12px;
@@ -441,7 +441,7 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 16px rgba(0,0,0,0.25);
 }
-.point-card::before {
+.gazetteer-card::before {
     content: '';
     position: absolute;
     top: 0; left: 10px; right: 10px;
@@ -450,23 +450,23 @@ body {
     opacity: 0;
     transition: opacity 0.3s;
 }
-.point-card:hover {
+.gazetteer-card:hover {
     transform: translateY(-2px);
     border-color: rgba(94,234,219,0.3);
     box-shadow: 0 3px 22px rgba(0,0,0,0.35), 0 0 32px rgba(94,234,219,0.1);
     background: rgba(24,24,48,0.7);
 }
-.point-card:hover::before { opacity: 1; }
-.point-name { font-weight: 700; font-size: 1.05rem; color: #ececf2; margin-bottom: 6px; }
-.point-coords {
+.gazetteer-card:hover::before { opacity: 1; }
+.gazetteer-name { font-weight: 700; font-size: 1.05rem; color: #ececf2; margin-bottom: 6px; }
+.gazetteer-coords {
     font-family: var(--font-main);
     font-size: 0.88rem;
     color: var(--accent-cyan);
     margin-bottom: 8px;
     letter-spacing: 0.02em;
 }
-.point-desc { font-size: 0.85rem; color: var(--text-secondary); padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
-.point-desc strong { color: #d0d0e0; }
+.gazetteer-desc { font-size: 0.85rem; color: var(--text-secondary); padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); }
+.gazetteer-desc strong { color: #d0d0e0; }
 
 /* BOSS 卡片（列数由所在 .content-grid-N 决定，此处不再跨列） */
 .boss-card {
@@ -495,8 +495,8 @@ body {
     background: rgba(24,24,48,0.7);
 }
 .boss-card:hover::before { opacity: 1; }
-.boss-card .point-name { font-weight: 700; font-size: 1.1rem; color: var(--boss-name-color); margin-bottom: 6px; }
-.boss-card .point-coords { font-family: var(--font-main); font-size: 0.88rem; color: var(--accent-cyan); margin-bottom: 8px; }
+.boss-card .gazetteer-name { font-weight: 700; font-size: 1.1rem; color: var(--boss-name-color); margin-bottom: 6px; }
+.boss-card .gazetteer-coords { font-family: var(--font-main); font-size: 0.88rem; color: var(--accent-cyan); margin-bottom: 8px; }
 .boss-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
 .boss-info-item { font-size: 0.82rem; color: var(--text-secondary); }
 .boss-info-full { grid-column: span 2; font-size: 0.82rem; color: var(--text-secondary); }
@@ -513,12 +513,12 @@ body {
 }
 
 /* 矿物点位坐标列表 */
-.point-card .ore-list {
+.gazetteer-card .ore-list {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.point-card .ore-list li {
+.gazetteer-card .ore-list li {
     font-family: var(--font-main);
     font-size: 0.98rem;
     color: var(--accent-cyan);

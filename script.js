@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <nav class="sidebar-nav">
                 <a href="${prefix}index.html" class="nav-btn">首页</a>
-                <a href="${prefix}page/point.html" class="nav-btn">点位汇总</a>
+                <a href="${prefix}page/gazetteer.html" class="nav-btn">点位汇总</a>
                 <a href="${prefix}page/mob.html" class="nav-btn">小怪详情</a>
                 <a href="${prefix}page/boss.html" class="nav-btn">BOSS详情</a>
                 <a href="${prefix}page/item.html" class="nav-btn">物品图鉴</a>

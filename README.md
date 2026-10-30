@@ -14,7 +14,7 @@
 | 页面 | 路径 | 内容 |
 | --- | --- | --- |
 | 首页 | `index.html` | 序言、贡献者名单 |
-| 点位汇总 | `page/point.html` | 小怪、BOSS、矿物、采集物及其它点位坐标 |
+| 点位汇总 | `page/gazetteer.html` | 小怪、BOSS、矿物、采集物及其它点位坐标 |
 | 小怪详情 | `page/mob.html` | 小怪数据（目前为占位页） |
 | BOSS 详情 | `page/boss.html` | 各区域 BOSS 的坐标、消耗、技能与掉落 |
 | 物品图鉴 | `page/item.html` | 基础/一般/主线/矿物/技能/支线/进阶材料 |
@@ -145,7 +145,7 @@ BOSS 数据采用和物品页一致的“规范 + 数据”结构：
 ## 样式约定
 
 - 全站颜色、字体、圆角、过渡等变量集中在 `style.css` 的 `:root`。
-- 常用布局类：`.content-card`、`.content-grid`、`.item-card`、`.point-card`、`.sub-nav`、`.wiki-table`。
+- 常用布局类：`.content-card`、`.content-grid`、`.item-card`、`.gazetteer-card`、`.sub-nav`、`.wiki-table`。
 - 页面级特殊样式尽量留在对应页面的 `<style>` 中，避免跨页复制。
 - 当前布局为 PC 优先：内容区固定 1400px，侧栏 260px；窗口不足时由浏览器原生横向滚动条滚动，不使用内部滚动容器。
 - 修改栅格列数时，同时检查 1366/1536 等常见桌面宽度下的显示效果。
