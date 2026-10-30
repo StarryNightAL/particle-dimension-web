@@ -1,4 +1,7 @@
 # 本地目录
 local/
+# 生成页面（由 build/script 生成，不入库）
+page/new_boss.html
+page/new_item.html
 # AI目录
 .dshwolf/

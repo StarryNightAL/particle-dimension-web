@@ -46,6 +46,9 @@
 │  ├─ fun.js               娱乐项目注册表与渲染器
 │  ├─ crate_simulator.js
 │  └─ gacha_simulator.js
+├─ build/                  数据源与页面生成脚本（不参与站点运行）
+│  ├─ data/                boss / item 的规范与数据
+│  └─ script/              parse_boss.py、parse_item.py
 ├─ font/                   本地 Noto Sans SC
 ├─ picture/                物品、玩家与全景图资源
 ├─ local/                  本地草稿与辅助脚本（已被 .gitignore 忽略）
@@ -126,21 +129,27 @@ export const myTool = {
 - 如果新页面需要出现在侧栏，请在 `script.js` 的 `sidebar.innerHTML` 中补充链接。
 - 页内锚点（如 `#basic_item`）必须与目标元素的 `id` 一致。
 - 图片放在 `picture/`，使用相对路径（子页面为 `../picture/...`），并补 `alt` 与 `loading="lazy"`。
-- 不要提交 `local/`：该目录用于本地草稿、数据与辅助脚本，已被 `.gitignore` 忽略。
+- 需要长期保存的数据和脚本放在 `build/`；`local/` 仅用于本地草稿与生成产物，已被 `.gitignore` 忽略。
 
 ### 物品页数据说明
 
-目前线上 `page/item.html` 以手工维护为准。`local/user/script/parse_item.py` 是本地/历史生成脚本，未纳入版本库；如需恢复自动生成，请先把数据源纳入版本管理，并同步更新生成模板中的 CSS 类名与输出路径。
+物品数据采用“规范 + 数据”结构，数据源与生成脚本已纳入版本库：
+
+- `build/data/item.txt`：数据源规范，以及区域、子区域与类型的中英文映射；
+- `build/data/item.json`：实际物品数据，结构为 `items → 类型 → 物品数组`；
+- `build/script/parse_item.py`：读取上述两个文件，生成 `local/user/tmp/item_parsed.json`、`local/user/tmp/item_render.html` 和 `page/new_item.html`。
+
+目前线上 `page/item.html` 仍以手工维护为准。`page/new_item.html` 已加入 `.gitignore`，生成后可直接在浏览器中打开比对，确认无误再替换正式页面。
 
 ### BOSS 页数据说明
 
 BOSS 数据采用和物品页一致的“规范 + 数据”结构：
 
-- `local/user/data/boss.txt`：数据源规范、区域中英文映射与格式示例；
-- `local/user/data/boss.json`：实际 BOSS 数据，结构为 `bosses → region → BOSS 数组`；
-- `local/user/script/parse_boss.py`：读取上述两个文件，校验后生成 `local/user/tmp/boss_parsed.json`、`local/user/tmp/boss_render.html` 和 `local/user/page/new_boss.html`，不会直接改写 `page/boss.html`。
+- `build/data/boss.txt`：数据源规范、区域中英文映射与格式示例；
+- `build/data/boss.json`：实际 BOSS 数据，结构为 `bosses → region → BOSS 数组`；
+- `build/script/parse_boss.py`：读取上述两个文件，校验后生成 `local/user/tmp/boss_parsed.json`、`local/user/tmp/boss_render.html` 和 `page/new_boss.html`，不会直接改写 `page/boss.html`。
 
-目前 `boss.json` 已包含 `page/boss.html` 中的全部 19 个 BOSS；生成的预览页在 `local/user/page/new_boss.html`，确认无误后再替换 `page/boss.html`。预览页内的资源路径按最终放入 `page/` 目录编写（`../style.css` 等），在 `local/user/page/` 直接打开时需自行同步或调整资源路径。
+目前 `boss.json` 已包含 `page/boss.html` 中的全部 19 个 BOSS；生成脚本的用法见 [`build/README.md`](build/README.md)。`page/new_boss.html` 已加入 `.gitignore`，与正式页面同级，资源路径可直接使用；比对确认后再替换 `page/boss.html`。
 
 ## 样式约定
 

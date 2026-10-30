@@ -1,0 +1,86 @@
+```meta:本文件内容规范
+# page/item.html 数据源规范
+
+结构：根对象 → items → type → 物品数组
+· 根对象的 key 为 "items"
+· items 对象的 key 为 type 中文名（如"基础物品"），也是页面大卡片标题
+· type 的值为物品数组
+· 页面顺序 = items 里各 type 的书写顺序
+
+物品对象 8 个可用键，所有键必须出现，随后按解释决定是否必填/可否缺省：
+
+"name":        必填项，物品名称，带有特殊字符(空格、/ \ : * ? " < > | （） · 及各类标点)时必须指定imgsrc
+"color":       可缺省，字体颜色，值为 "" / null / "default"（均忽略大小写） 用默认色 #FFFFFF，格式 #RRGGBB
+"imgsrc":      可缺省，缺省或值为default直接使用物品名字.png，决定{item_imgsrc}的值，需带有后缀，当直接指定相对路径时(以../开头)，应不使用模板而使用提供的路径
+"region":      必填项，所属区域，语义为该物品的首次出现点或主要产出点，不要求是唯一产地；填 region 映射表中的中文名（如"石山"）
+"sub_region":  可缺省，所属子区域，值为 "" / null / "None"（忽略大小写）表示直属主区域；填 sub_region 映射表中的中文名（如"矿洞"）
+"desc":        必填项，物品描述
+"source":      必填项，物品来源
+"usage":       必填项，物品用途
+
+region 语义：该物品的首次出现点或主要产出点，不要求是唯一产地
+特殊：region=特殊 用于不隶属于任何地理区域、跨区域或人造的物品（如 BOSS 箱子通货、锻造产物）
+
+IMGSRC路径模板
+../picture/item/{type_en}/{item_imgsrc}
+说明：type_en 由外层 type 中文名查 type 映射表得到
+方括号“[]”表示非必须项（当前模板不含可选项）
+示例1：<img src="../picture/item/basic_item/皮革.png" alt="皮革" loading="lazy">
+示例2：<img src="../picture/item/advanced_item/粒子水晶.png" alt="粒子水晶" loading="lazy">
+
+· 注释用 "_anno_x": "注释内容"，x为同一物品内不重复的数字，均不写入 HTML
+所有以下划线(“_”)开头的键应不视为正文内容
+块开头以"meta"开头的不作为物品
+```
+
+```meta:region使用示例与注解
+示例：
+原始文本中：region=石山
+html的imgsrc中：使用stone_mountain
+html的大区域标题中（展示给访问者）：使用“石山”
+注解：
+region=特殊 用于不隶属于任何地理区域、跨区域或人造的物品（如 BOSS 箱子通货、锻造产物）
+```
+
+```meta:路径中英文映射表
+region
+石山=stone_mountain
+雪山=snowy_mountain
+沼泽=swamp
+沙漠=desert
+火山=volcano
+矿洞与晶海=cave_and_crystal_ocean
+特殊=special
+sub_region
+矿洞=mine_cave
+晶海=crystal_ocean
+type
+基础物品=basic_item
+一般物品=common_item
+主线物品=main_quest_item
+矿物=mineral_item
+技能物品=skill_item
+支线物品=side_quest_item
+进阶物品=advanced_item
+```
+
+```meta:格式
+{
+  "items": {
+    "基础物品": [
+      {
+        "name": "第一个物品",
+        "color": "",
+        "imgsrc": "",
+        "region": "",
+        "sub_region": "",
+        "desc": "",
+        "source": "",
+        "usage": "",
+        "_anno_1": "可选注释，下划线开头不渲染"
+      }
+    ],
+    "进阶物品": []
+  }
+}
+```

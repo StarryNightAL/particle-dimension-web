@@ -1,0 +1,126 @@
+```meta:本文件内容规范
+# page/boss.html 数据源规范
+
+结构：根对象 → bosses → region → BOSS 数组
+· 根对象的 key 为 "bosses"
+· bosses 对象的 key 为 region 中文名（如"石山"），也是页面大区域标题
+· region 的值为 BOSS 数组
+· 页面顺序 = bosses 里各 region 的书写顺序
+
+BOSS 对象 10 个可用键；subtitle 可省略，credit_user 在 credit=false 时可省略，其余键必须出现：
+
+"name":              必填项，BOSS 名称，同时作为卡片标题
+"subtitle":          可缺省，卡片标题后的灰色副标题，不带括号；解析器也兼容 name 末尾带全角括号的旧写法
+"color":             可缺省，字体颜色，值为 "" / null / "default"（均忽略大小写）用默认色 #FF5555，格式 #RRGGBB
+"credit":            可缺省，true / false，是否显示署名，默认 true
+"credit_user":       可缺省，署名中的提供者，credit=true 时生效；credit=false 时省略，默认 "玩家狐望江"
+"credit_add_change": 可缺省，true / false，是否追加"，由星夜StarN修改"，默认 false
+"region":            必填项，所属区域，必须与所在 bosses 的 key 一致
+"sub_region":        可缺省，所属子区域；"" / null / "None"（忽略大小写）表示直属主区域
+"summary":           必填项，摘要数组，按页面显示顺序排列，元素为 {"key": "...", "value": "..."}
+"sections":          必填项，正文对象，按 key 的书写顺序渲染
+
+· name 末尾若带“（...）”的旧写法，解析器会自动拆成 name + subtitle；新数据建议直接写 subtitle。
+
+summary 常用 key：坐标 / 召唤消耗 / 开启箱子消耗 / 箱子爆率
+· "箱子爆率" 可以写成 "箱子爆率（补充说明）"，页面会原样显示
+· 爆率字段内的每个空格都会渲染为 &nbsp;
+· 多行内容用 \n 表示，例如分难度爆率、入口/入场坐标
+
+sections 已知 key（按推荐顺序）：
+Boss名 / 别名 / 召唤物 / 简略介绍 / 战利品 / 进入场地限制 / 经验 / 特点 / 主动技能 / 被动技能 / 场地效果 / 额外备注 / 其它效果
+· 文本字段直接写字符串，换行用 \n
+· 文本字段有多行时，渲染会在冒号后先补一个 &lt;br&gt;
+· 列表字段（主动技能 / 被动技能 / 场地效果 / 其它效果）写对象数组：
+  [{"name": "技能名", "description": "技能描述"}]
+· 列表项的 "description" 可省略；描述为空时不要写空字符串
+· 列表项可选 "children"，用于嵌套子条目；children 元素统一为 {"name": "...", "description": "..."} 对象，description 为空时可省略
+· "Boss名" 可省略，生成页面时会用 name 自动补
+· 注释用 "_anno_x": "注释内容"，下划线开头的键不写入页面
+
+署名文本
+此卡片除蓝框部分外由{credit_user}提供 + （credit_add_change=true 时追加“，由星夜StarN修改”）
+```
+
+```meta:region使用示例与注解
+示例：
+bosses 的 key：石山
+HTML 大区域标题：石山
+HTML 的 id：stone_mountain
+sub_region：矿洞
+HTML 子区域标题：矿洞
+HTML 的 id：mine_cave
+
+注解：
+· region 必须与所在 bosses 的 key 一致；新增区域时同时更新下方映射表
+· sub_region 为 null（JSON null）表示该 BOSS 直属主区域，不生成子标题
+· 页面顺序由 bosses 中各 region 的书写顺序决定，region 内按数组顺序渲染
+```
+
+```meta:区域中英文映射表
+region
+石山=stone_mountain
+雪山=snowy_mountain
+沼泽=swamp
+沙漠=desert
+火山=volcano
+矿洞与晶海=cave_and_crystal_ocean
+地狱=nether
+末地=end
+sub_region
+矿洞=mine_cave
+晶海=crystal_ocean
+末地外岛深层=end_outer_islands_deep
+```
+
+```meta:格式
+{
+  "bosses": {
+    "石山": [
+      {
+        "name": "示例BOSS",
+        "subtitle": "示例副标题",
+        "color": "default",
+        "credit": true,
+        "credit_user": "玩家狐望江",
+        "credit_add_change": false,
+        "region": "石山",
+        "sub_region": null,
+        "summary": [
+          {
+            "key": "坐标",
+            "value": "X: 0 / Y: 0 / Z: 0"
+          },
+          {
+            "key": "召唤消耗",
+            "value": "无"
+          },
+          {
+            "key": "开启箱子消耗",
+            "value": "无"
+          },
+          {
+            "key": "箱子爆率",
+            "value": "100%-示例物品*1"
+          }
+        ],
+        "sections": {
+          "简略介绍": "示例介绍",
+          "战利品": "示例物品",
+          "进入场地限制": "无",
+          "经验": "无",
+          "特点": "示例特点",
+          "主动技能": [
+            {
+              "name": "示例技能",
+              "description": "示例技能描述"
+            }
+          ],
+          "额外备注": "多行文本用 \n 表示\n这是第二行",
+          "_anno_1": "下划线开头的键仅作注释，不渲染"
+        }
+      }
+    ]
+  }
+}
+```

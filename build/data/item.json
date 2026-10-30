@@ -1,0 +1,218 @@
+{
+  "items": {
+    "基础物品": [
+      {
+        "name": "皮革",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "石山",
+        "sub_region": null,
+        "desc": "新手期常见的基础合成原料",
+        "source": "打野狼",
+        "usage": "制作装备、提交主线任务"
+      },
+      {
+        "name": "木棍",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "石山",
+        "sub_region": null,
+        "desc": "新手期常见的基础合成原料",
+        "source": "打游荡尸壳",
+        "usage": "制作装备、提交主线任务"
+      },
+      {
+        "name": "圆石",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "石山",
+        "sub_region": null,
+        "desc": "石山区域常见的基础材料",
+        "source": "打石山守卫者",
+        "usage": "制作装备、提交主线任务"
+      }
+    ],
+    "一般物品": [
+      {
+        "name": "烈焰粉",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "沙漠",
+        "sub_region": null,
+        "desc": "沙漠区域的掉落材料",
+        "source": "打沙漠骷髅",
+        "usage": "主线任务、烈焰棒锻造"
+      },
+      {
+        "name": "树脂砖",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "火山",
+        "sub_region": null,
+        "desc": "火山区域的掉落材料",
+        "source": "打火山骷髅",
+        "usage": "主线任务、锻造饰品、锤锻虚界回响+3饰品"
+      }
+    ],
+    "主线物品": [
+      {
+        "name": "冰",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "雪山",
+        "sub_region": null,
+        "desc": "雪山区域的主线材料",
+        "source": "打神殿骷髅",
+        "usage": "提交主线任务"
+      },
+      {
+        "name": "蜘蛛眼",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "沼泽",
+        "sub_region": null,
+        "desc": "沼泽区域的掉落材料",
+        "source": "打沼泽魔蛛",
+        "usage": "主线任务、日常任务"
+      },
+      {
+        "name": "糖",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "沼泽",
+        "sub_region": null,
+        "desc": "沼泽区域的掉落材料",
+        "source": "打沼泽女巫",
+        "usage": "主线任务、治愈光环升三阶"
+      },
+      {
+        "name": "火焰弹",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "沙漠",
+        "sub_region": null,
+        "desc": "沙漠区域的主线材料",
+        "source": "打粒子冲击体",
+        "usage": "提交主线任务"
+      },
+      {
+        "name": "中型紫晶芽",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "矿洞与晶海",
+        "sub_region": "矿洞",
+        "desc": "矿洞区域的主线材料",
+        "source": "打芽孢变异体",
+        "usage": "主线任务、召唤天灾•突变晶核"
+      },
+      {
+        "name": "海晶砂粒",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "矿洞与晶海",
+        "sub_region": "晶海",
+        "desc": "晶海区域的主线材料",
+        "source": "打疯尸",
+        "usage": "主线任务、召唤远古•深渊晶冻体"
+      },
+      {
+        "name": "海晶碎片",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "矿洞与晶海",
+        "sub_region": "晶海",
+        "desc": "晶海区域的主线材料",
+        "source": "打守卫者",
+        "usage": "主线任务、召唤远古•深渊晶冻体"
+      }
+    ],
+    "矿物": [
+      {
+        "name": "粗铁",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "石山",
+        "sub_region": null,
+        "desc": "常见矿石资源，用途广泛",
+        "source": "打精英骷髅或挖矿",
+        "usage": "主线任务、日常任务、盔甲、锻造"
+      },
+      {
+        "name": "金粒",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "雪山",
+        "sub_region": null,
+        "desc": "金锭的合成原料",
+        "source": "打雪山骷髅、雪山精英骷髅、挖矿、分解金锭",
+        "usage": "合成金锭"
+      },
+      {
+        "name": "红石粉",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "沼泽",
+        "sub_region": null,
+        "desc": "常见矿物材料",
+        "source": "打沼泽女巫、挖矿",
+        "usage": "主线任务、锻造、治愈光环升三阶"
+      }
+    ],
+    "技能物品": [
+      {
+        "name": "瞬间治疗1药水",
+        "color": "default",
+        "imgsrc": "default",
+        "region": "沼泽",
+        "sub_region": null,
+        "desc": "由沼泽女巫掉落的技能材料",
+        "source": "打沼泽女巫（喝药水时击杀有概率掉落）",
+        "usage": "治愈光环升三阶"
+      }
+    ],
+    "支线物品": [
+      {
+        "name": "幽匿块",
+        "color": "default",
+        "imgsrc": "幽匿块.gif",
+        "region": "火山",
+        "sub_region": null,
+        "desc": "梦魇回响支线所需材料",
+        "source": "打梦魇异常",
+        "usage": "梦魇回响支线"
+      }
+    ],
+    "进阶物品": [
+      {
+        "name": "粒子水晶",
+        "color": "#FFAA00",
+        "imgsrc": "default",
+        "region": "特殊",
+        "sub_region": null,
+        "desc": "跨区域的进阶材料，由 BOSS 箱子产出",
+        "source": "开启 BOSS 箱子",
+        "usage": "盔甲、技能升阶、饰品锻造、饰品锤锻"
+      },
+      {
+        "name": "粒子圣晶",
+        "color": "#FF5555",
+        "imgsrc": "default",
+        "region": "特殊",
+        "sub_region": null,
+        "desc": "高阶 BOSS 箱子产出的进阶材料",
+        "source": "开启特定的 BOSS 箱子（如梦魇等）",
+        "usage": "技能升阶、饰品锻造、饰品锤锻"
+      },
+      {
+        "name": "粒子圣核",
+        "color": "#FF5555",
+        "imgsrc": "default",
+        "region": "特殊",
+        "sub_region": null,
+        "desc": "由锻造获得的进阶材料",
+        "source": "锻造",
+        "usage": "任务、饰品锤锻"
+      }
+    ]
+  }
+}
