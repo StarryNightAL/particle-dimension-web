@@ -2,22 +2,46 @@
 
 「粒子维度」是运行在网易 Minecraft 基岩版租赁服上的服务器，玩法围绕“粒子”展开。本站是由玩家整理维护的附属 Wiki 与工具站，收录点位、BOSS、物品、锻造、饰品、玩家与经济体系等内容。
 
-> 本站为玩家自发维护，部分数据带有主观性或仍在补充中；如有遗漏或错误，欢迎指正。
+- 线上站点：<https://lizirpg.pages.dev/>（Cloudflare Pages）
+- 源代码仓库：<https://github.com/StarryNightAL/particle-dimension-web>
 
-## 适用玩家
+> 本站为玩家自发维护，部分数据带有主观性或仍在补充中；如有遗漏或错误，欢迎通过 Issue 或 PR 指正。
 
-- 网易 Minecraft 基岩版「粒子维度」租赁服玩家
-- 想查询坐标、BOSS 机制、物品来源与锻造配方的玩家
+## 目录
+
+- [关于本站](#关于本站)
+- [页面一览](#页面一览)
+- [技术栈](#技术栈)
+- [目录结构](#目录结构)
+- [本地预览](#本地预览)
+- [部署](#部署)
+- [数据管线](#数据管线)
+- [工具与娱乐模块](#工具与娱乐模块)
+- [内容维护](#内容维护)
+- [样式约定](#样式约定)
+- [字体与许可](#字体与许可)
+- [贡献](#贡献)
+- [致谢 / 版权](#致谢--版权)
+
+## 关于本站
+
+面向以下玩家：
+
+- 网易 Minecraft 基岩版「粒子维度」租赁服玩家；
+- 想查询坐标、BOSS 机制、物品来源与锻造配方的玩家；
+- 想了解服务器经济体系、玩家信息与历史活动的内容整理者。
+
+站点为纯静态页面，所有内容随仓库提交直接发布，没有后端、数据库或登录系统。
 
 ## 页面一览
 
 | 页面 | 路径 | 内容 |
 | --- | --- | --- |
-| 首页 | `index.html` | 序言、贡献者名单 |
+| 首页 | `index.html` | 序言、站点入口、贡献者名单 |
 | 点位汇总 | `page/gazetteer.html` | 小怪、BOSS、矿物、采集物及其它点位坐标 |
 | 小怪详情 | `page/mob.html` | 小怪数据（目前为占位页） |
 | BOSS 详情 | `page/boss.html` | 各区域 BOSS 的坐标、消耗、技能与掉落 |
-| 物品图鉴 | `page/item.html` | 基础/一般/主线/矿物/技能/支线/进阶材料 |
+| 物品图鉴 | `page/item.html` | 基础 / 一般 / 主线 / 矿物 / 技能 / 支线 / 进阶材料 |
 | 锻造与道具 | `page/forging.html` | 各阶段锻造物品、材料与配方 |
 | 饰品详情 | `page/accessory.html` | 饰品等级、材料、效果与锻造数值 |
 | 玩家图鉴 | `page/player.html` | 服务器玩家介绍 |
@@ -25,9 +49,15 @@
 | 工具调用 | `tool/index.html` | 近战伤害、等级经验、锻造模拟器 |
 | 休闲娱乐 | `fun/index.html` | 开箱模拟器、抽奖（暂停开发） |
 
-## 技术栈与目录
+## 技术栈
 
-纯静态站点：原生 HTML + CSS + JavaScript（ES Modules），无框架、无构建步骤、无第三方运行时依赖。
+纯静态站点：原生 HTML + CSS + JavaScript（ES Modules），无框架、无构建步骤、无第三方运行时依赖，也没有 `package.json` 或 `npm install`。
+
+- 布局 PC 优先：内容区固定 1400px、侧栏 260px，窗口不足时使用浏览器原生横向滚动条；
+- 侧栏由 `script.js` 注入，根据当前是否位于 `page/`、`tool/`、`fun/` 自动补 `../`，因此兼容根域名与项目子路径两种部署方式；
+- 全站资源使用相对路径，便于迁移到任意静态托管。
+
+## 目录结构
 
 ```text
 .
@@ -47,11 +77,12 @@
 │  ├─ crate_simulator.js
 │  └─ gacha_simulator.js
 ├─ build/                  数据源与页面生成脚本（不参与站点运行）
+│  ├─ README.md            数据管线说明
 │  ├─ data/                boss / item 的规范与数据
 │  └─ script/              parse_boss.py、parse_item.py
 ├─ font/                   本地 Noto Sans SC
 ├─ picture/                物品、玩家与全景图资源
-├─ local/                  本地草稿与辅助脚本（已被 .gitignore 忽略）
+├─ local/                  本地草稿、生成产物与辅助脚本（已被 .gitignore 忽略）
 └─ archive/                旧版页面归档
 ```
 
@@ -70,19 +101,66 @@ python -m http.server 8000
 http://localhost:8000/
 ```
 
-也可以使用任意静态服务器，例如 VS Code Live Server。项目没有 `npm install` 或构建步骤。
+也可以使用任意静态服务器，例如 VS Code Live Server。项目没有构建步骤，改完文件刷新页面即可。
 
 ## 部署
 
-本站按 GitHub Pages 的静态站点方式组织：
+### Cloudflare Pages（当前线上）
+
+主站部署在 Cloudflare Pages，地址为 <https://lizirpg.pages.dev/>。它采用纯静态直发：没有构建步骤，发布内容就是仓库根目录。若通过 Git 集成接入，`main` 分支的新提交会自动触发部署。
+
+如果需要在新的 Cloudflare 账号中重新接入：
+
+1. 在 Cloudflare 控制台进入 `Workers & Pages → Create → Pages`；
+2. 选择 `Connect to Git`（或直接上传构建产物）；
+3. 选择仓库 `StarryNightAL/particle-dimension-web`；
+4. 构建设置保持纯静态：
+   - Framework preset：`None`
+   - Build command：留空
+   - Build output directory：`/`（仓库根目录，填写 `.` 等效）
+5. 保存后，每次推送到 `main` 都会重新发布。
+
+也可以用 Wrangler 直接上传：
+
+```bash
+npx wrangler pages deploy . --project-name=<项目名>
+```
+
+因为仓库根目录就是站点根目录，`build/`、`README.md` 等文件也会被一并发布，但它们只是普通静态文件，不影响页面运行。
+
+### GitHub Pages（可选）
+
+如需在 GitHub 侧再部署一份镜像：
 
 1. 将改动推送到 `main` 分支；
 2. 在仓库 `Settings → Pages` 中选择 `Deploy from a branch`；
 3. 分支选择 `main`，目录选择 `/ (root)`。
 
-仓库地址：<https://github.com/StarryNightAL/particle-dimension-web>
+### 路径说明
 
-站点中的链接均使用相对路径；`script.js` 会根据当前是否位于 `page/`、`tool/`、`fun/` 自动补 `../`，因此也兼容 GitHub Pages 的项目子路径部署。
+站点中的链接均使用相对路径；`script.js` 会根据当前是否位于 `page/`、`tool/`、`fun/` 自动补 `../`，因此无论部署在根域名、`*.pages.dev` 子域还是 GitHub Pages 的项目子路径下都能正常工作。
+
+## 数据管线
+
+物品与 BOSS 页面采用“规范 + 数据 + 生成脚本”的方式维护，源文件放在 `build/`，完整说明见 [`build/README.md`](build/README.md)。
+
+```bash
+python build/script/parse_boss.py
+python build/script/parse_item.py
+```
+
+| 脚本 | 输入 | 输出 |
+| --- | --- | --- |
+| `parse_boss.py` | `build/data/boss.txt`、`build/data/boss.json` | `local/user/tmp/*`、`page/new_boss.html` |
+| `parse_item.py` | `build/data/item.txt`、`build/data/item.json` | `local/user/tmp/*`、`page/new_item.html` |
+
+约定：
+
+- `boss.json` 结构为 `bosses → region → BOSS 数组`，`sub_region` 的空值使用 JSON `null`，不要写字符串 `"null"`；
+- `item.json` 结构为 `items → 类型 → 物品数组`；
+- `page/new_boss.html`、`page/new_item.html` 是生成结果，已加入 `.gitignore`，不会进入版本库，也不会被部署；
+- 生成页面确认无误后，再手动替换 `page/boss.html` / `page/item.html`；
+- 数据源是唯一入口，不要直接改正式页面后反过来覆盖 `build/data/`。
 
 ## 工具与娱乐模块
 
@@ -124,44 +202,25 @@ export const myTool = {
 
 ## 内容维护
 
-- 内容页面是手写静态 HTML，没有 CMS 或后端。
-- 新增页面时，复制现有页面的 `<head>`/`<body>` 骨架，保留 `#particle-canvas`、`#sidebar`、`.app-container` 和 `.main-content` 结构。
-- 如果新页面需要出现在侧栏，请在 `script.js` 的 `sidebar.innerHTML` 中补充链接。
-- 页内锚点（如 `#basic_item`）必须与目标元素的 `id` 一致。
-- 图片放在 `picture/`，使用相对路径（子页面为 `../picture/...`），并补 `alt` 与 `loading="lazy"`。
-- 需要长期保存的数据和脚本放在 `build/`；`local/` 仅用于本地草稿与生成产物，已被 `.gitignore` 忽略。
-
-### 物品页数据说明
-
-物品数据采用“规范 + 数据”结构，数据源与生成脚本已纳入版本库：
-
-- `build/data/item.txt`：数据源规范，以及区域、子区域与类型的中英文映射；
-- `build/data/item.json`：实际物品数据，结构为 `items → 类型 → 物品数组`；
-- `build/script/parse_item.py`：读取上述两个文件，生成 `local/user/tmp/item_parsed.json`、`local/user/tmp/item_render.html` 和 `page/new_item.html`。
-
-目前线上 `page/item.html` 仍以手工维护为准。`page/new_item.html` 已加入 `.gitignore`，生成后可直接在浏览器中打开比对，确认无误再替换正式页面。
-
-### BOSS 页数据说明
-
-BOSS 数据采用和物品页一致的“规范 + 数据”结构：
-
-- `build/data/boss.txt`：数据源规范、区域中英文映射与格式示例；
-- `build/data/boss.json`：实际 BOSS 数据，结构为 `bosses → region → BOSS 数组`；
-- `build/script/parse_boss.py`：读取上述两个文件，校验后生成 `local/user/tmp/boss_parsed.json`、`local/user/tmp/boss_render.html` 和 `page/new_boss.html`，不会直接改写 `page/boss.html`。
-
-目前 `boss.json` 已包含 `page/boss.html` 中的全部 19 个 BOSS；生成脚本的用法见 [`build/README.md`](build/README.md)。`page/new_boss.html` 已加入 `.gitignore`，与正式页面同级，资源路径可直接使用；比对确认后再替换 `page/boss.html`。
+- 内容页面是手写静态 HTML，没有 CMS 或后端；
+- 新增页面时，复制现有页面的 `<head>` / `<body>` 骨架，保留 `#particle-canvas`、`#sidebar`、`.app-container` 和 `.main-content` 结构；
+- 如果新页面需要出现在侧栏，请在 `script.js` 的 `sidebar.innerHTML` 中补充链接；
+- 页内锚点（如 `#basic_item`）必须与目标元素的 `id` 一致；
+- 图片放在 `picture/`，使用相对路径（子页面为 `../picture/...`），并补 `alt` 与 `loading="lazy"`；
+- 需要长期保存的数据和脚本放在 `build/`；`local/` 仅用于本地草稿与生成产物，已被 `.gitignore` 忽略；
+- `page/new_boss.html`、`page/new_item.html` 属于生成产物，不要提交。
 
 ## 样式约定
 
-- 全站颜色、字体、圆角、过渡等变量集中在 `style.css` 的 `:root`。
-- 常用布局类：`.content-card`、`.content-grid`、`.item-card`、`.gazetteer-card`、`.sub-nav`、`.wiki-table`。
-- 页面级特殊样式尽量留在对应页面的 `<style>` 中，避免跨页复制。
-- 当前布局为 PC 优先：内容区固定 1400px，侧栏 260px；窗口不足时由浏览器原生横向滚动条滚动，不使用内部滚动容器。
-- 修改栅格列数时，同时检查 1366/1536 等常见桌面宽度下的显示效果。
+- 全站颜色、字体、圆角、过渡等变量集中在 `style.css` 的 `:root`；
+- 常用布局类：`.content-card`、`.content-grid`、`.item-card`、`.gazetteer-card`、`.sub-nav`、`.wiki-table`；
+- 页面级特殊样式尽量留在对应页面的 `<style>` 中，避免跨页复制；
+- 当前布局为 PC 优先：内容区固定 1400px，侧栏 260px；窗口不足时由浏览器原生横向滚动条滚动，不使用内部滚动容器；
+- 修改栅格列数时，同时检查 1366 / 1536 等常见桌面宽度下的显示效果。
 
 ## 字体与许可
 
-- 字体：Noto Sans SC，本地存放于 `font/woff2/`，由 `font/fonts.css` 引入。
+- 字体：Noto Sans SC，本地存放于 `font/woff2/`，由 `font/fonts.css` 引入；
 - 许可：SIL Open Font License 1.1，详见 [`font/LICENSE`](font/LICENSE)。
 
 ## 贡献
@@ -171,7 +230,8 @@ BOSS 数据采用和物品页一致的“规范 + 数据”结构：
 - 坐标、掉落、技能、配方等数据请尽量注明来源或版本时间；
 - 图片资源请确认使用权限；
 - 一次 PR 尽量只做一类修改，便于 review；
-- 提交前请本地打开页面检查链接、图片和工具是否正常。
+- 提交前请本地打开页面检查链接、图片和工具是否正常；
+- 修改数据源 `build/data/` 时，如需更新线上内容，请把确认后的生成结果替换到 `page/boss.html` / `page/item.html` 并一并提交。
 
 ## 致谢 / 版权
 
