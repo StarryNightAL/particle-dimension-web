@@ -448,6 +448,7 @@ def render_list_items(items: list) -> str:
         name = esc(item.get("name", ""))
         description = esc(item.get("description", ""))
         text = f"{name}：{description}" if description else name
+        text = text.replace("\n", "<br>")
 
         children = item.get("children") or []
         if children:
