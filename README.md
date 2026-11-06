@@ -107,26 +107,22 @@ http://localhost:8000/
 
 ### Cloudflare Pages（当前线上）
 
-主站部署在 Cloudflare Pages，地址为 <https://lizirpg.pages.dev/>。它采用纯静态直发：没有构建步骤，发布内容就是仓库根目录。若通过 Git 集成接入，`main` 分支的新提交会自动触发部署。
+主站部署在 Cloudflare Pages，地址为 <https://lizirpg.pages.dev/>。它采用纯静态直发：没有构建步骤，发布内容就是仓库根目录。仓库通过 Git 集成接入，`main` 分支的新提交会自动触发部署；Cloudflare 只发布已提交的文件，被 `.gitignore` 忽略的内容（如 `local/`、`page/new_*.html`）不会上线。
 
 如果需要在新的 Cloudflare 账号中重新接入：
 
 1. 在 Cloudflare 控制台进入 `Workers & Pages → Create → Pages`；
-2. 选择 `Connect to Git`（或直接上传构建产物）；
-3. 选择仓库 `StarryNightAL/particle-dimension-web`；
+2. 选择 `Connect to Git`，并授权 Cloudflare GitHub App（只需要读取仓库的权限）；
+3. 选择仓库 `StarryNightAL/particle-dimension-web` 与 `main` 分支；
 4. 构建设置保持纯静态：
    - Framework preset：`None`
    - Build command：留空
-   - Build output directory：`/`（仓库根目录，填写 `.` 等效）
+   - Build output directory：`.`（仓库根目录，不要填 `/`）
 5. 保存后，每次推送到 `main` 都会重新发布。
 
-也可以用 Wrangler 直接上传：
+> 本项目只通过 Git 集成部署。不要用 `wrangler pages deploy .` 之类的手工上传：它会按磁盘现状打包，且默认不读取 `.gitignore`，可能把 `local/` 里的草稿一并传上去。
 
-```bash
-npx wrangler pages deploy . --project-name=<项目名>
-```
-
-因为仓库根目录就是站点根目录，`build/`、`README.md` 等文件也会被一并发布，但它们只是普通静态文件，不影响页面运行。
+因为仓库根目录就是站点根目录，`build/`、`README.md` 等已提交的文件也会被一并发布，但它们只是普通静态文件，不影响页面运行。
 
 ### GitHub Pages（可选）
 
