@@ -454,12 +454,12 @@ def render_list_items(items: list) -> str:
         if children:
             text = (
                 f"{text}\n"
-                f'                                        <ul class="skill-sub-list">\n'
+                f'                                    <ul class="skill-sub-list">\n'
                 f"{render_children(children)}\n"
-                f"                                        </ul>"
+                f"                                    </ul>"
             )
 
-        lines.append(f"                                    <li>{text}</li>")
+        lines.append(f"                                <li>{text}</li>")
     return "\n".join(lines)
 
 
