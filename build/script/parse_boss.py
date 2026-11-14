@@ -41,7 +41,7 @@ PAGE_BOSS = ROOT / "page" / "new_boss.html"
 DEFAULT_COLOR = "#FF5555"
 DEFAULT_CREDIT_USER = "玩家狐望江"
 
-SUMMARY_KEYS = ("坐标", "召唤消耗", "开启箱子消耗", "箱子爆率")
+SUMMARY_KEYS = ("坐标", "召唤消耗", "开启箱子消耗", "入场特殊需求", "箱子爆率")
 
 SECTION_KEYS = (
     "Boss名",
@@ -532,21 +532,8 @@ def render_regions(regions: list) -> str:
     return "\n\n".join(parts)
 
 
-PREFACE_HTML = '''            <section class="content-section">
-                <article class="content-card">
-                    <h2 class="content-title">前言</h2>
-                    <p class="content-text">
-                        本书为怪物图鉴的重制版，制作相对前版比较精良，完善前版的各个缺点，比如说重点内容加了点彩色，本次重制版，主要把技巧选项删除，减少主观性，保证内容真实有效。<br>
-                        编：狐望江，暗己调灵之{鬼魂}<br>
-                        鸣谢（部分资料提供，不分前后）：孤僻的羊吃麦片，sleep___，Rav_若兮初日，海灵伯，YF年华
-                    </p>
-                    <p class="credit-text">此部分由玩家狐望江提供；摘自原文本</p>
-                </article>
-            </section>'''
-
-
 def render_content(regions: list) -> str:
-    return PREFACE_HTML + "\n\n" + render_regions(regions)
+    return render_regions(regions)
 
 
 # ---------- 页面模板 ----------
