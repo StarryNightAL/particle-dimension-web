@@ -1,0 +1,13 @@
+# robots.txt —— 粒子维度 附属Wiki
+# https://lizirpg.pages.dev/robots.txt
+
+User-agent: *
+
+# 旧版页面归档：与现行页面重复，且可能已过时
+Disallow: /archive/
+
+# 数据源与生成脚本：不是站点内容
+Disallow: /build/
+
+# 字体文件：仅用于页面渲染，无索引价值
+Disallow: /font/
