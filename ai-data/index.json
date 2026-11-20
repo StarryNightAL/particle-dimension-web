@@ -1,0 +1,219 @@
+{
+  "name": "粒子维度 附属Wiki",
+  "url": "https://lizirpg.pages.dev/",
+  "repository": "https://github.com/StarryNightAL/particle-dimension-web",
+  "language": "zh-CN",
+  "updated": "2026-11-21",
+  "description": "网易 Minecraft 基岩版「粒子维度」租赁服的玩家 Wiki 与工具站，纯静态站点。",
+  "agent_guide": "/ai-data/ROBOT.md",
+  "human_guide": "/ai-data/HUMAN.md",
+  "pages": [
+    {
+      "path": "/",
+      "title": "粒子维度 附属Wiki",
+      "type": "home",
+      "summary": "站点入口、序言与贡献者名单。",
+      "sections": [
+        { "title": "序言" },
+        { "title": "贡献者" }
+      ]
+    },
+    {
+      "path": "/page/gazetteer.html",
+      "title": "点位汇总",
+      "type": "content",
+      "summary": "小怪、BOSS、矿物、采集物及其它点位的坐标汇总。",
+      "sections": [
+        { "title": "小怪点位" },
+        { "title": "BOSS点位" },
+        { "title": "矿物点位" },
+        { "title": "采集物点位" },
+        { "title": "其它点位" }
+      ]
+    },
+    {
+      "path": "/page/mob.html",
+      "title": "小怪详情",
+      "type": "placeholder",
+      "summary": "小怪数据页，目前为占位内容。"
+    },
+    {
+      "path": "/page/boss.html",
+      "title": "BOSS详情",
+      "type": "content",
+      "summary": "各区域 BOSS 的坐标、消耗、技能与掉落，数据由 build/data/boss.json 生成。",
+      "sections": [
+        { "id": "stone_mountain", "title": "石山" },
+        { "id": "snowy_mountain", "title": "雪山" },
+        { "id": "swamp", "title": "沼泽" },
+        { "id": "desert", "title": "沙漠" },
+        { "id": "volcano", "title": "火山" },
+        { "id": "cave_and_crystal_ocean", "title": "矿洞与晶海" },
+        { "id": "nether", "title": "地狱" },
+        { "id": "end", "title": "末地" }
+      ]
+    },
+    {
+      "path": "/page/item.html",
+      "title": "物品图鉴",
+      "type": "content",
+      "summary": "按材料类型分类的物品图鉴，数据来源 build/data/item.json。",
+      "sections": [
+        { "id": "basic_item", "title": "基础材料" },
+        { "id": "common_item", "title": "一般材料" },
+        { "id": "main_quest_item", "title": "主线材料" },
+        { "id": "mineral_item", "title": "矿物" },
+        { "id": "skill_item", "title": "技能材料" },
+        { "id": "side_quest_item", "title": "支线材料" },
+        { "id": "advanced_item", "title": "进阶材料" }
+      ]
+    },
+    {
+      "path": "/page/forging.html",
+      "title": "锻造与道具",
+      "type": "content",
+      "summary": "各阶段锻造物品、材料与配方。",
+      "sections": [
+        { "id": "basic-item", "title": "基础物品" },
+        { "id": "general-item", "title": "一般物品" },
+        { "id": "advanced-item", "title": "进阶物品" },
+        { "id": "high-item", "title": "高级物品" },
+        { "id": "nether-advanced-item", "title": "地狱进阶物品" },
+        { "id": "nether-high-item", "title": "地狱高级物品" },
+        { "id": "tier4-forging", "title": "四阶锻造" },
+        { "id": "prismarine-forging", "title": "晶海锻造" },
+        { "id": "tier5-forging", "title": "五阶锻造" },
+        { "id": "special-forging", "title": "特殊锻造" }
+      ]
+    },
+    {
+      "path": "/page/accessory.html",
+      "title": "饰品详情",
+      "type": "content",
+      "summary": "饰品等级、材料、效果与锤锻数值。",
+      "sections": [
+        { "id": "preface", "title": "前言与消歧义" },
+        { "id": "forging-system", "title": "饰品锤锻系统" },
+        { "id": "protection-accessory", "title": "保护类饰品" },
+        { "id": "attack-accessory", "title": "攻击类饰品" },
+        { "id": "special-accessory", "title": "特殊类饰品" }
+      ]
+    },
+    {
+      "path": "/page/player.html",
+      "title": "玩家图鉴",
+      "type": "content",
+      "summary": "服务器玩家介绍。"
+    },
+    {
+      "path": "/page/economy.html",
+      "title": "交易与经济体系",
+      "type": "content",
+      "summary": "粒子水晶本位经济、交易规则与物价表。",
+      "sections": [
+        { "title": "序言" },
+        { "title": "经济体系" },
+        { "title": "物品物价表" }
+      ]
+    },
+    {
+      "path": "/page/interesting_thing.html",
+      "title": "粒子趣事",
+      "type": "content",
+      "summary": "服务器相关的趣闻与杂项内容。"
+    },
+    {
+      "path": "/tool/index.html",
+      "title": "工具调用",
+      "type": "tool",
+      "summary": "近战伤害计算器、等级经验计算器、粒子锻造模拟器。",
+      "tools": [
+        "基岩版近战伤害",
+        "等级和经验值计算器",
+        "粒子锻造模拟器"
+      ]
+    },
+    {
+      "path": "/fun/index.html",
+      "title": "休闲娱乐",
+      "type": "fun",
+      "summary": "开箱模拟器；一周年新春祈愿暂停开发。",
+      "tools": [
+        "开箱模拟器",
+        "抽奖（暂停开发）"
+      ]
+    }
+  ],
+  "data_sources": [
+    {
+      "path": "/build/data/boss.json",
+      "format": "json",
+      "summary": "BOSS 数据，结构为 bosses → 区域 → BOSS 数组。",
+      "spec": "/build/data/boss.txt",
+      "generator": "/build/script/parse_boss.py",
+      "output": "/page/new_boss.html"
+    },
+    {
+      "path": "/build/data/item.json",
+      "format": "json",
+      "summary": "物品数据，结构为 items → 类型 → 物品数组。",
+      "spec": "/build/data/item.txt",
+      "generator": "/build/script/parse_item.py",
+      "output": "/page/new_item.html"
+    },
+    {
+      "path": "/tool/forging.txt",
+      "format": "text",
+      "summary": "锻造模拟器的规则与教程文本。"
+    }
+  ],
+  "documents": [
+    {
+      "path": "/README.md",
+      "title": "项目说明",
+      "summary": "站点介绍、页面列表、部署与数据管线概览。"
+    },
+    {
+      "path": "/build/README.md",
+      "title": "数据管线",
+      "summary": "生成脚本的用法、输入输出与数据约定。"
+    },
+    {
+      "path": "/ai-data/HUMAN.md",
+      "title": "ai-data 目录说明",
+      "summary": "本目录的定位、职责边界与维护方式。"
+    },
+    {
+      "path": "/ai-data/ROBOT.md",
+      "title": "AI 操作手册",
+      "summary": "硬性规则、阅读顺序、命令、验证清单与陷阱。"
+    }
+  ],
+  "special": {
+    "robots": "/robots.txt",
+    "not_found": "/404.html",
+    "sitemap": "/ai-data/index.json"
+  },
+  "excluded": [
+    {
+      "path": "/archive/",
+      "reason": "旧版页面归档，内容可能与现行页面重复。"
+    },
+    {
+      "path": "/build/",
+      "reason": "数据源与生成脚本，不是站点内容；robots.txt 已禁止抓取。"
+    },
+    {
+      "path": "/font/",
+      "reason": "字体子集文件，无索引价值。"
+    },
+    {
+      "path": "/page/new_boss.html",
+      "reason": "生成产物，被 .gitignore 忽略，不会部署。"
+    },
+    {
+      "path": "/page/new_item.html",
+      "reason": "生成产物，被 .gitignore 忽略，不会部署。"
+    }
+  ]
+}
